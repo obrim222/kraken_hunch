@@ -111,7 +111,8 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->increments('id');
             $table->integer('price_at_time_of_tip')->nullable();
             $table->enum('tip_percentage',[30, 40, 50]);
-            $table->date('date');
+            $table->date('date_now');
+            $table->date('date_end');
             $table->enum('tip_direction', ['Up', 'Down']);
             $table->enum('reason_up', ['major roadmap releases success', 'stock market up', 'influencers backing the project', 'money printing', 'instinct of the expert up']);
             $table->enum('reason_down', ['major roadmap releases failure', 'stock market down', 'influencers slating the project', 'instinct of the expert down', 'FUD']);
