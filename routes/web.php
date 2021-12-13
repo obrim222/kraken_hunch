@@ -6,7 +6,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MailerController;
-use App\Http\Controllers\TipsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,10 +40,9 @@ Route::get('/hunch', function () {
 });
 
 
-
-//Route::get('/tips', function () {
- //   return view('tips');
-//});
+Route::get('/tips', function () {
+    return view('tips');
+});
 
 Route::get('/about', function () {
     return view('about');
