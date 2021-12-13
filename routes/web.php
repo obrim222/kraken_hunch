@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MailerController;
+use App\Http\Controllers\TipsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,9 +41,10 @@ Route::get('/hunch', function () {
 });
 
 
-Route::get('/tips', function () {
-    return view('tips');
-});
+
+//Route::get('/tips', function () {
+ //   return view('tips');
+//});
 
 Route::get('/about', function () {
     return view('about');
@@ -62,3 +64,86 @@ Route::post("send-email", [MailerController::class, "composeEmail"])->name("send
 
 //Test
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+
+//Kasia TIPS START
+
+Route::get('/tips',[TipsController::class, 'index']);
+
+Route::get('/tips/create',[TipsController::class, 'create']);
+
+Route::post('/tips/create',[TipsController::class, 'store']);
+
+
+
+Route::get('/tips/up',[TipsController::class, 'orderTipsbyDirection']);
+
+
+
+Route::get('/tips',[TipsController::class, 'orderTipsbyCoin']);
+
+
+Route::get('/tips',[TipsController::class, 'orderTipsbyReason']);
+
+Route::get('/tips',[TipsController::class, 'wentUp']);
+
+//Route::get('/tips',[TipsController::class, 'wentDown']);
+
+
+
+Route::get('/tips/{id}',[TipsController::class, 'showSingleTip']);
+
+Route::put('/tips/{id}',[TipsController::class, 'update']);
+
+Route::post('/tips/{id}',[TipsController::class, 'destroy']);
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Route::get('/tips/create','TipsController@create');
+
+Route::get('/tips/create','TipsController@create');
+
+Route::post('/tips','TipsController@store');
+
+Route::get('/tips','TipsController@orderTipsbyDirection');
+
+Route::get('/tips','TipsController@orderTipsbyCoin');
+
+Route::get('/tips','TipsController@orderTipsbyReason');
+
+Route::get('/tips','TipsController@wentUp');
+
+//Route::get('/tips','TipsController@wentDown');
+
+
+
+//TIPS ID 
+
+Route::get('/tips/{id}','TipsController@showSingleTip');
+
+
+Route::get('/tips/{id}/edit','TipsController@edit');
+
+Route::put('/tips/{id}','TipsController@update');
+
+Route::post('/tips/{id}','TipsController@destroy');
+
+
+
+//Kasia: shall work when date in DB/table
+//Route::get('/tips','TipsController@latestTips');
+
+//TIPS END
+
+*/
+

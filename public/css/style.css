@@ -646,8 +646,8 @@ button:hover::before,
 }
 
 .footer {
-  background-color: #2d314d;
-  color: white;
+  background-color: white;
+  color: #2d314d;
   padding: 2.5rem;
   text-align: center;
 }
