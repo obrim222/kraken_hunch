@@ -1,6 +1,8 @@
 @extends('mytemplate')
 
 @section('title', 'Tips')
+<!-- added in the styling link-->
+<link rel="stylesheet" href="../css/style.css">
 
 @section('content')
 
