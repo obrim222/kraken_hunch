@@ -1065,8 +1065,12 @@ button:hover::before,
   padding-bottom: 1.0625rem;
 }
 .header__logo img {
+<<<<<<< refs/remotes/origin/tom
   width: 25rem;
   height: 10rem;
+=======
+  width: 8.8125rem;
+>>>>>>> test
 }
 .header__toggle > span {
   display: block;
@@ -1323,7 +1327,11 @@ button:hover::before,
 }
 
 .footer {
+<<<<<<< refs/remotes/origin/tom
   background-color: #fafafa;
+=======
+  background-color: white;
+>>>>>>> test
   color: #2d314d;
   padding: 2.5rem;
   text-align: center;
@@ -1339,7 +1347,11 @@ button:hover::before,
   }
 }
 .footer a {
+<<<<<<< refs/remotes/origin/tom
   color: #000;
+=======
+  color: white;
+>>>>>>> test
 }
 .footer__logo {
   display: inline-block;
