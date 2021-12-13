@@ -1,0 +1,1 @@
+CryptoHunch-stableVersion
