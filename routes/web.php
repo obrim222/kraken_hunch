@@ -72,7 +72,7 @@ Route::get('/tips',[TipsController::class, 'index']);
 
 Route::get('/tips/create',[TipsController::class, 'create']);
 
-Route::post('/tips/create',[TipsController::class, 'store']);
+Route::post('/tips',[TipsController::class, 'store']);
 
 
 
