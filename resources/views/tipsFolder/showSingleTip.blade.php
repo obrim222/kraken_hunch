@@ -2,6 +2,9 @@
 
 @section('title', 'Tips')
 
+<!-- added in the styling link-->
+<link rel="stylesheet" href="../css/style.css">
+
 @section('content')
 
 <div class="wrapper tip-details">
