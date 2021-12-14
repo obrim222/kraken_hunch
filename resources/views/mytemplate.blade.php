@@ -97,12 +97,18 @@
                 </a>
             </div>
 
+<<<<<<< refs/remotes/origin/tom
+=======
+
+ 
+>>>>>>> footer, forms
 
 
 
 
             <div class="footer__copyright">
-                &copy; CryptoHunch. All Rights Reserved.
+                <img width="25px" height="25px" src="/images/lux.png"> Engineered in Luxembourg. 
+                <br> © CryptoHunch. All Rights Reserved.
             </div>
         </div>
     </footer>
