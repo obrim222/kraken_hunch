@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\tip;
+use App\Models\Tip;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
