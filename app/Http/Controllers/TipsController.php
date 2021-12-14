@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\tip;
+use App\Models\Tip;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -17,6 +18,7 @@ class TipsController extends Controller
         //get data from database
         $tipsdata = Tip::all();
             return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+
     }
 
 
@@ -25,6 +27,7 @@ class TipsController extends Controller
         $tipsdata = Tip::orderBy('tip_direction')->get();
             return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
     }
+    
 
     public function orderTipsbyCoin()
     {
@@ -62,12 +65,12 @@ class TipsController extends Controller
 
         $tip = new Tip();
 
-        $tip->tipper_name = request('tipper_name');
-        $tip->title = request('title');
-        $tip->tip_text = request('tip_text');
-        $tip->coin_name = request('coin_name');
-        $tip->price_at_time_of_tip = request('price_at_time_of_tip');
-        $tip->calculated_tip_price = request('calculated_tip_price');
+        $tip->tip_direction = request('tip_direction, up');
+        $tip->tip_direction = request('tip_direction, down');
+
+
+        
+    
         
 
         // kasia: problem with ennum to be solved
@@ -96,7 +99,7 @@ class TipsController extends Controller
     public function update($id){
 
         $tip = Tip::findOrFail($id);
-
+ 
         $tip->tipper_name = request('tipper_name');
         $tip->title = request('title');
         $tip->tip_text = request('tip_text');
@@ -119,17 +122,17 @@ class TipsController extends Controller
     }
     
 
-    /*
+    /* LATESTS TIPS 
     
     Kasia: add curly brakets & activate once DB has date
     public function latestTips
         $tipsdata = Tip::latest();
             return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
-
-
-            
+ 
     */ 
 
+
+    
 
    
 
