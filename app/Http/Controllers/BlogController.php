@@ -17,12 +17,18 @@ class BlogController extends Controller
         return view('blogs');
     }
 
+<<<<<<< refs/remotes/origin/tom
     public function createBlogPost()
     {
 
 
         return view('post');
     }
+=======
+    //test
+    
+    public function addBlogpost(){
+>>>>>>> test
 
     /*
     public function __construct()
