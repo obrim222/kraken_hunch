@@ -23,7 +23,7 @@ class BlogController extends Controller
 
         return view('post');
     }
-*/
+
 
     /*
     public function __construct()
@@ -59,10 +59,6 @@ class BlogController extends Controller
         }
     }
 
-
-    public function addBlogpost()
-    {
-    }
 
     public function addBlogpost()
     {
