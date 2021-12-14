@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+<<<<<<< refs/remotes/origin/tom
 use App\Http\Controllers\PostCommentController;
+=======
+>>>>>>> commit
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -13,7 +16,10 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< refs/remotes/origin/tom
 
+=======
+>>>>>>> commit
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +44,7 @@ Route::get('/coins', function () {
 
 
 Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
+<<<<<<< refs/remotes/origin/tom
 Route::post('/blogs', [PostCommentController::class, 'store']);
 
 
@@ -45,6 +52,15 @@ Route::get('/post', [BlogController::class, 'createBlogPost']);
 
 Route::post('/post', [BlogController::class, 'store']);
 
+=======
+Route::post('/blogs', [BlogController::class, 'addComment']);
+
+// Test Route
+Route::get('/post', [BlogController::class, 'viewBlogpost']);
+Route::post('/post', [BlogController::class, 'addComment']);
+
+//Route::get('/blogs', [BlogController::class, 'show']);
+>>>>>>> commit
 
 
 Route::get('/hunch', function () {
@@ -123,7 +139,13 @@ Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
 
 
+<<<<<<< refs/remotes/origin/tom
  
+=======
+Route::get('/post', [BlogController::class, 'viewBlogpost']);
+
+Route::post('/post', [BlogController::class, 'addComment']);
+>>>>>>> commit
 
 
 
@@ -167,3 +189,7 @@ Route::post('/tips/{id}','TipsController@destroy');
 //TIPS END
 
 */
+<<<<<<< refs/remotes/origin/tom
+=======
+
+>>>>>>> commit

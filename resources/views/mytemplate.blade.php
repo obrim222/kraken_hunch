@@ -110,4 +110,8 @@
     <script src="./js/app.js"></script>
 </body>
 
+<<<<<<< refs/remotes/origin/tom
 </html
+=======
+</html
+>>>>>>> commit
