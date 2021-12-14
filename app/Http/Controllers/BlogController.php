@@ -32,11 +32,15 @@ class BlogController extends Controller
 
         return view('post');
     }
+<<<<<<< refs/remotes/origin/tom
 =======
     //test
     
     public function addBlogpost(){
 >>>>>>> test
+=======
+
+>>>>>>> Blog Page/Post
 
     /*
 =======
@@ -101,6 +105,7 @@ class BlogController extends Controller
         }
     }
 
+<<<<<<< refs/remotes/origin/tom
 
     public function addBlogpost()
     {
@@ -127,6 +132,8 @@ class BlogController extends Controller
         ]);
 
 <<<<<<< refs/remotes/origin/tom
+=======
+>>>>>>> Blog Page/Post
     public function favouriteBlogpost()
     {
 =======
