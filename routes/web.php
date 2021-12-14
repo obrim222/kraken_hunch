@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PostCommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,19 +32,17 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/coins', function () {
-    return view('coins');
-});
+Route::get('/coins', [CoinController::class, 'index']);
 
 
 Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
-Route::post('/blogs', [BlogController::class, 'addComment']);
+Route::post('/blogs', [PostCommentController::class, 'store']);
 
-// Test Route
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-Route::post('/post', [BlogController::class, 'addComment']);
 
-//Route::get('/blogs', [BlogController::class, 'show']);
+Route::get('/post', [BlogController::class, 'createBlogPost']);
+
+Route::post('/post', [BlogController::class, 'store']);
+
 
 
 Route::get('/hunch', function () {
@@ -121,9 +121,7 @@ Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
 
 
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-
-Route::post('/post', [BlogController::class, 'addComment']);
+ 
 
 
 
@@ -167,4 +165,3 @@ Route::post('/tips/{id}','TipsController@destroy');
 //TIPS END
 
 */
-
