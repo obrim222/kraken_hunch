@@ -31,7 +31,7 @@ class RegisterController extends Controller
             'last_name' => 'required|string|max:50',
             'email' => 'required|email',
             'password' => 'required',
-            'tip_count' => 'required'
+
         ]);
 
         $user = new CustomUser;
@@ -40,7 +40,7 @@ class RegisterController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->password = $request->password;
-        $user->tip_count = $request->tip_count;
+
 
 
         if ($user->save()) {
