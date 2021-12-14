@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BlogModel;
+use App\Models\PostCommentModel;
 use Laravel\Ui\Presets\React;
 
 
@@ -36,6 +37,26 @@ class BlogController extends Controller
         return $posts; //returns the fetched posts
     }
 */
+    public function addComment(Request $request)
+    {
+
+        $this->validate($request, [
+            'comment' => 'required',
+        ]);
+
+
+        $blogComment = new PostCommentModel;
+
+        $blogComment->comment = $request->comment;
+
+        $blogComment->save();
+
+        if ($blogComment->save()) {
+            return redirect('home')->with('success', 'Saved in the DB');
+        } else {
+            return back()->with('error', 'Something wrong with the DB');
+        }
+    }
 
 
     public function addBlogpost()
