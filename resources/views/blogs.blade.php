@@ -8,11 +8,14 @@
 <p style="color:green">{{ $message }}</p>
 @endif
 
+<<<<<<< refs/remotes/origin/tom
 @if ($message = Session::get('error'))
 <p style="color:red">{{ $message }}</p>
 @endif
 
 
+=======
+>>>>>>> Blogs add Comments
 <section class="articles">
     <div class="article__content container container--pall">
         <h2>Latest Articles</h2>
@@ -34,9 +37,15 @@
                     <form action="{{ route('blogs') }}" method="post">
                         @csrf
 
+<<<<<<< refs/remotes/origin/tom
                         <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                         @error('blogComment')
+=======
+                        <textarea name="blog" cols="15" rows="4"></textarea>
+
+                        @error('body')
+>>>>>>> Blogs add Comments
                         <div>
                             {{ $message }}
                         </div>
@@ -46,7 +55,10 @@
                         <div>
                             <button type="submit">Comment</button>
                         </div>
+<<<<<<< refs/remotes/origin/tom
                     </form>
+=======
+>>>>>>> Blogs add Comments
                 </div>
             </a>
 
@@ -61,13 +73,20 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
+<<<<<<< refs/remotes/origin/tom
                     <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                     @error('blogComment')
+=======
+                    <textarea name="blog" cols="15" rows="4"></textarea>
+
+                    @error('body')
+>>>>>>> Blogs add Comments
                     <div>
                         {{ $message }}
                     </div>
                     @enderror
+<<<<<<< refs/remotes/origin/tom
 
 
                     <div>
@@ -100,6 +119,38 @@
                         <button type="submit">Comment</button>
                     </div>
                 </form>
+=======
+
+
+                    <div>
+                        <button type="submit">Comment</button>
+                    </div>
+            </a>
+
+            <a href="#" class="article__item">
+                <div class="article__image" style="background-image: url('./images/solana.jpg')"></div>
+                <div class="article__text">
+                    <div class="article__author">By Michael O Brien</div>
+                    <div class="article__title">.....</div>
+                    <div class="article__description">.....</div>
+                </div>
+                <br>
+                <form action="{{ route('blogs') }}" method="post">
+                    @csrf
+
+                    <textarea name="blog" cols="15" rows="4"></textarea>
+
+                    @error('body')
+                    <div>
+                        {{ $message }}
+                    </div>
+                    @enderror
+
+
+                    <div>
+                        <button type="submit">Comment</button>
+                    </div>
+>>>>>>> Blogs add Comments
             </a>
 
             <a href="#" class="article__item">
@@ -113,9 +164,15 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
+<<<<<<< refs/remotes/origin/tom
                     <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                     @error('blogComment')
+=======
+                    <textarea name="blog" cols="15" rows="4"></textarea>
+
+                    @error('body')
+>>>>>>> Blogs add Comments
                     <div>
                         {{ $message }}
                     </div>
@@ -125,7 +182,10 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+<<<<<<< refs/remotes/origin/tom
                 </form>
+=======
+>>>>>>> Blogs add Comments
             </a>
         </div>
     </div>
