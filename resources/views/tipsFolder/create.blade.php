@@ -16,12 +16,12 @@
 
             <label for="coin_name"> coin </label><br>
             <select name="coin_name" id="type2">
-                <option value="coin1">Uniswap</option>
-                <option value="coin2">Cardano</option>
-                <option value="coin2">Chiliz</option>
-                <option value="coin2">Bitcoin</option>
-                <option value="coin2">The Sandbox</option>
-                <option value="coin2">Etherum</option>
+                <option value="uniswap">Uniswap</option>
+                <option value="cardano">Cardano</option>
+                <option value="chiliz">Chiliz</option>
+                <option value="bitcoin">Bitcoin</option>
+                <option value="the_sandbox">The Sandbox</option>
+                <option value="etherum">Etherum</option>
             </select>
             <br><br>
 

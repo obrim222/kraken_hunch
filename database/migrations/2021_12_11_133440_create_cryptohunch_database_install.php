@@ -44,7 +44,9 @@ class CreateCryptohunchDatabaseInstall extends Migration
         Schema::create('coin_data', function (Blueprint $table) {
             $table->increments('id');
             $table->string('symbol', 20);
-            $table->string('name', 100);
+
+
+            $table->enum('name', ['uniswap', 'cardano', 'chiliz', 'bitcoin', 'the_sandbox', 'etherum']);
 
             $table->string('poster', 500);
             $table->string('description', 2000);
@@ -58,6 +60,8 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->integer('transactions_per_second');
             $table->integer('blocktime');
             $table->integer('transactions_fees');
+
+
         });
 
 
