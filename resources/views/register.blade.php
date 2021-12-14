@@ -20,7 +20,6 @@ return redirect()->route('login');
 
 @endif
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <section class="hero">
     <div class="container">
@@ -36,10 +35,7 @@ return redirect()->route('login');
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel=" stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+
 
 <body>
     <div class="container mt-4">
@@ -48,22 +44,17 @@ return redirect()->route('login');
             {{ session('status') }}
         </div>
         @endif
-        <div class="card">
-            <div class="card-header text-center font-weight-bold">
-                Create a CryptoHunch account </div>
-            <div class="card-body">
+        <div class="form-container">
                 <form id="add-blog-post-form" method="post">
                     @csrf
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label>
+                        <label>First Name</label><br>
                         <input type="text" name="first_name" value="{{ old('first_name') }}"><br>
                         @error('first_name')
                         <div class="text-red-500 mt-2 text-sm p-6">
                             {{ $message }}
                         </div>
                         @enderror
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Last Name</label>
+                            <label>Last Name</label><br>
                             <input type="text" name="last_name" value="{{ old('last_name') }}"><br>
                             @error('last_name')
                             <div class="text-red-500 mt-2 text-sm p-6">
@@ -71,32 +62,27 @@ return redirect()->route('login');
                             </div>
                             @enderror
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
+                                <label>Email</label><br>
                                 <input type="email" name="email" value="{{ old('email') }}"><br>
                                 @error('email')
                                 <div class="text-red-500 mt-2 text-sm">
                                     {{ $message }}
                                 </div>
                                 @enderror
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Password</label>
+                                    <label>Password</label><br>
                                     <input type="password" name="password"><br>
                                     @error('password')
                                     <div class="text-red-500 mt-2 text-sm">
                                         {{ $message }}
                                     </div>
                                     @enderror
-
-                                </div>
-                                <button type="submit" name="submit" class="btn btn-primary">Register</button>
+                                    <button type="submit" name="submit" class="button register">Register</button>
                                 @endsection
+                                </div>
+                               
+                                </div>
                 </form>
 
             </div>
         </div>
     </div>
-
-</body>
-
-</html>
