@@ -19,40 +19,90 @@ return redirect()->route('login');
 }
 
 @endif
-<form method="post">
-    <h1>Register</h1>
-    @csrf
 
-    <input type="text" name="first_name" placeholder="Firstname" value="{{ old('first_name') }}"><br>
-    @error('first_name')
-    <div class="text-red-500 mt-2 text-sm p-6">
-        {{ $message }}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<section class="hero">
+        <div class="container">
+
+            <div class="hero__text container--pall">
+                <h1>Register</h1>
+                
+               
+            </div>
+        </div>
+    </section>
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Create a CryptoHunch account</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+  @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
     </div>
-    @enderror
-    <input type="text" name="last_name" placeholder="Lastname" value="{{ old('last_name') }}"><br>
-    @error('last_name')
-    <div class="text-red-500 mt-2 text-sm p-6">
-        {{ $message }}
+  @endif
+  <div class="card">
+    <div class="card-header text-center font-weight-bold">
+Create a CryptoHunch account   </div>
+    <div class="card-body">
+       @csrf
+        <div class="form-group">
+          <label for="exampleInputEmail1">First Name</label><br>
+          <input type="text" name="first_name" value="{{ old('first_name') }}"><br>
+   @error('first_name')
+   <div class="text-red-500 mt-2 text-sm p-6">
+       {{ $message }}
+   </div> 
+   @enderror
+        <div class="form-group">
+          <label for="exampleInputEmail1">Last Name</label><br>
+          <input type="text" name="last_name" value="{{ old('last_name') }}"><br>
+   @error('last_name')
+   <div class="text-red-500 mt-2 text-sm p-6">
+       {{ $message }}
+   </div>
+   @enderror
+
+   <div class="form-group">
+          <label for="exampleInputEmail1">Email</label><br>
+          <input type="email" name="email"  value="{{ old('email') }}"><br>
+   @error('email')
+   <div class="text-red-500 mt-2 text-sm">
+       {{ $message }}
+   </div>
+   @enderror
+   <div class="form-group">
+          <label for="exampleInputEmail1">Password</label><br>
+          <input type="password" name="password" ><br>
+   @error('password')
+   <div class="text-red-500 mt-2 text-sm">
+       {{ $message }}
+   </div>
+   @enderror
+   
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+       
+      </form>
+
+      @endsection
+     
     </div>
-    @enderror
-    <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}"><br>
-    @error('email')
-    <div class="text-red-500 mt-2 text-sm">
-        {{ $message }}
-    </div>
-    @enderror
-    <input type="password" name="password" placeholder="Password"><br>
-    @error('password')
-    <div class="text-red-500 mt-2 text-sm">
-        {{ $message }}
-    </div>
-    @enderror
-    <input type="number" name="tip_count" placeholder="Tip Count" value="{{ old('tip_count') }}"><br>
-    @error('tip_count')
-    <div class="text-red-500 mt-2 text-sm">
-        {{ $message }}
-    </div>
-    @enderror
-    <input type="submit" name="submit" value="Register">
-</form>
-@endsection
+  </div>
+</div>  
+
+</body>
+</html>
+
+
+  
+   
+   
+
