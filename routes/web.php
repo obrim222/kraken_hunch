@@ -97,7 +97,7 @@ Route::post('/tips', [TipsController::class, 'store']);
 
 
 
-Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
+//Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
 
 
 
