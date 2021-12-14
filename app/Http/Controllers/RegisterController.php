@@ -40,6 +40,10 @@ class RegisterController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->password = $request->password;
+<<<<<<< refs/remotes/origin/tom
+=======
+
+>>>>>>> RegisterPageCorrection
 
 
         auth()->attempt($request->only('email', 'password'));
