@@ -5,26 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/*
-$id
-$user_id
-$coin_id
-$blog
-$date
-*/
+
 
 class BlogModel extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $table = "blogs";
+
 
     protected $fillable = [
-        'blog_post',
+        'blog',
         'coin_id',
-        'date',
-        'user_id',
+
     ];
-
-
-    public $timestamps = false;
-
 }

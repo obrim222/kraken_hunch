@@ -38,11 +38,11 @@ Route::get('/coins', function () {
 Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
 Route::post('/blogs', [BlogController::class, 'addComment']);
 
-// Test Route
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-Route::post('/post', [BlogController::class, 'addComment']);
 
-//Route::get('/blogs', [BlogController::class, 'show']);
+Route::get('/post', [BlogController::class, 'createBlogPost']);
+
+Route::post('/post', [BlogController::class, 'store']);
+
 
 
 Route::get('/hunch', function () {
@@ -121,9 +121,7 @@ Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
 
 
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-
-Route::post('/post', [BlogController::class, 'addComment']);
+ 
 
 
 
