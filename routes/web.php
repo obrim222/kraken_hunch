@@ -167,4 +167,3 @@ Route::post('/tips/{id}','TipsController@destroy');
 //TIPS END
 
 */
-
