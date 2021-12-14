@@ -1065,7 +1065,8 @@ button:hover::before,
   padding-bottom: 1.0625rem;
 }
 .header__logo img {
-  width: 8.8125rem;
+  width: 25rem;
+  height: 10rem;
 }
 .header__toggle > span {
   display: block;
@@ -1322,7 +1323,7 @@ button:hover::before,
 }
 
 .footer {
-  background-color: white;
+  background-color: #fafafa;
   color: #2d314d;
   padding: 2.5rem;
   text-align: center;
@@ -1338,7 +1339,7 @@ button:hover::before,
   }
 }
 .footer a {
-  color: white;
+  color: #000;
 }
 .footer__logo {
   display: inline-block;

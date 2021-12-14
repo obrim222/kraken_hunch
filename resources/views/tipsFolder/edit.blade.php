@@ -7,36 +7,72 @@
 @section('content')
 
 <div class="wrapper create-tip">
-    <h1>Update Tip</h1>
+    <h1>Share your secrets & tip the community</h1>
 
-        <form action="/tips" method="GET">
+        <form action="/tips" method="POST">
             @csrf
 
-            <input type="text" name="tipper_name" placeholder="name" value ="{{ $tip->tipper_name }}"><br>
-            <input type="text" name="title" placeholder="title" value="{{ $tip->title }}"><br>
-            <input type="text" name="tip_text" placeholder="write your tip" value="{{ $tip->tip_text }}"><br>
-            <input type="text" name="coin_name" placeholder="coin" value="{{ $tip->coin_name }}"><br>
-            <input type="number" name="price_at_time_of_tip" placeholder="price_at_time_of_tip" value="{{ $tip->price_at_time_of_tip }}"><br>
-            <input type="number" name="calculated_tip_price" placeholder="calculated_tip_price" value="{{ $tip->calculated_tip_price }}">
-            <br><br>
             
-            <label for="tip_reason">Now select reason behind your prediction</label><br>
-            <select name="tip_reason" id="type1">
-                    <option value="influencer talks">Influencer Talks</option>
-                    <option value="intuition">Intuition</option>
-                    <option value="goverment">Govermentypo</option>
-                </select> 
-                <br><br>
+            
 
-            <label for="tip_direction"> up or down?</label><br>
+            <label for="coin_name"> coin </label><br>
+            <select name="coin_name" id="type2">
+                <option value="coin1">Uniswap</option>
+                <option value="coin2">Cardano</option>
+                <option value="coin2">Chiliz</option>
+                <option value="coin2">Bitcoin</option>
+                <option value="coin2">The Sandbox</option>
+                <option value="coin2">Etherum</option>
+            </select>
+            <br><br>
+
+
+
+            <label for="tip_direction">Currency</label><br>
+            <select name="tip_direction" id="type2">
+                <option value="currency1">eur</option>
+                <option value="currency2">hunch</option>
+            </select>
+            <br><br>
+
+            <input type="date" name="date" placeholder="Date">Time Frame <br><br>
+            <input type="date" name="date" placeholder="Date">Time Frame <br><br>
+            <input type="text" name="price_at_time_of_tip" placeholder="Current price of the coin"><br> <br>
+            
+
+
+            <label for="tip_direction"> Price direction up or down?</label><br>
             <select name="tip_direction" id="type2">
                 <option value="up">up</option>
                 <option value="down">down</option>
             </select>
+            <br><br>
+            
+            <label for="tip_reason_up">Reason behind your prediction UP</label><br>
+            <select name="tip_reason" id="type1">
+                    <option value="major roadmap releases success">Major roadmap releases success</option>
+                    <option value="stock market up">Stock market up</option>
+                    <option value="influencers backing the project">Influencers backing the project</option>
+                    <option value="money printing">Money printing</option>
+                    <option value="instinct of the expert up">Instinct of the expert up"</option>
+                </select> 
+                <br><br>
+
+
+            <label for="tip_reason_down">Reason behind your prediction DOWN</label><br>
+            <select name="tip_reason" id="type2">
+                    <option value="major roadmap releases failure">Major roadmap releases failure</option>
+                    <option value="stock market down">Stock market down</option>
+                    <option value="influencers slating the project">Influencers slating the project</option>
+                    <option value="instinct of the expert down">Instinct of the expert down</option>
+                    <option value="FUD">FUD</option>
+                </select> 
+                <br><br>
+
 
             <br><br>
             
-            <input type="submit" name='submitBtn' value = "Update Tip"> 
+            <input type="submit" name='submitBtn' value = "Submit Your Tip"> 
         </form>
         <br><br>
 

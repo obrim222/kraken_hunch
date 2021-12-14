@@ -35,7 +35,6 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('balance');
-
             $table->integer('payment_type_id')->unsigned();
             $table->index('payment_type_id');
             $table->foreign('payment_type_id')->references('id')->on('payment_type');
@@ -110,22 +109,23 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
         Schema::create('tips', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('price_at_time_of_tip');
-
-            $table->integer('tip_percentage');
-            $table->date('date');
+            $table->integer('price_at_time_of_tip')->nullable();
+            $table->enum('tip_percentage',[30, 40, 50]);
+            $table->date('date_now');
+            $table->date('date_end');
             $table->enum('tip_direction', ['Up', 'Down']);
-            $table->enum('reason', ['major roadmap releases', 'market events', 'influencers backing the project', 'money printing', 'instinct of the expert', 'other']);
+            $table->enum('reason_up', ['major roadmap releases success', 'stock market up', 'influencers backing the project', 'money printing', 'instinct of the expert up']);
+            $table->enum('reason_down', ['major roadmap releases failure', 'stock market down', 'influencers slating the project', 'instinct of the expert down', 'FUD']);
             $table->string('reason_description', 1000);
             $table->integer('calculated_tip_price');
-            $table->integer('test2')->nullable();
-            $table->integer('test')->nullable();
             $table->integer('user_id')->unsigned();
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('coin_id')->unsigned();
             $table->index('coin_id');
             $table->foreign('coin_id')->references('id')->on('coin_data');
+            
+            
         });
 
 
