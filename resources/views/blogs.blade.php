@@ -26,7 +26,7 @@
                     <form action="{{ route('blogs') }}" method="post">
                         @csrf
 
-                        <textarea name="blog" cols="15" rows="4"></textarea>
+                        <textarea name="body" cols="15" rows="4"></textarea>
 
                         @error('body')
                         <div>
@@ -52,7 +52,7 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="blog" cols="15" rows="4"></textarea>
+                    <textarea name="body" cols="15" rows="4"></textarea>
 
                     @error('body')
                     <div>
@@ -77,7 +77,7 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="blog" cols="15" rows="4"></textarea>
+                    <textarea name="body" cols="15" rows="4"></textarea>
 
                     @error('body')
                     <div>
@@ -102,7 +102,7 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="blog" cols="15" rows="4"></textarea>
+                    <textarea name="body" cols="15" rows="4"></textarea>
 
                     @error('body')
                     <div>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- displays site properly based on user's device -->
-    
-        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css">
-            <title>@yield('title')</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>@yield('title')</title>
+</head>
 
 <body>
     <header class="header">
@@ -28,12 +28,7 @@
                 <span> </span>
             </a>
 
-<?php 
-if (Auth::check())
-{
-   echo "test";
-}
-?>
+
 
             <div class="header__links hide-for-mobile">
                 <a href="/home">Home</a>
@@ -65,7 +60,7 @@ if (Auth::check())
 
     <footer class="footer">
         <div class="container">
-          <!--   <a class="footer__logo" href="#">
+            <!--   <a class="footer__logo" href="#">
                 <img src="/images/logo.png" />
             </a>
 -->
@@ -103,9 +98,8 @@ if (Auth::check())
             </div>
 
 
- 
 
-           
+
 
             <div class="footer__copyright">
                 <img width="25px" height="25px" src="/images/lux.png"> Engineered in Luxembourg. 
