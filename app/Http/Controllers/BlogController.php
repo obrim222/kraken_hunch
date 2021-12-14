@@ -14,7 +14,7 @@ class BlogController extends Controller
        
     }
 
-    
+    //test
     
     public function addBlogpost(){
 
