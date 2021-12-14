@@ -23,6 +23,6 @@ class CustomUser extends Model
         'last_name',
         'email',
         'password',
-        'tip_count',
+
     ];
 }
