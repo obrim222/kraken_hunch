@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CoinController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -32,7 +32,9 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/coins', [CoinController::class, 'index']);
+Route::get('/coins', function () {
+    return view('coins');
+});
 
 
 Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
