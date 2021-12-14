@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BlogModel;
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 use App\Models\PostCommentModel;
 =======
 >>>>>>> RegisterPageCorrection
+=======
+use App\Models\PostCommentModel;
+>>>>>>> BlogPage/Post
 use Laravel\Ui\Presets\React;
 
 
@@ -55,6 +59,27 @@ class BlogController extends Controller
 */
     public function addComment(Request $request)
     {
+<<<<<<< refs/remotes/origin/tom
+=======
+
+        $this->validate($request, [
+            'comment' => 'required',
+        ]);
+
+
+        $blogComment = new PostCommentModel;
+
+        $blogComment->comment = $request->comment;
+
+        $blogComment->save();
+
+        if ($blogComment->save()) {
+            return redirect('home')->with('success', 'Saved in the DB');
+        } else {
+            return back()->with('error', 'Something wrong with the DB');
+        }
+    }
+>>>>>>> BlogPage/Post
 
         $this->validate($request, [
             'comment' => 'required',

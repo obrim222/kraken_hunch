@@ -38,11 +38,15 @@
                         @csrf
 
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                         <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                         @error('blogComment')
 =======
                         <textarea name="blog" cols="15" rows="4"></textarea>
+=======
+                        <textarea name="body" cols="15" rows="4"></textarea>
+>>>>>>> BlogPage/Post
 
                         @error('body')
 >>>>>>> Blogs add Comments
@@ -74,11 +78,15 @@
                     @csrf
 
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                     <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                     @error('blogComment')
 =======
                     <textarea name="blog" cols="15" rows="4"></textarea>
+=======
+                    <textarea name="body" cols="15" rows="4"></textarea>
+>>>>>>> BlogPage/Post
 
                     @error('body')
 >>>>>>> Blogs add Comments
@@ -138,7 +146,7 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="blog" cols="15" rows="4"></textarea>
+                    <textarea name="body" cols="15" rows="4"></textarea>
 
                     @error('body')
                     <div>
@@ -165,11 +173,15 @@
                     @csrf
 
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                     <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                     @error('blogComment')
 =======
                     <textarea name="blog" cols="15" rows="4"></textarea>
+=======
+                    <textarea name="body" cols="15" rows="4"></textarea>
+>>>>>>> BlogPage/Post
 
                     @error('body')
 >>>>>>> Blogs add Comments
