@@ -13,14 +13,22 @@ class BlogController extends Controller
     {
 
 
+        return view('blogs');
+    }
+
+    public function createBlogPost()
+    {
+
+
         return view('post');
     }
 
+    /*
     public function __construct()
     {
         $this->middleware(['auth'])->only(['store', 'destroy']);
     }
-
+*/
     /*
     public function show()
     {
@@ -29,29 +37,6 @@ class BlogController extends Controller
     }
 */
 
-    public function addComment(Request $request)
-    {
-        // Validations
-
-        $request->validate([
-
-            'blog' => 'required',
-            'author_id' => 'required'
-
-        ]);
-
-        $blogPost = new BlogModel;
-        $blogPost->blog = $request->blog;
-        $blogPost->author_id = $request->author_id;
-
-        $blogPost->save();
-
-        if ($blogPost->save()) {
-            return redirect('blogs')->with('success', 'Saved in the db');
-        } else {
-            return redirect('blogs')->with('error', 'Error');
-        }
-    }
 
     public function addBlogpost()
     {
@@ -80,24 +65,28 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
+        // Validations
+
         $request->validate([
-            'author_id' => 'required|integer',
+
             'blog' => 'required',
-            'coin_id' => 'required|integer'
+            'coin_id' => 'required'
 
         ]);
 
-        $blogComment = new BlogModel;
+        $blogPost = new BlogModel;
 
-        $blogComment->author_id = $request->author_id;
-        $blogComment->blog = $request->blog;
+        $blogPost->blog = $request->blog;
+        $blogPost->coin_id = $request->coin_id;
 
-        $blogComment->save();
+        $blogPost->save();
 
-        if ($blogComment->save()) {
-            return redirect('blogs')->with('success', 'Saved in the db');
+        if ($blogPost->save()) {
+            return redirect('home')->with('success', 'Saved in the DB');
         } else {
-            return redirect('blogs')->with('error', 'Error');
+            return back()->with('error', 'Something wrong with the DB');
         }
+
+        auth()->attempt($request->only('email', 'password'));
     }
 }
