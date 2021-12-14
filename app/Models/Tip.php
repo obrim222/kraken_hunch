@@ -9,4 +9,12 @@ class Tip extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $table = "tips";
+
+    protected $fillable = [
+        'user_first_name',
+        'user_last_name'
+
+    ];
 }
