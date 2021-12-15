@@ -14,24 +14,26 @@
 @endif
 
 <section class="hero">
-    <div class="container">
+    <div class="container  ">
 
-        <div class="hero__text container--pall">
-            <h1>Login</h1>
+        <div class="hero__text flex flex-jc-c ">
+            <h3>Login</h3>
 
 
         </div>
     </div>
 </section>
 
-
+<div class="containerSmallContent flex flex-jc-c ">
 
 <div class="form-container">
 <<<<<<< refs/remotes/origin/tom
                 <form method="post">
     @csrf
-    <label>Email</label><br>
 
+
+    <p>Enter your email:</p>
+ 
     <input type="email" name="email" ><br>
 =======
                 <form id="add-blog-post-form" method="post">
@@ -41,11 +43,13 @@
     <input type="email" name="email" placeholder="E-mail"><br>
 >>>>>>> fix
     @error('email')
-    <div class="text-red-500 mt-2 text-sm p-6">
+    <div class="text-red-500 mt-2 text-sm p-4">
         {{ $message }}
     </div>
     @enderror
-    <label>Password</label><br>
+
+
+        <p>Enter your password:</p>
 
 <<<<<<< refs/remotes/origin/tom
     <input type="password" name="password" ><br>
@@ -53,18 +57,28 @@
     <input type="password" name="password" placeholder="Password"><br>
 >>>>>>> fix
     @error('password')
-    <div class="text-red-500 mt-2 text-sm p-6">
+    <div class="text-red-500 mt-2 text-sm p-4">
         {{ $message }}
     </div>
     @enderror
+    <div class ="p-4 "> 
     <button type="submit" name="submit" class="button register">Login</button>
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 
   
 =======
 </form>
 >>>>>>> fix
+=======
+    </div>
+</div>
+>>>>>>>  michael 15.12 admin auth, styling
 
 </form>
+
 </div>
+
+
+
 @endsection

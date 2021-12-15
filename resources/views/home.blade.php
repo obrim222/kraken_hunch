@@ -18,6 +18,9 @@
 <p style="color:red">{{ $message }}</p>
 @endif
 
+
+
+
 <section class="hero">
     <div class="container">
 <<<<<<< refs/remotes/origin/tom
@@ -48,11 +51,11 @@
 </section>
 
     
-    <section class="hero">
+    <section class="article__item ">
         <div class="container">
-
+        
             <div class="hero__text container--pall">
-                <h1>Leaderboard</h1>
+                <h3>Leaderboard</h3>
                 <div class="table">
                     <div class="card">
                     <div>Number</div>       
@@ -77,9 +80,8 @@
 =======
 
     
-    <section class="hero">
-        <div class="container">
 
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> fix
             <div class="hero__text container--pall">
                 <h1>Leaderboard</h1>
@@ -98,6 +100,8 @@
             </div>
         </div>
     </section>
+=======
+>>>>>>>  michael 15.12 admin auth, styling
 
     <section class="feature">
         <div class="feature__content container container--pall">
