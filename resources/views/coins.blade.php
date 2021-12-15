@@ -334,6 +334,7 @@
 
     </div>
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 </div>
 @endsection
 >>>>>>> BlogPage/Post
@@ -341,3 +342,7 @@
 
     @endsection
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
+=======
+
+    @endsection
+>>>>>>> fix

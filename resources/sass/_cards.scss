@@ -1642,6 +1642,10 @@ button:hover::before,
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.flip-card-inner-ta {
+    text-align: left;
+}
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
@@ -1666,11 +1670,14 @@ button:hover::before,
     background-color: #f8f8ff;
     color: black;
     transform: rotateY(180deg);
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
+<<<<<<< refs/remotes/origin/tom
 =======
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
+=======
+>>>>>>> fix
 }
 
 .grid-container {
@@ -1875,6 +1882,7 @@ button,
     font-size: 0.875rem;
     transition: opacity 300ms ease-in-out;
     overflow: hidden;
+    margin: 10px;
 }
 button::before,
 .button::before {
@@ -2308,8 +2316,11 @@ button:hover::before,
     font-size: 0.875rem;
 }
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> commit
 =======
+=======
+>>>>>>> fix
 
 //Card data
 .table {
@@ -2344,4 +2355,7 @@ button:hover::before,
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
+=======
+>>>>>>> fix

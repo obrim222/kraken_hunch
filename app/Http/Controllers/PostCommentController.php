@@ -11,6 +11,7 @@ class PostCommentController extends Controller
     {
 
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
         $request->validate([
 
             'blogComment' => 'required'
@@ -21,15 +22,21 @@ class PostCommentController extends Controller
 
         $blogComment->comment = $request->blogComment;
 =======
+=======
+>>>>>>> fix
 
         $blogComment = new PostCommentModel;
 
         $blogComment->body = $request->body;
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> BlogPage/Post
+=======
+>>>>>>> fix
 
         $blogComment->save();
 
         if ($blogComment->save()) {
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
             return redirect('blogs')->with('success', 'Saved in the Database');
         } else {
@@ -44,10 +51,15 @@ class PostCommentController extends Controller
         ]);
     }
 =======
+=======
+>>>>>>> fix
             return redirect('home')->with('success', 'Saved in the DB');
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }
     }
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> BlogPage/Post
+=======
+>>>>>>> fix
 }

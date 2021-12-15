@@ -106,10 +106,14 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->increments('id');
             $table->integer('price_at_time_of_tip')->nullable();
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
             $table->enum('tip_percentage', [30, 40, 50]);
 =======
             $table->enum('tip_percentage',[30, 40, 50]);
 >>>>>>> commit
+=======
+            $table->enum('tip_percentage', [30, 40, 50]);
+>>>>>>> fix
             $table->date('date_now');
             $table->date('date_end');
             $table->enum('tip_direction', ['Up', 'Down']);
@@ -124,11 +128,15 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->index('coin_id');
             $table->foreign('coin_id')->references('id')->on('coin_data');
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
             
             
 =======
             $table->string('winlose_flag', 1);
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
+=======
+            $table->string('winlose_flag', 1);
+>>>>>>> fix
         });
 
 

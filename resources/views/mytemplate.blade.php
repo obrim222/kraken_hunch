@@ -115,6 +115,7 @@
             </div>
 
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 =======
 
 <<<<<<< refs/remotes/origin/tom
@@ -127,6 +128,11 @@
 
 
 >>>>>>> BlogPage/Post
+=======
+
+
+
+>>>>>>> fix
 
             <div class="footer__copyright">
                 <img width="25px" height="25px" src="/images/lux.png"> Engineered in Luxembourg. 
@@ -140,6 +146,7 @@
 
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 </html
 =======
 </html
@@ -147,3 +154,6 @@
 =======
 </html
 >>>>>>> BlogPage/Post
+=======
+</html
+>>>>>>> fix

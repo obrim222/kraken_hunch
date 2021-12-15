@@ -235,11 +235,11 @@ Route::get('/coins', [CoinController::class, 'index']);
 Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
 Route::post('/blogs', [PostCommentController::class, 'store']);
 
-// Test Route
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-Route::post('/post', [BlogController::class, 'addComment']);
 
-//Route::get('/blogs', [BlogController::class, 'show']);
+Route::get('/post', [BlogController::class, 'createBlogPost']);
+
+Route::post('/post', [BlogController::class, 'store']);
+
 
 
 Route::get('/hunch', function () {
@@ -307,20 +307,25 @@ Route::put('/tips/{id}', [TipsController::class, 'update']);
 
 Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
+<<<<<<< refs/remotes/origin/tom
 Route::get('/post', [BlogController::class, 'viewBlogpost']);
 
 
 
 <<<<<<< refs/remotes/origin/tom
+=======
+>>>>>>> fix
 Route::get('/post', [BlogController::class, 'viewBlogpost']);
 
-Route::post('/post', [BlogController::class, 'addComment']);
 
 
-
+<<<<<<< refs/remotes/origin/tom
 =======
 Route::get('/coins', [CoinController::class, 'index']);
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
+=======
+Route::get('/coins', [CoinController::class, 'index']);
+>>>>>>> fix
 
 
 /*
@@ -361,4 +366,7 @@ Route::post('/tips/{id}','TipsController@destroy');
 //TIPS END
 
 */
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> RegisterPageCorrection
+=======
+>>>>>>> fix

@@ -27,11 +27,19 @@
 
 
 <div class="form-container">
+<<<<<<< refs/remotes/origin/tom
                 <form method="post">
     @csrf
     <label>Email</label><br>
 
     <input type="email" name="email" ><br>
+=======
+                <form id="add-blog-post-form" method="post">
+    @csrf
+    <label>Email</label><br>
+
+    <input type="email" name="email" placeholder="E-mail"><br>
+>>>>>>> fix
     @error('email')
     <div class="text-red-500 mt-2 text-sm p-6">
         {{ $message }}
@@ -39,15 +47,23 @@
     @enderror
     <label>Password</label><br>
 
+<<<<<<< refs/remotes/origin/tom
     <input type="password" name="password" ><br>
+=======
+    <input type="password" name="password" placeholder="Password"><br>
+>>>>>>> fix
     @error('password')
     <div class="text-red-500 mt-2 text-sm p-6">
         {{ $message }}
     </div>
     @enderror
     <button type="submit" name="submit" class="button register">Login</button>
+<<<<<<< refs/remotes/origin/tom
 
   
+=======
+</form>
+>>>>>>> fix
 
 </form>
 </div>

@@ -23,6 +23,7 @@ class BlogController extends Controller
     public function viewBlogpost()
     {
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< Updated upstream
 
 
@@ -181,6 +182,18 @@ class BlogController extends Controller
             return redirect('blogs')->with('error', 'Error');
         }
 >>>>>>> RegisterPageCorrection
+=======
+
+        $blogs = BlogModel::all();
+        return view('blogs', ['blogs' => $blogs]);
+    }
+
+
+    //test
+
+    public function addBlogpost()
+    {
+>>>>>>> fix
     }
 
     public function addBlogpost()
@@ -210,9 +223,14 @@ class BlogController extends Controller
     {
         $this->authorize('delete', $post);
 
+<<<<<<< refs/remotes/origin/tom
         $post->delete();
 
         return back();
+=======
+    public function favouriteBlogpost()
+    {
+>>>>>>> fix
     }
 
     public function store(Request $request)
@@ -231,6 +249,7 @@ class BlogController extends Controller
         $blogPost->blog = $request->blog;
         $blogPost->coin_id = $request->coin_id;
 
+<<<<<<< refs/remotes/origin/tom
         $blogPost->save();
 
         if ($blogPost->save()) {
@@ -244,11 +263,14 @@ class BlogController extends Controller
 =======
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
 
+=======
+>>>>>>> fix
     public function viewFavouriteBlogpost()
     {
     }
 
 
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
     public function deleteTip(BlogModel $post)
     {
@@ -292,4 +314,9 @@ class BlogController extends Controller
     {
     }
 >>>>>>> Auto stash before merge of "michael" and "origin/main"
+=======
+    public function deleteTip()
+    {
+    }
+>>>>>>> fix
 }
