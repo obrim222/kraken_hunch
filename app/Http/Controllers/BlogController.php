@@ -49,12 +49,14 @@ class BlogController extends Controller
 
         $blogComment->comment = $request->comment;
 
+
+
         $blogComment->save();
 
         if ($blogComment->save()) {
-            return redirect('home')->with('success', 'Saved in the DB');
+            return redirect('home')->with('success', 'User registered in the Database');
         } else {
-            return back()->with('error', 'Something wrong with the DB');
+            return back()->with('error', 'Error registering');
         }
     }
 

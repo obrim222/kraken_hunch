@@ -42,13 +42,12 @@ class RegisterController extends Controller
         $user->password = $request->password;
 
 
+        auth()->attempt($request->only('email', 'password'));
 
         if ($user->save()) {
-            return redirect('home')->with('success', 'Saved in the DB');
+            return redirect('home')->with('success', 'User registered in the database');
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }
-
-        auth()->attempt($request->only('email', 'password'));
     }
 }

@@ -6,6 +6,14 @@
 
 @section('content')
 
+@if ($message = Session::get('success'))
+<p style="color:green">{{ $message }}</p>
+@endif
+
+@if ($message = Session::get('error'))
+<p style="color:red">{{ $message }}</p>
+@endif
+
 <section class="hero">
     <div class="container">
 

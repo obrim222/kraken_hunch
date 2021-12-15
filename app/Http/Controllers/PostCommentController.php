@@ -10,17 +10,29 @@ class PostCommentController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+
+            'blogComment' => 'required'
+
+        ]);
 
         $blogComment = new PostCommentModel;
 
-        $blogComment->body = $request->body;
+        $blogComment->comment = $request->blogComment;
 
         $blogComment->save();
 
         if ($blogComment->save()) {
-            return redirect('home')->with('success', 'Saved in the DB');
+            return redirect('blogs')->with('success', 'Saved in the Database');
         } else {
-            return back()->with('error', 'Something wrong with the DB');
+            return back()->with('error', 'Error');
         }
+    }
+
+    public function show(PostCommentModel $post)
+    {
+        return view('blogs', [
+            'blogs' => $post
+        ]);
     }
 }

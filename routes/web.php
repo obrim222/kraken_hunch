@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\PostCommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -13,7 +13,7 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PostCommentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
