@@ -4,6 +4,14 @@
 
 @section('content')
 
+@if ($message = Session::get('success'))
+<p style="color:green">{{ $message }}</p>
+@endif
+
+@if ($message = Session::get('error'))
+<p style="color:red">{{ $message }}</p>
+@endif
+
 
 <section class="articles">
     <div class="article__content container container--pall">
@@ -26,9 +34,9 @@
                     <form action="{{ route('blogs') }}" method="post">
                         @csrf
 
-                        <textarea name="body" cols="15" rows="4"></textarea>
+                        <textarea name="blogComment" cols="15" rows="4"></textarea>
 
-                        @error('body')
+                        @error('blogComment')
                         <div>
                             {{ $message }}
                         </div>
@@ -38,6 +46,7 @@
                         <div>
                             <button type="submit">Comment</button>
                         </div>
+                    </form>
                 </div>
             </a>
 
@@ -52,9 +61,9 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="body" cols="15" rows="4"></textarea>
+                    <textarea name="blogComment" cols="15" rows="4"></textarea>
 
-                    @error('body')
+                    @error('blogComment')
                     <div>
                         {{ $message }}
                     </div>
@@ -64,6 +73,7 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+                </form>
             </a>
 
             <a href="#" class="article__item">
@@ -77,9 +87,9 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="body" cols="15" rows="4"></textarea>
+                    <textarea name="blogComment" cols="15" rows="4"></textarea>
 
-                    @error('body')
+                    @error('blogComment')
                     <div>
                         {{ $message }}
                     </div>
@@ -89,6 +99,7 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+                </form>
             </a>
 
             <a href="#" class="article__item">
@@ -102,9 +113,9 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="body" cols="15" rows="4"></textarea>
+                    <textarea name="blogComment" cols="15" rows="4"></textarea>
 
-                    @error('body')
+                    @error('blogComment')
                     <div>
                         {{ $message }}
                     </div>
@@ -114,6 +125,7 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+                </form>
             </a>
         </div>
     </div>
