@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DropdownController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,6 +87,11 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 //Test
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
+Route::get('/post', [BlogController::class, 'viewBlogpost']);
+
+Route::post('/post', [BlogController::class, 'addComment']);
+
+
 
 //Kasia TIPS START
 
@@ -93,78 +99,45 @@ Route::get('/tips', [TipsController::class, 'index']);
 
 Route::get('/tips/create', [TipsController::class, 'create']);
 
-Route::post('/tips', [TipsController::class, 'store']);
+Route::post('/tips/create', [TipsController::class, 'store']);
 
+
+
+
+
+
+//DropDown dobre
+//Route::get('/tips/dropdown', [DropdownController::class, 'index']);
+//Route::post('/tips/dropdown', [DropdownController::class, 'store']);
+// jak uzywam drop down trezba zaktualizowac DV 
+
+
+
+//DELETE
+//Route::post('/tips', [TipsController::class, 'storeDropDownItems']); skasowac
+//Route::get('/tips', [TipsController::class, 'createDropDownItems']); skasowav
+//Route::get('/tips', [TipsController::class, 'indexDrop']); skasowac
+//Route::get('/tips/dropdown', [DropdownController::class, 'index']); skasowac
+//Route::post('/tips/dropdown_data', [DropdownController::class, 'data']);
 
 
 //Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
-
-
-
-Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
-
-
-Route::get('/tips', [TipsController::class, 'orderTipsbyReason']);
-
-Route::get('/tips', [TipsController::class, 'wentUp']);
-
+//Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
+//Route::get('/tips', [TipsController::class, 'orderTipsbyReason']);
+//Route::get('/tips', [TipsController::class, 'wentUp']);
 //Route::get('/tips',[TipsController::class, 'wentDown']);
-
-
-
-Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
-
-Route::put('/tips/{id}', [TipsController::class, 'update']);
-
-Route::post('/tips/{id}', [TipsController::class, 'destroy']);
-
-
-
-
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-
-Route::post('/post', [BlogController::class, 'addComment']);
-
-
-
-
-
-/*
-Route::get('/tips/create','TipsController@create');
-
-Route::get('/tips/create','TipsController@create');
-
-Route::post('/tips','TipsController@store');
-
-Route::get('/tips','TipsController@orderTipsbyDirection');
-
-Route::get('/tips','TipsController@orderTipsbyCoin');
-
-Route::get('/tips','TipsController@orderTipsbyReason');
-
-Route::get('/tips','TipsController@wentUp');
-
-//Route::get('/tips','TipsController@wentDown');
-
-
-
-//TIPS ID 
-
-Route::get('/tips/{id}','TipsController@showSingleTip');
-
-
-Route::get('/tips/{id}/edit','TipsController@edit');
-
-Route::put('/tips/{id}','TipsController@update');
-
-Route::post('/tips/{id}','TipsController@destroy');
-
-
-
-//Kasia: shall work when date in DB/table
+//Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
+//Route::put('/tips/{id}', [TipsController::class, 'update']);
+//Route::post('/tips/{id}', [TipsController::class, 'destroy']);
+//Route::get('/tips/{id}/edit','TipsController@edit');
+//Route::put('/tips/{id}','TipsController@update');
+//Route::post('/tips/{id}','TipsController@destroy');
+//Route::get('/tips/{id}','TipsController@showSingleTip');
 //Route::get('/tips','TipsController@latestTips');
 
-//TIPS END
 
-*/
+
+
+
+
 
