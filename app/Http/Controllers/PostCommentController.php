@@ -12,11 +12,15 @@ class PostCommentController extends Controller
 
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
+=======
+>>>>>>> BlogComment
         $request->validate([
 
             'blogComment' => 'required'
 
         ]);
+<<<<<<< refs/remotes/origin/tom
 
         $blogComment = new PostCommentModel;
 
@@ -32,10 +36,17 @@ class PostCommentController extends Controller
 >>>>>>> BlogPage/Post
 =======
 >>>>>>> fix
+=======
+
+        $blogComment = new PostCommentModel;
+
+        $blogComment->comment = $request->blogComment;
+>>>>>>> BlogComment
 
         $blogComment->save();
 
         if ($blogComment->save()) {
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
             return redirect('blogs')->with('success', 'Saved in the Database');
@@ -54,12 +65,25 @@ class PostCommentController extends Controller
 =======
 >>>>>>> fix
             return redirect('home')->with('success', 'Saved in the DB');
+=======
+            return redirect('blogs')->with('success', 'Saved in the Database');
+>>>>>>> BlogComment
         } else {
-            return back()->with('error', 'Something wrong with the DB');
+            return back()->with('error', 'Error');
         }
     }
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 >>>>>>> BlogPage/Post
 =======
 >>>>>>> fix
+=======
+
+    public function show(PostCommentModel $post)
+    {
+        return view('blogs', [
+            'blogs' => $post
+        ]);
+    }
+>>>>>>> BlogComment
 }

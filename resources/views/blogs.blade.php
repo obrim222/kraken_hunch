@@ -7,6 +7,14 @@
 @if ($message = Session::get('success'))
 <p style="color:green">{{ $message }}</p>
 @endif
+<<<<<<< refs/remotes/origin/tom
+=======
+
+@if ($message = Session::get('error'))
+<p style="color:red">{{ $message }}</p>
+@endif
+
+>>>>>>> BlogComment
 
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
@@ -43,6 +51,7 @@
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                         <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                         @error('blogComment')
@@ -59,6 +68,11 @@
 
                         @error('body')
 >>>>>>> fix
+=======
+                        <textarea name="blogComment" cols="15" rows="4"></textarea>
+
+                        @error('blogComment')
+>>>>>>> BlogComment
                         <div>
                             {{ $message }}
                         </div>
@@ -70,11 +84,15 @@
                         </div>
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                     </form>
 =======
 >>>>>>> Blogs add Comments
 =======
 >>>>>>> fix
+=======
+                    </form>
+>>>>>>> BlogComment
                 </div>
             </a>
 
@@ -92,6 +110,7 @@
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                     <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                     @error('blogComment')
@@ -174,8 +193,11 @@
 >>>>>>> Blogs add Comments
 =======
                     <textarea name="body" cols="15" rows="4"></textarea>
+=======
+                    <textarea name="blogComment" cols="15" rows="4"></textarea>
+>>>>>>> BlogComment
 
-                    @error('body')
+                    @error('blogComment')
                     <div>
                         {{ $message }}
                     </div>
@@ -185,6 +207,7 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+                </form>
             </a>
 
             <a href="#" class="article__item">
@@ -198,9 +221,9 @@
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
-                    <textarea name="body" cols="15" rows="4"></textarea>
+                    <textarea name="blogComment" cols="15" rows="4"></textarea>
 
-                    @error('body')
+                    @error('blogComment')
                     <div>
                         {{ $message }}
                     </div>
@@ -210,7 +233,11 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> fix
+=======
+                </form>
+>>>>>>> BlogComment
             </a>
 
             <a href="#" class="article__item">
@@ -227,6 +254,7 @@
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                     <textarea name="blogComment" cols="15" rows="4"></textarea>
 
                     @error('blogComment')
@@ -243,6 +271,11 @@
 
                     @error('body')
 >>>>>>> fix
+=======
+                    <textarea name="blogComment" cols="15" rows="4"></textarea>
+
+                    @error('blogComment')
+>>>>>>> BlogComment
                     <div>
                         {{ $message }}
                     </div>
@@ -254,11 +287,15 @@
                     </div>
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
                 </form>
 =======
 >>>>>>> Blogs add Comments
 =======
 >>>>>>> fix
+=======
+                </form>
+>>>>>>> BlogComment
             </a>
         </div>
     </div>

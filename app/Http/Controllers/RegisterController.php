@@ -48,6 +48,7 @@ class RegisterController extends Controller
 =======
 >>>>>>> fix
 
+        auth()->attempt($request->only('email', 'password'));
 
         auth()->attempt($request->only('email', 'password'));
 

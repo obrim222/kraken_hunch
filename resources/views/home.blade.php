@@ -7,6 +7,9 @@
 
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
+=======
+>>>>>>> BlogComment
 @if ($message = Session::get('success'))
 <p style="color:green">{{ $message }}</p>
 @endif
@@ -17,7 +20,10 @@
 
 <section class="hero">
     <div class="container">
+<<<<<<< refs/remotes/origin/tom
 =======
+=======
+>>>>>>> BlogComment
 
     <section class="hero">
         <div class="container">
