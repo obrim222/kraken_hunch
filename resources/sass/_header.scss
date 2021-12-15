@@ -38,8 +38,8 @@
 
     &__logo {
         img {
-            width: 25rem;
-            height: 10rem;
+            width: 16rem;
+            height: 4rem;
         }
     }
 
@@ -81,7 +81,7 @@
     &__links {
         a {
             position: relative;
-            font-size: $font-sm;
+            font-size: $font-med;
             color: $grayishBlue;
             transition: color 300ms ease-in-out;
 
@@ -110,4 +110,28 @@
             }
         }
     }
+}
+
+.flex-col-ai-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-col-ai-e {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.align-self-end {
+    align-self: flex-end !important;
+}
+
+.align-self-start {
+    align-self: flex-start !important;
+}
+
+.user-icon-padding {
+    padding-top: 10px;
 }

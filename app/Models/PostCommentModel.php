@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 
-class BlogModel extends Model
+class PostCommentModel extends Model
 {
     use HasFactory;
     public $timestamps = false;
@@ -15,8 +15,7 @@ class BlogModel extends Model
 
 
     protected $fillable = [
-        'blog',
-        'coin_id',
+        'comment',
 
     ];
 }

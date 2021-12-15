@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 
 
-class BlogModel extends Model
+class AdminModel extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = "blogs";
+    protected $table = "admin";
 
 
-    protected $fillable = [
-        'blog',
-        'coin_id',
+    protected $fillable = [];
 
-    ];
+
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
 }

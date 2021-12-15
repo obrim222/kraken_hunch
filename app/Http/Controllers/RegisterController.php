@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -31,8 +32,10 @@ class RegisterController extends Controller
             'last_name' => 'required|string|max:50',
             'email' => 'required|email',
             'password' => 'required',
-            'tip_count' => 'required'
+
         ]);
+
+
 
         $user = new CustomUser;
 
@@ -40,15 +43,15 @@ class RegisterController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->password = $request->password;
-        $user->tip_count = $request->tip_count;
+
 
 
         if ($user->save()) {
-            return redirect('home')->with('success', 'Saved in the DB');
+            auth()->attempt($request->only('email', 'password'));
+            event(new Registered($user));
+            return redirect('home')->with('success', 'User registered in the database');
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }
-
-        auth()->attempt($request->only('email', 'password'));
     }
 }

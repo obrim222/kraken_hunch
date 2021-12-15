@@ -31,6 +31,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->string('last_name', 100);
             $table->string('email', 100);
             $table->string('password', 50);
+            $table->integer('is_admin');
         });
 
              //dynamic table - populates on account top up
@@ -40,6 +41,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('balance');
+
             $table->integer('payment_type_id')->unsigned();
             $table->index('payment_type_id');
             $table->foreign('payment_type_id')->references('id')->on('payment_type');
@@ -102,21 +104,44 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->increments('id');
             $table->string('currency1', 6);
             $table->date('date');
-
             $table->integer('currency1_price');
             $table->string('currency2', 6);
-
             $table->integer('currency2_price');
-
             $table->integer('coin_id')->unsigned();
             $table->index('coin_id');
             $table->foreign('coin_id')->references('id')->on('coin_data');
         });
 
 
+<<<<<<< HEAD
 
         //dynamic table - populates from different transaction types
 Schema::create('transactions', function (Blueprint $table) {
+=======
+        Schema::create('tips', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('price_at_time_of_tip')->nullable();
+            $table->enum('tip_percentage', [30, 40, 50]);
+            $table->date('date_now');
+            $table->date('date_end');
+            $table->enum('tip_direction', ['Up', 'Down']);
+            $table->enum('reason_up', ['major roadmap releases success', 'stock market up', 'influencers backing the project', 'money printing', 'instinct of the expert up']);
+            $table->enum('reason_down', ['major roadmap releases failure', 'stock market down', 'influencers slating the project', 'instinct of the expert down', 'FUD']);
+            $table->string('reason_description', 1000);
+            $table->integer('calculated_tip_price');
+            $table->integer('user_id')->unsigned();
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('coin_id')->unsigned();
+            $table->index('coin_id');
+            $table->foreign('coin_id')->references('id')->on('coin_data');
+            $table->string('winlose_flag', 1);
+        });
+
+
+
+        Schema::create('transactions', function (Blueprint $table) {
+>>>>>>> main
             $table->increments('id');
             $table->date('date');
             $table->string('description', 200);

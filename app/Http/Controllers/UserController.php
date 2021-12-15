@@ -36,14 +36,16 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->tip_count = $request->tip_count;
 
+        $user->save();
 
+        if ($user->save()) {
 
-
-        if ($user->save())
             return back()->with('success', 'Saved in the DB');
-        else
+        } else {
             return back()->with('error', 'Something wrong with the DB');
+        }
     }
+
 
     public function register()
     {
