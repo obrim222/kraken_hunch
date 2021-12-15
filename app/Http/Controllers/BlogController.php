@@ -7,33 +7,33 @@ use App\Models\BlogModel;
 
 class BlogController extends Controller
 {
-    public function viewBlogpost(){
+    public function viewBlogpost()
+    {
 
         $blogs = BlogModel::all();
-        return view ('blogs', ['blogs' => $blogs]);   
-       
+        return view('blogs', ['blogs' => $blogs]);
     }
+
 
     //test
-    
-    public function addBlogpost(){
 
+    public function addBlogpost()
+    {
     }
 
 
-    public function favouriteBlogpost(){
-        
+    public function favouriteBlogpost()
+    {
     }
 
 
 
-    public function viewFavouriteBlogpost(){
-        
+    public function viewFavouriteBlogpost()
+    {
     }
 
 
-    public function deleteTip(){
-        
+    public function deleteTip()
+    {
     }
-
 }

@@ -8,9 +8,17 @@
     
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
+     
             <title>@yield('title')</title>
     </head>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>@yield('title')</title>
+</head>
 
 <body>
     <header class="header">
@@ -19,8 +27,11 @@
         <nav class="container container--pall flex flex-jc-sb flex-ai-c">
             <a href="/" class="header__logo">
 
-                <img src="/images/logo.png" alt="CryptoHunch" />
+                <img src="/images/logo_crop.png" alt="CryptoHunch" />
             </a>
+
+
+
 
             <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
                 <span> </span>
@@ -28,12 +39,7 @@
                 <span> </span>
             </a>
 
-<?php 
-if (Auth::check())
-{
-   echo "test";
-}
-?>
+
 
             <div class="header__links hide-for-mobile">
                 <a href="/home">Home</a>
@@ -44,6 +50,12 @@ if (Auth::check())
                 <a href="/about">About</a>
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
+          
+            </div>
+            <div class="align-self-start user-icon-padding">
+              <i class="fas fa-user"></i>
+              <div>€</div>
+
             </div>
         </nav>
         <!--  <a href="#" class="button header__cta hide-for-mobile">Login</a>-->
@@ -65,7 +77,7 @@ if (Auth::check())
 
     <footer class="footer">
         <div class="container">
-          <!--   <a class="footer__logo" href="#">
+            <!--   <a class="footer__logo" href="#">
                 <img src="/images/logo.png" />
             </a>
 -->
@@ -102,12 +114,13 @@ if (Auth::check())
                 </a>
             </div>
 
- 
 
-           
+
+
 
             <div class="footer__copyright">
-                &copy; CryptoHunch. All Rights Reserved.
+                <img width="25px" height="25px" src="/images/lux.png"> Engineered in Luxembourg. 
+                <br> © CryptoHunch. All Rights Reserved.
             </div>
         </div>
     </footer>
