@@ -19,6 +19,7 @@
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 @if ($message = Session::get('error'))
 <p style="color:red">{{ $message }}</p>
 @endif
@@ -34,12 +35,14 @@
 
 
 >>>>>>> Toms changes
+=======
+>>>>>>> Login Page + Blog Pages
 <section class="articles">
     <div class="article__content container container--pall">
         <h2>Latest Articles</h2>
 
         <div class="article__grid">
-            <a href="#" class="article__item">
+            <a href="blogArticleBtc" class="article__item">
                 <div class="article__image" style="background-image: url('./images/bitcoin.jpg')"></div>
                 <div class="article__text">
                     <div class="article__author">By Kasia Kolo</div>
@@ -51,6 +54,7 @@
                         Michael Saylor is a brave man. Having recently taken out a bank
                         loan to buy 7000 bitcoin....
                     </div>
+<<<<<<< refs/remotes/origin/tom
                     <br>
                     @foreach($blogs as $post)
 
@@ -96,6 +100,10 @@
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+=======
+
+
+>>>>>>> Login Page + Blog Pages
                     </form>
 =======
 >>>>>>> Blogs add Comments
@@ -108,13 +116,14 @@
             </a>
 
 
-            <a href="#" class="article__item">
+            <a href="blogArticleEth" class="article__item">
                 <div class="article__image" style="background-image: url('./images/ethereum.jpg')"></div>
                 <div class="article__text">
                     <div class="article__author">By Tom Weniger</div>
                     <div class="article__title">Ethereum...</div>
                     <div class="article__description">Our .......</div>
                 </div>
+<<<<<<< refs/remotes/origin/tom
                 <br>
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
@@ -219,40 +228,33 @@
                     <div>
                         <button type="submit">Comment</button>
                     </div>
+=======
+>>>>>>> Login Page + Blog Pages
                 </form>
             </a>
 
-            <a href="#" class="article__item">
+            <a href="blogArticleSol" class="article__item">
                 <div class="article__image" style="background-image: url('./images/solana.jpg')"></div>
                 <div class="article__text">
                     <div class="article__author">By Michael O Brien</div>
                     <div class="article__title">.....</div>
                     <div class="article__description">.....</div>
                 </div>
-                <br>
-                <form action="{{ route('blogs') }}" method="post">
-                    @csrf
 
-                    <textarea name="blogComment" cols="15" rows="4"></textarea>
-
-                    @error('blogComment')
-                    <div>
-                        {{ $message }}
-                    </div>
-                    @enderror
-
-
+<<<<<<< refs/remotes/origin/tom
                     <div>
                         <button type="submit">Comment</button>
                     </div>
 <<<<<<< refs/remotes/origin/tom
 >>>>>>> fix
 =======
+=======
+>>>>>>> Login Page + Blog Pages
                 </form>
 >>>>>>> BlogComment
             </a>
 
-            <a href="#" class="article__item">
+            <a href="blogArticleAda" class="article__item">
                 <div class="article__image" style="background-image: url('./images/cardano.png')"></div>
                 <div class="article__text">
                     <div class="article__author">By Kasia Kolo</div>
@@ -260,6 +262,7 @@
                     <div class="article__description">.....</div>
                 </div>
                 <br>
+<<<<<<< refs/remotes/origin/tom
                 <form action="{{ route('blogs') }}" method="post">
                     @csrf
 
@@ -306,6 +309,9 @@
 =======
 >>>>>>> fix
 =======
+=======
+
+>>>>>>> Login Page + Blog Pages
                 </form>
 >>>>>>> BlogComment
             </a>

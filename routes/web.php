@@ -212,6 +212,7 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -236,13 +237,20 @@ Route::get('/coins', [CoinController::class, 'index']);
 
 Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
 Route::post('/blogs', [PostCommentController::class, 'store']);
+Route::get('/delete', [PostCommentController::class, 'delete']);
 
 
 Route::get('/post', [BlogController::class, 'createBlogPost']);
 
 Route::post('/post', [BlogController::class, 'store']);
 
+Route::get('/blogArticleAda', [PostCommentController::class, 'blogArticleAda']);
 
+Route::get('/blogArticleBtc', [PostCommentController::class, 'blogArticleBtc']);
+
+Route::get('/blogArticleEth', [PostCommentController::class, 'blogArticleEth']);
+
+Route::get('/blogArticleSol', [PostCommentController::class, 'blogArticleSol']);
 
 Route::get('/hunch', function () {
     return view('hunch');
@@ -381,6 +389,26 @@ Route::post('/tips/{id}','TipsController@destroy');
 
 */
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> RegisterPageCorrection
 =======
 >>>>>>> fix
+=======
+
+
+
+Route::get('/test', function () {
+    $data = array('name' => "Our Code World");
+    // Path or name to the blade template to be rendered
+    $template_path = 'email_template';
+
+    Mail::send(['text' => $template_path], $data, function ($message) {
+        // Set the receiver and subject of the mail.
+        $message->to('simon-bertrand@live.fr', 'Receiver Name')->subject('Laravel First Mail');
+        // Set the sender
+        $message->from('johndoetest11@hotmail.com', 'Our Code World');
+    });
+
+    return "Basic email sent, check your inbox.";
+});
+>>>>>>> Login Page + Blog Pages

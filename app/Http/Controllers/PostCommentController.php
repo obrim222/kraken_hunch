@@ -45,6 +45,7 @@ class PostCommentController extends Controller
 
         $blogComment->save();
 
+        /*
         if ($blogComment->save()) {
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
@@ -71,6 +72,7 @@ class PostCommentController extends Controller
         } else {
             return back()->with('error', 'Error');
         }
+        */
     }
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
@@ -86,5 +88,46 @@ class PostCommentController extends Controller
 
         return view('blogs', ['blogs' => $postComment]);
     }
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> BlogComment
+=======
+
+    public function delete(PostCommentModel $post)
+    {
+        $this->authorize('delete', $post);
+
+        $post->delete();
+
+        return back();
+    }
+
+    public function blogArticleAda()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleAda', ['blogs' => $postComment]);
+    }
+
+
+    public function blogArticleBtc()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleBtc', ['blogs' => $postComment]);
+    }
+
+    public function blogArticleEth()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleEth', ['blogs' => $postComment]);
+    }
+
+    public function blogArticleSol()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleSol', ['blogs' => $postComment]);
+    }
+>>>>>>> Login Page + Blog Pages
 }
