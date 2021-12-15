@@ -68,6 +68,9 @@ a:hover {
     text-decoration: none;
 }
 
+.buttonPadding {
+    padding: 20px;
+}
 // Spacing
 .container {
     max-width: 69.375rem;
@@ -151,7 +154,6 @@ button,
     font-size: $font-sm;
     transition: opacity 300ms ease-in-out;
     overflow: hidden;
-    margin-top: 20px;
 
     &::before {
         content: "";

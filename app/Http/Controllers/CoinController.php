@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\CoinModel;
+//use App\Models\CoinData;
 
 class CoinController extends Controller
 {
 
 
-
     public function index()
     {
-        $coins = CoinModel::all();
+        $coin_data  = DB::table('coin_data')
+            ->select('*')
 
-        return view('coins', ['coins' => $coins]);
-        dd($coins);
+            ->get();
+
+
+        // return response()->view('coins', compact($coin_data));
+        return view('coins', ['coin_data' => $coin_data]);
     }
 }

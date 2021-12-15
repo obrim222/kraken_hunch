@@ -210,7 +210,7 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PostCommentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -263,7 +263,6 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
-
 Route::get("email", [MailerController::class, "email"])->name("email");
 
 Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
@@ -283,7 +282,6 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 //Test
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-
 //Kasia TIPS START
 
 Route::get('/tips', [TipsController::class, 'index']);
@@ -292,11 +290,7 @@ Route::get('/tips/create', [TipsController::class, 'create']);
 
 Route::post('/tips', [TipsController::class, 'store']);
 
-
-
 Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
-
-
 
 Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
 
@@ -307,23 +301,26 @@ Route::get('/tips', [TipsController::class, 'wentUp']);
 
 //Route::get('/tips',[TipsController::class, 'wentDown']);
 
-
-
 Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
 
 Route::put('/tips/{id}', [TipsController::class, 'update']);
 
 Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
+Route::get('/post', [BlogController::class, 'viewBlogpost']);
 
 
 
+<<<<<<< refs/remotes/origin/tom
 Route::get('/post', [BlogController::class, 'viewBlogpost']);
 
 Route::post('/post', [BlogController::class, 'addComment']);
 
 
 
+=======
+Route::get('/coins', [CoinController::class, 'index']);
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
 
 
 /*

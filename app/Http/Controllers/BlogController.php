@@ -19,6 +19,7 @@ class BlogController extends Controller
 {
     public function viewBlogpost()
     {
+<<<<<<< Updated upstream
 
 
 <<<<<<< refs/remotes/origin/tom
@@ -59,6 +60,18 @@ class BlogController extends Controller
     {
         $posts = BlogModel::all(); //fetch all blog posts from DB
         return $posts; //returns the fetched posts
+=======
+
+        $blogs = BlogModel::all();
+        return view('blogs', ['blogs' => $blogs]);
+    }
+
+
+    //test
+
+    public function addBlogpost()
+    {
+>>>>>>> Stashed changes
     }
 */
     public function addComment(Request $request)
@@ -70,6 +83,7 @@ class BlogController extends Controller
             'comment' => 'required',
         ]);
 
+<<<<<<< Updated upstream
 
         $blogComment = new PostCommentModel;
 
@@ -82,6 +96,10 @@ class BlogController extends Controller
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }
+=======
+    public function favouriteBlogpost()
+    {
+>>>>>>> Stashed changes
     }
 >>>>>>> BlogPage/Post
 
@@ -126,6 +144,7 @@ class BlogController extends Controller
 
         $request->validate([
 
+<<<<<<< refs/remotes/origin/tom
             'blog' => 'required',
             'author_id' => 'required'
 
@@ -134,7 +153,13 @@ class BlogController extends Controller
 <<<<<<< refs/remotes/origin/tom
 =======
 >>>>>>> Blog Page/Post
+=======
+<<<<<<< Updated upstream
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
     public function favouriteBlogpost()
+=======
+    public function viewFavouriteBlogpost()
+>>>>>>> Stashed changes
     {
 =======
         $blogPost = new BlogModel;
@@ -155,6 +180,7 @@ class BlogController extends Controller
     {
     }
 
+<<<<<<< Updated upstream
 
 <<<<<<< refs/remotes/origin/tom
     public function viewFavouriteBlogpost()
@@ -239,4 +265,9 @@ class BlogController extends Controller
         }
 >>>>>>> RegisterPageCorrection
     }
+=======
+    public function deleteTip()
+    {
+    }
+>>>>>>> Stashed changes
 }
