@@ -6,6 +6,7 @@ use App\Http\Controllers\PostCommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipsController;
 use App\Http\Controllers\LogoutController;
@@ -118,7 +119,19 @@ Route::get('/post', [BlogController::class, 'viewBlogpost']);
 Route::get('/coins', [CoinController::class, 'index']);
 
 
+
+
+//Auth::routes();
+
+
+Route::group(['middleware' => ['admin']], function () {
+
+    Route::get('/admin', [LoginAdminController::class, 'adminView']);
+}); 
+
 /*
+ 
+
 Route::get('/tips/create','TipsController@create');
 
 Route::get('/tips/create','TipsController@create');

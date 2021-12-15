@@ -26,6 +26,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->string('last_name', 100);
             $table->string('email', 100);
             $table->string('password', 50);
+            $table->integer('is_admin');
         });
 
 
@@ -35,6 +36,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('balance');
+
             $table->integer('payment_type_id')->unsigned();
             $table->index('payment_type_id');
             $table->foreign('payment_type_id')->references('id')->on('payment_type');
