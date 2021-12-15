@@ -15,7 +15,7 @@ class PostCommentModel extends Model
 
 
     protected $fillable = [
-        'body',
+        'comment',
 
     ];
 }
