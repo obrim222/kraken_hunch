@@ -43,9 +43,10 @@ return redirect()->route('login');
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
+
         @endif
         <div class="form-container">
-                <form id="add-blog-post-form" method="post">
+                <form method="post">
                     @csrf
                         <label>First Name</label><br>
                         <input type="text" name="first_name" value="{{ old('first_name') }}"><br>
@@ -77,12 +78,12 @@ return redirect()->route('login');
                                     </div>
                                     @enderror
                                     <button type="submit" name="submit" class="button register">Register</button>
-                                @endsection
-                                </div>
+                                    </form>
+                                    </div>
+                                    @endsection
+                       
                                
-                                </div>
-                </form>
+                             
+             
 
-            </div>
-        </div>
-    </div>
+    
