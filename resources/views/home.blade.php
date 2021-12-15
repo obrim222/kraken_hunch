@@ -57,6 +57,28 @@
         </div>
     </section>
 
+    
+    <section class="hero">
+        <div class="container">
+
+            <div class="hero__text container--pall">
+                <h1>Leaderboard</h1>
+                <div class="table">
+                    <div class="card">
+                    <div>Number</div>       
+                </div> 
+                <div class="card">
+                    card
+                </div> 
+                <div class="card">
+                    card
+                </div> 
+                </div>    
+            </div>
+            </div>
+        </div>
+    </section>
+
     <section class="feature">
         <div class="feature__content container container--pall">
             <div class="feature__intro">

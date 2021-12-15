@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\BlogModel;
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 use App\Models\PostCommentModel;
 =======
 >>>>>>> RegisterPageCorrection
@@ -14,11 +15,14 @@ use App\Models\PostCommentModel;
 >>>>>>> BlogPage/Post
 use Laravel\Ui\Presets\React;
 
+=======
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
 
 class BlogController extends Controller
 {
     public function viewBlogpost()
     {
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< Updated upstream
 
 
@@ -61,6 +65,8 @@ class BlogController extends Controller
         $posts = BlogModel::all(); //fetch all blog posts from DB
         return $posts; //returns the fetched posts
 =======
+=======
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
 
         $blogs = BlogModel::all();
         return view('blogs', ['blogs' => $blogs]);
@@ -71,6 +77,7 @@ class BlogController extends Controller
 
     public function addBlogpost()
     {
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> Stashed changes
     }
 */
@@ -187,10 +194,17 @@ class BlogController extends Controller
 =======
     public function favouriteBlogpost()
 >>>>>>> RegisterPageCorrection
+=======
+    }
+
+
+    public function favouriteBlogpost()
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
     {
     }
 
 
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
     public function deleteTip(BlogModel $post)
     {
@@ -227,12 +241,15 @@ class BlogController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
 =======
+=======
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
 
     public function viewFavouriteBlogpost()
     {
     }
 
 
+<<<<<<< refs/remotes/origin/tom
     public function deleteTip(BlogModel $post)
     {
         $this->authorize('delete', $post);
@@ -270,4 +287,9 @@ class BlogController extends Controller
     {
     }
 >>>>>>> Stashed changes
+=======
+    public function deleteTip()
+    {
+    }
+>>>>>>> Auto stash before merge of "michael" and "origin/main"
 }
