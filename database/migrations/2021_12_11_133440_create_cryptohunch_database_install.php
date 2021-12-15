@@ -93,18 +93,13 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->increments('id');
             $table->string('currency1', 6);
             $table->date('date');
-
             $table->integer('currency1_price');
             $table->string('currency2', 6);
-
             $table->integer('currency2_price');
-
             $table->integer('coin_id')->unsigned();
             $table->index('coin_id');
             $table->foreign('coin_id')->references('id')->on('coin_data');
         });
-
-
 
 
         Schema::create('tips', function (Blueprint $table) {
@@ -124,6 +119,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->integer('coin_id')->unsigned();
             $table->index('coin_id');
             $table->foreign('coin_id')->references('id')->on('coin_data');
+            $table->string('winlose_flag', 1);
         });
 
 

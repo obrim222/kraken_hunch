@@ -12,6 +12,7 @@ class BlogController extends Controller
 {
     public function viewBlogpost()
     {
+<<<<<<< Updated upstream
 
 
         return view('blogs');
@@ -36,6 +37,18 @@ class BlogController extends Controller
     {
         $posts = BlogModel::all(); //fetch all blog posts from DB
         return $posts; //returns the fetched posts
+=======
+
+        $blogs = BlogModel::all();
+        return view('blogs', ['blogs' => $blogs]);
+    }
+
+
+    //test
+
+    public function addBlogpost()
+    {
+>>>>>>> Stashed changes
     }
 */
     public function addComment(Request $request)
@@ -45,6 +58,7 @@ class BlogController extends Controller
             'comment' => 'required',
         ]);
 
+<<<<<<< Updated upstream
 
         $blogComment = new PostCommentModel;
 
@@ -57,6 +71,10 @@ class BlogController extends Controller
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }
+=======
+    public function favouriteBlogpost()
+    {
+>>>>>>> Stashed changes
     }
 
 
@@ -64,11 +82,16 @@ class BlogController extends Controller
     {
     }
 
+<<<<<<< Updated upstream
     public function favouriteBlogpost()
+=======
+    public function viewFavouriteBlogpost()
+>>>>>>> Stashed changes
     {
     }
 
 
+<<<<<<< Updated upstream
 
     public function viewFavouriteBlogpost()
     {
@@ -110,4 +133,9 @@ class BlogController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
     }
+=======
+    public function deleteTip()
+    {
+    }
+>>>>>>> Stashed changes
 }

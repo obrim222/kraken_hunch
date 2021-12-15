@@ -3,11 +3,11 @@
 @section('title', 'Home')
 
 
-
 @section('content')
 
-<section class="hero">
-    <div class="container">
+
+    <section class="hero">
+        <div class="container">
 
         <div class="hero__text container--pall">
             <h1>Welcome to CryptoHunch!</h1>
@@ -22,17 +22,39 @@
     </div>
 </section>
 
-<section class="feature">
-    <div class="feature__content container container--pall">
-        <div class="feature__intro">
-            <h2>Why choose CryptoHunch?</h2>
-            <p>
-                CryptoHunch provides educational summaries to investors on the pros
-                and cons of each currency. We also advise on where to buy them. Our
-                Tipsters not only provide tips but they are willing to put their
-                money where their mouth is!
-            </p>
+    
+    <section class="hero">
+        <div class="container">
+
+            <div class="hero__text container--pall">
+                <h1>Leaderboard</h1>
+                <div class="table">
+                    <div class="card">
+                    <div>Number</div>       
+                </div> 
+                <div class="card">
+                    card
+                </div> 
+                <div class="card">
+                    card
+                </div> 
+                </div>    
+            </div>
+            </div>
         </div>
+    </section>
+
+    <section class="feature">
+        <div class="feature__content container container--pall">
+            <div class="feature__intro">
+                <h2>Why choose CryptoHunch?</h2>
+                <p>
+                    CryptoHunch provides educational summaries to investors on the pros
+                    and cons of each currency. We also advise on where to buy them. Our
+                    Tipsters not only provide tips but they are willing to put their
+                    money where their mouth is!
+                </p>
+            </div>
 
         <div class="feature__grid">
             <div class="feature__item">
