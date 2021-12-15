@@ -3,7 +3,8 @@
 @section('title', 'Tips')
 
 @section('content')
- 
+<section class="hero">
+        <div class="container">
 
 <section class="hero">
     <div class="container">
