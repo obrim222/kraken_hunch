@@ -8,6 +8,7 @@
     
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
      
             <title>@yield('title')</title>
@@ -26,8 +27,11 @@
         <nav class="container container--pall flex flex-jc-sb flex-ai-c">
             <a href="/" class="header__logo">
 
-                <img src="/images/logo.png" alt="CryptoHunch" />
+                <img src="/images/logo_crop.png" alt="CryptoHunch" />
             </a>
+
+
+
 
             <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
                 <span> </span>
@@ -46,6 +50,12 @@
                 <a href="/about">About</a>
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
+          
+            </div>
+            <div class="align-self-start user-icon-padding">
+              <i class="fas fa-user"></i>
+              <div>€</div>
+
             </div>
         </nav>
         <!--  <a href="#" class="button header__cta hide-for-mobile">Login</a>-->
