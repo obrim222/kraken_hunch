@@ -27,11 +27,11 @@
 
 
 <div class="form-container">
-                <form id="add-blog-post-form" method="post">
+                <form method="post">
     @csrf
     <label>Email</label><br>
 
-    <input type="email" name="email" placeholder="E-mail"><br>
+    <input type="email" name="email" ><br>
     @error('email')
     <div class="text-red-500 mt-2 text-sm p-6">
         {{ $message }}
@@ -39,13 +39,16 @@
     @enderror
     <label>Password</label><br>
 
-    <input type="password" name="password" placeholder="Password"><br>
+    <input type="password" name="password" ><br>
     @error('password')
     <div class="text-red-500 mt-2 text-sm p-6">
         {{ $message }}
     </div>
     @enderror
     <button type="submit" name="submit" class="button register">Login</button>
-</form>
 
+  
+
+</form>
+</div>
 @endsection
