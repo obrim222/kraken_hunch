@@ -18,6 +18,7 @@
 
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 @if ($message = Session::get('error'))
 <p style="color:red">{{ $message }}</p>
 @endif
@@ -27,6 +28,12 @@
 >>>>>>> Blogs add Comments
 =======
 >>>>>>> fix
+=======
+
+
+
+
+>>>>>>> Toms changes
 <section class="articles">
     <div class="article__content container container--pall">
         <h2>Latest Articles</h2>
@@ -45,6 +52,10 @@
                         loan to buy 7000 bitcoin....
                     </div>
                     <br>
+                    @foreach($blogs as $post)
+
+                    {{$post->comment}}
+                    @endforeach
                     <form action="{{ route('blogs') }}" method="post">
                         @csrf
 
@@ -95,6 +106,7 @@
 >>>>>>> BlogComment
                 </div>
             </a>
+
 
             <a href="#" class="article__item">
                 <div class="article__image" style="background-image: url('./images/ethereum.jpg')"></div>

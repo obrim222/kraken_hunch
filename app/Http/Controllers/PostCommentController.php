@@ -79,11 +79,12 @@ class PostCommentController extends Controller
 >>>>>>> fix
 =======
 
-    public function show(PostCommentModel $post)
+
+    public function index()
     {
-        return view('blogs', [
-            'blogs' => $post
-        ]);
+        $postComment = PostCommentModel::all();
+
+        return view('blogs', ['blogs' => $postComment]);
     }
 >>>>>>> BlogComment
 }

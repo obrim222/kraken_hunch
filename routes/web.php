@@ -233,7 +233,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/coins', [CoinController::class, 'index']);
 
 
-Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
+Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
 Route::post('/blogs', [PostCommentController::class, 'store']);
 
 
