@@ -22,11 +22,13 @@ class PostCommentController extends Controller
 
         $blogComment->save();
 
+        /*
         if ($blogComment->save()) {
             return redirect('blogs')->with('success', 'Saved in the Database');
         } else {
             return back()->with('error', 'Error');
         }
+        */
     }
 
 
@@ -35,5 +37,43 @@ class PostCommentController extends Controller
         $postComment = PostCommentModel::all();
 
         return view('blogs', ['blogs' => $postComment]);
+    }
+
+    public function delete(PostCommentModel $post)
+    {
+        $this->authorize('delete', $post);
+
+        $post->delete();
+
+        return back();
+    }
+
+    public function blogArticleAda()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleAda', ['blogs' => $postComment]);
+    }
+
+
+    public function blogArticleBtc()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleBtc', ['blogs' => $postComment]);
+    }
+
+    public function blogArticleEth()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleEth', ['blogs' => $postComment]);
+    }
+
+    public function blogArticleSol()
+    {
+        $postComment = PostCommentModel::all();
+
+        return view('blogArticleSol', ['blogs' => $postComment]);
     }
 }
