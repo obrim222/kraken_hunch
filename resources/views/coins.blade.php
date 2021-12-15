@@ -31,7 +31,7 @@
             <div class="grid-container">
 
           
-               @foreach($coin_data as $coin)
+               @foreach($coins as $coin)
             
                 <div class="flip-card">
                     <div class="flip-card-inner">
@@ -42,15 +42,29 @@
                             
                         <div class="nomics-ticker-widget" data-name="Uniswap Protocol Token" data-base= <?php  echo '"'. $coin->symbol . '"'  ?> data-quote="EUR">  </div><script src="https://widget.nomics.com/embed.js"></script>
                         
-                        <div class="table">                 
-                            <div class="card">Category: <?php  echo $coin->coin_category ?></div>
-                            <div class="card">Circ. Supply: <?php  echo $coin->coin_category ?></div>
-                            <div class="card">Algorithm: <?php  echo $coin->algorithm ?></div>
-                            <div class="card">Founder: <?php  echo $coin->founder ?></div>
-                           <div class="card">Co-founder: <?php  echo $coin->cofounder ?></div>        
-                        </div>
+                        <div class ="table">
+                            <div class="card">
+                               Category: {{$coin->coin_category}}
+                           </div>
+                           <div class="card">
+                               Founder:  {{$coin->founder}} 
+                           </div>
+                           <div class="card">
+                               Cofounder:  {{$coin->cofounder}} 
+                               </div>
+                               <div class="card">
+                               TPS:  {{$coin->transactions_per_second}} 
+                               </div>
+                               <div class="card">
+                               BlockTime:  {{$coin->blocktime}} 
+                               </div>
+                               <div class="card">
+                               Txn Fees:  {{$coin->transactions_fees}} 
+                               </div>
+   
+                            </div>
                         
-                          <div class ="flex flex-jc-sb buttonPadding">
+                          <div class ="flex flex-jc-c  ">
                             <p><a href="/tips" class="button hero__cta">View Tips</a> </p> 
                             <p><a href="/create" class="button hero__cta">Give Tip</a> </p> 
                            </div>

@@ -71,9 +71,14 @@ a:hover {
 .buttonPadding {
     padding: 20px;
 }
+
+.buttonMargin {
+    padding: 20px;
+}
+
 // Spacing
 .container {
-    max-width: 69.375rem;
+    max-width: 75.375rem;
     margin: 0 auto;
 
     &--pall {
@@ -137,6 +142,26 @@ a:hover {
     &-ai-c {
         align-items: center;
     }
+}
+
+.flex-col-ai-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-col-ai-e {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.align-self-end {
+    align-self: flex-end !important;
+}
+
+.align-self-start {
+    align-self: flex-start !important;
 }
 
 // Buttons

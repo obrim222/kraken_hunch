@@ -385,6 +385,7 @@ button,
   font-size: 0.875rem;
   transition: opacity 300ms ease-in-out;
   overflow: hidden;
+  margin: 10px;
 }
 
 button::before,
@@ -966,8 +967,12 @@ a:hover {
   padding: 20px;
 }
 
+.buttonMargin {
+  padding: 20px;
+}
+
 .container {
-  max-width: 69.375rem;
+  max-width: 75.375rem;
   margin: 0 auto;
 }
 .container--pall {
@@ -1032,6 +1037,26 @@ a:hover {
   align-items: center;
 }
 
+.flex-col-ai-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-col-ai-e {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.align-self-end {
+  align-self: flex-end !important;
+}
+
+.align-self-start {
+  align-self: flex-start !important;
+}
+
 button,
 .button {
   position: relative;
@@ -1046,7 +1071,6 @@ button,
   font-size: 0.875rem;
   transition: opacity 300ms ease-in-out;
   overflow: hidden;
-  margin-top: 20px;
 }
 button::before,
 .button::before {
@@ -1112,8 +1136,8 @@ button:hover::before,
   padding-bottom: 1.0625rem;
 }
 .header__logo img {
-  width: 25rem;
-  height: 10rem;
+  width: 16rem;
+  height: 4rem;
 }
 .header__toggle > span {
   display: block;
@@ -1144,7 +1168,7 @@ button:hover::before,
 }
 .header__links a {
   position: relative;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   color: #9698a6;
   transition: color 300ms ease-in-out;
 }
@@ -1168,6 +1192,30 @@ button:hover::before,
 }
 .header__links a:hover::before {
   opacity: 1;
+}
+
+.flex-col-ai-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-col-ai-e {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.align-self-end {
+  align-self: flex-end !important;
+}
+
+.align-self-start {
+  align-self: flex-start !important;
+}
+
+.user-icon-padding {
+  padding-top: 10px;
 }
 
 .hero {
