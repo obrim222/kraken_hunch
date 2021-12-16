@@ -10,8 +10,14 @@ class TipsController extends Controller
 {
     public function index()
     {
+        $tipsdata = Tip::join('users', 'tips.user_id', '=', 'users.id')
+            ->get(['tips.*', 'users.first_name']);
+
+
+
         //connection with database
-        $tipsdata = Tip::all();
+        //  $tipsdata = Tip::all();
+
         return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
     }
 
@@ -29,8 +35,6 @@ class TipsController extends Controller
     {
 
         $tip = new Tip();
-
-
 
 
         $tip->tip_currency = $request->tip_currency;
