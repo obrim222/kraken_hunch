@@ -47,29 +47,31 @@
                         Tipper: {{ $tip->first_name}}
                     </div>
                     <div>
-                        Currency name: {{ $tip->coin_name }} 
+                        Coin name: {{ $tip->name }} 
                     </div>
                     <div>
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Price went up of: {{ $tip->calculated_tip_price }} % 
-                     </div>
-                      <div>
-                         Date:{{ $tip->date }} 
-                      </div>
+                        Forecast {{ $tip->calculated_tip_price }} % 
+                    </div>
+                    <div>
+                        Date:{{ $tip->date_now }} 
+                    </div>
 
-                      <div>
-                         Value: {{ $tip->tip_direction }} 
-                      </div>
-                      <div>
-                           Reason why it went {{ $tip->tip_direction }}: 
-                    {{ $tip->reason }}  
-                     </div>  
-                      
-                     <div>
-                         Tipper comment: {{ $tip->reason_user_description }}                                 
-                    </div>     
+                    <div>
+                        Value: {{ $tip->tip_direction }} 
+                    </div>
+                    <div>
+                        Forecast Reason Up: {{ $tip->reason_up}}
+                    </div>  
+                    <div> 
+                        Forecast Reason Down: {{ $tip->reason_down}}
+                    </div>
+           
+                    <div>
+                        Tipper comment: {{ $tip->reason_user_description }}                                 
+                    </div>    
             </div> 
             @endif
             @endforeach
@@ -92,36 +94,38 @@
   
                 @if ($tip->winlose_flag  == "W" )
                 <div class="card">
-                        <h2>{{ $tip->title }}</h2>
+                    <h2>{{ $tip->title }}</h2>
 
-                        <div>
-                            Tipper: {{ $tip->first_name}}
-                        </div>
-                        <div>
-                            Currency name: {{ $tip->coin_name }} 
-                        </div>
-                        <div>
-                            Initial tip price: {{ $tip->price_at_time_of_tip }}
-                        </div>
-                        <div>
-                            Price went up of: {{ $tip->calculated_tip_price }} % 
-                        </div>
-                        <div>
-                            Date:{{ $tip->date }} 
-                        </div>
+                    <div>
+                        Tipper: {{ $tip->first_name}}
+                    </div>
+                    <div>
+                        Coin name: {{ $tip->name }} 
+                    </div>
+                    <div>
+                        Initial tip price: {{ $tip->price_at_time_of_tip }}
+                    </div>
+                    <div>
+                        Forecast {{ $tip->calculated_tip_price }} % 
+                    </div>
+                    <div>
+                        Date:{{ $tip->date_now }} 
+                    </div>
 
-                        <div>
-                            Value: {{ $tip->tip_direction }} 
-                        </div>
-                        <div>
-                            Reason why it went {{ $tip->tip_direction }}: 
-                        {{ $tip->reason }}  
-                        </div>  
-                        
-                        <div>
-                            Tipper comment: {{ $tip->reason_user_description }}                                 
-                        </div>     
-                    </div> 
+                    <div>
+                        Value: {{ $tip->tip_direction }} 
+                    </div>
+                    <div>
+                        Forecast Reason Up: {{ $tip->reason_up}}
+
+                    </div>  
+                    <div>
+                        Forecast Reason Down: {{ $tip->reason_down}}
+               
+                    </div>  
+                    <div>
+                        Tipper comment: {{ $tip->reason_user_description }}                                 
+                    </div>  
 
             @endif
 
@@ -154,31 +158,32 @@
                         Tipper: {{ $tip->first_name}}
                     </div>
                     <div>
-                        Currency name: {{ $tip->coin_name }} 
+                        Coin name: {{ $tip->name }} 
                     </div>
                     <div>
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Price went up of: {{ $tip->calculated_tip_price }} % 
-                     </div>
-                      <div>
-                         Date:{{ $tip->date }} 
-                      </div>
+                        Forecast {{ $tip->calculated_tip_price }} % 
+                    </div>
+                    <div>
+                        Date:{{ $tip->date_now }} 
+                    </div>
 
-                      <div>
-                         Value: {{ $tip->tip_direction }} 
-                      </div>
-                      <div>
-                           Reason why it went {{ $tip->tip_direction }}: 
-                    {{ $tip->reason }}  
-                     </div>  
-                      
-                     <div>
-                         Tipper comment: {{ $tip->reason_user_description }}                                 
-                    </div>     
-            </div> 
-
+                    <div>
+                        Value: {{ $tip->tip_direction }} 
+                    </div>
+                    <div>
+                        Forecast Reason Up: {{ $tip->reason_up}}
+                    </div>  
+                    <div>
+                        Forecast Reason Down: {{ $tip->reason_down}}
+               
+                    </div>  
+                    
+                    <div>
+                        Tipper comment: {{ $tip->reason_user_description }}                                 
+                    </div>  
             @endif
             @endforeach
 

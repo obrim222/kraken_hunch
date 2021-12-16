@@ -11,9 +11,8 @@ class TipsController extends Controller
     public function index()
     {
         $tipsdata = Tip::join('users', 'tips.user_id', '=', 'users.id')
-            ->get(['tips.*', 'users.first_name']);
-
-
+            ->join('coin_data',  'coin_data.id', '=', 'tips.coin_id')
+            ->get(['tips.*', 'users.first_name', 'coin_data.name']);
 
         //connection with database
         //  $tipsdata = Tip::all();
