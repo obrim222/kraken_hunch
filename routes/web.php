@@ -1,14 +1,10 @@
 <?php
 
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CoinController;
-use App\Http\Controllers\PostCommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\TipsController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MailerController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
@@ -39,25 +35,20 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/coins', [CoinController::class, 'index']);
+Route::get('/coins', function () {
+    return view('coins');
+});
 
 
-Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
-Route::post('/blogs', [PostCommentController::class, 'store']);
-Route::get('/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
+Route::post('/blogs', [BlogController::class, 'addComment']);
 
+// Test Route
+Route::get('/post', [BlogController::class, 'viewBlogpost']);
+Route::post('/post', [BlogController::class, 'addComment']);
 
-Route::get('/post', [BlogController::class, 'createBlogPost']);
+//Route::get('/blogs', [BlogController::class, 'show']);
 
-Route::post('/post', [BlogController::class, 'store']);
-
-Route::get('/blogArticleAda', [PostCommentController::class, 'blogArticleAda']);
-
-Route::get('/blogArticleBtc', [PostCommentController::class, 'blogArticleBtc']);
-
-Route::get('/blogArticleEth', [PostCommentController::class, 'blogArticleEth']);
-
-Route::get('/blogArticleSol', [PostCommentController::class, 'blogArticleSol']);
 
 Route::get('/hunch', function () {
     return view('hunch');
@@ -72,13 +63,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => true]);
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
 
 Route::get("email", [MailerController::class, "email"])->name("email");
 

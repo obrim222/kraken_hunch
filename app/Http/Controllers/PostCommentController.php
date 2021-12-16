@@ -22,6 +22,9 @@ class PostCommentController extends Controller
 
         $blogComment->save();
 
+        if ($blogComment->save()) {
+            return back()->with('success', 'Saved in the Database');
+        }
         /*
         if ($blogComment->save()) {
             return redirect('blogs')->with('success', 'Saved in the Database');
@@ -41,7 +44,7 @@ class PostCommentController extends Controller
 
     public function delete(PostCommentModel $post)
     {
-        $this->authorize('delete', $post);
+
 
         $post->delete();
 
