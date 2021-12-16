@@ -105,23 +105,46 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
 
         Schema::create('tips', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('price_at_time_of_tip')->nullable();
-            $table->enum('tip_percentage', [30, 40, 50]);
+            $table->id();
+
+            $table->enum('tip_direction', ['up', 'down']);
+            $table->enum('tip_currency', ['eur', 'hunch']);
+
+            $table->timestamps();
+
+            $table->integer('price_at_time_of_tip');
+
+
+
             $table->date('date_now');
             $table->date('date_end');
-            $table->enum('tip_direction', ['Up', 'Down']);
-            $table->enum('reason_up', ['major roadmap releases success', 'stock market up', 'influencers backing the project', 'money printing', 'instinct of the expert up']);
-            $table->enum('reason_down', ['major roadmap releases failure', 'stock market down', 'influencers slating the project', 'instinct of the expert down', 'FUD']);
+
+            $table->enum('reason_up', ['major_roadmap_releases_success', 'stock_market_up', 'influencers_backing_the_project', 'money_printing', 'instinct_of_the_expert_up'])->nullable();
+            $table->enum('reason_down', ['major_roadmap_releases_failure', 'stock_market_down', 'influencers_slating_the_project', 'instinct_of_the_expert_down', 'FUD'])->nullable();
+
             $table->string('reason_description', 1000);
-            $table->integer('calculated_tip_price');
-            $table->integer('user_id')->unsigned();
-            $table->index('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('calculated_tip_price')->nullable();
+
+            $table->enum('tip_percentage', [30, 40, 50]);
+
+
             $table->integer('coin_id')->unsigned();
-            $table->index('coin_id');
-            $table->foreign('coin_id')->references('id')->on('coin_data');
-            $table->string('winlose_flag', 1);
+            $table->index('coin_id')->nullable();
+            $table->foreign('coin_id')->references('id')->on('coin_data')->nullable();
+
+            //$table->integer('user_id')->unsigned()->nullable();
+            //$table->index('user_id')->nullable();
+            //$table->foreign('user_id')->references('id')->on('users')->nullable();
+
+
+            //$table->string('win_lose_flag',1)->nullable();
+            //$table->string('win_lose_flag',1)->nullable();
+
+
+            //$table->string('versus_currency', 6)->nullable();
+            //$table->integer('versus_exchange_rate')->nullable();
+
+            // $table->string('winlose_flag', 1);
         });
 
 

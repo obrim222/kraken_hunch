@@ -29,17 +29,7 @@
 <div class="form-container">
     <form method="post">
         @csrf
-        <label>Email</label><br>
-                <form method="post">
-    @csrf
 
-        <input type="email" name="email"><br>
-        @error('email')
-        <div class="text-red-500 mt-2 text-sm p-6">
-            {{ $message }}
-        </div>
-        @enderror
-        <label>Password</label><br>
 
     <p>Enter your email:</p>
  
@@ -50,13 +40,7 @@
     </div>
     @enderror
 
-        <input type="password" name="password"><br>
-        @error('password')
-        <div class="text-red-500 mt-2 text-sm p-6">
-            {{ $message }}
-        </div>
-        @enderror
-        <button type="submit" name="submit" class="button register">Login</button>
+
 
         <p>Enter your password:</p>
 

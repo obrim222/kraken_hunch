@@ -12,7 +12,7 @@
     <div class="container">
 
         <div class="hero__text container--pall">
-            <h1>Coins</h1>
+            <h1 class="animate__animated  animate__backInRight">Coins</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non nisi non dolor pulvinar laoreet. Praesent vel ultrices leo, in iaculis turpis. Etiam ac nibh mollis, convallis orci ut, dictum eros.
 
