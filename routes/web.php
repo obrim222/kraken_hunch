@@ -12,12 +12,9 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
-use App\Http\Controllers\DropdownController;
-=======
-use Illuminate\Support\Facades\Mail;
 
->>>>>>> main
+use App\Http\Controllers\StripeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,125 +88,7 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 //Test
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-<<<<<<< HEAD
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-=======
-//Kasia TIPS START
+// Stripe Payment Gateway
 
-Route::get('/tips', [TipsController::class, 'index']);
-
-Route::get('/tips/create', [TipsController::class, 'create']);
-
-Route::post('/tips', [TipsController::class, 'store']);
-
-Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
-
-Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
-
-
-Route::get('/tips', [TipsController::class, 'orderTipsbyReason']);
-
-Route::get('/tips', [TipsController::class, 'wentUp']);
-
-//Route::get('/tips',[TipsController::class, 'wentDown']);
-
-Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
-
-Route::put('/tips/{id}', [TipsController::class, 'update']);
-
-Route::post('/tips/{id}', [TipsController::class, 'destroy']);
-
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-
-
-
-Route::get('/coins', [CoinController::class, 'index']);
-
-
->>>>>>> main
-
-Route::get('/coins', [CoinController::class, 'index']);
-
-//Auth::routes();
-
-
-<<<<<<< HEAD
-//Kasia TIPS START
-
-Route::get('/tips', [TipsController::class, 'index']);
-
-Route::get('/tips/create', [TipsController::class, 'create']);
-=======
-Route::group(['middleware' => ['admin']], function () {
-
-    Route::get('/admin', [LoginAdminController::class, 'adminView']);
-}); 
-
-/*
- 
-
-Route::get('/tips/create','TipsController@create');
-
-Route::get('/tips/create','TipsController@create');
-
-Route::post('/tips','TipsController@store');
->>>>>>> main
-
-Route::post('/tips/create', [TipsController::class, 'store']);
-
-
-
-
-
-
-//DropDown dobre
-//Route::get('/tips/dropdown', [DropdownController::class, 'index']);
-//Route::post('/tips/dropdown', [DropdownController::class, 'store']);
-// jak uzywam drop down trezba zaktualizowac DV 
-
-
-
-//DELETE
-//Route::post('/tips', [TipsController::class, 'storeDropDownItems']); skasowac
-//Route::get('/tips', [TipsController::class, 'createDropDownItems']); skasowav
-//Route::get('/tips', [TipsController::class, 'indexDrop']); skasowac
-//Route::get('/tips/dropdown', [DropdownController::class, 'index']); skasowac
-//Route::post('/tips/dropdown_data', [DropdownController::class, 'data']);
-
-
-//Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
-//Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
-//Route::get('/tips', [TipsController::class, 'orderTipsbyReason']);
-//Route::get('/tips', [TipsController::class, 'wentUp']);
-//Route::get('/tips',[TipsController::class, 'wentDown']);
-//Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
-//Route::put('/tips/{id}', [TipsController::class, 'update']);
-//Route::post('/tips/{id}', [TipsController::class, 'destroy']);
-//Route::get('/tips/{id}/edit','TipsController@edit');
-//Route::put('/tips/{id}','TipsController@update');
-//Route::post('/tips/{id}','TipsController@destroy');
-//Route::get('/tips/{id}','TipsController@showSingleTip');
-//Route::get('/tips','TipsController@latestTips');
-
-
-
-
-
-
-
-
-
-Route::get('/test', function () {
-    $data = array('name' => "Our Code World");
-    // Path or name to the blade template to be rendered
-    $template_path = 'email_template';
-
-    Mail::send(['text' => $template_path], $data, function ($message) {
-        // Set the receiver and subject of the mail.
-        $message->to('simon-bertrand@live.fr', 'Receiver Name')->subject('Laravel First Mail');
-        // Set the sender
-        $message->from('johndoetest11@hotmail.com', 'Our Code World');
-    });
-
-    return "Basic email sent, check your inbox.";
-});
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
