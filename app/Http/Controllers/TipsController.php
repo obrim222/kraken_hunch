@@ -1,127 +1,102 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Tip;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
-
 
 class TipsController extends Controller
 {
-
-    public $timestamps = false;
-    
     public function index()
     {
-        //get data from database
+        //connection with database
         $tipsdata = Tip::all();
-            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
-
+        return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
     }
 
 
-    public function orderTipsbyDirection()
+    public function create()
     {
-        $tipsdata = Tip::orderBy('tip_direction')->get();
-            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
-    }
-    
 
-    public function orderTipsbyCoin()
-    {
-        $tipsdata = Tip::orderBy('coin_name')->get();
-            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
-    }
+        //$currency_types = DB::table('tips')->get();  //Dropdown get tip_currency table data from DB
 
-
-    public function orderTipsbyReason()
-    {
-        $tipsdata = Tip::orderBy('tip_reason')->get();
-            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
-    }
-
-    public function wentUp(){
-
-        $tipsdata = Tip::where('tip_direction' , 'up')->get();
-            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
-
-    }
-    
-
-    public function create(){
         return view('tipsFolder.create');
     }
 
 
-    public function showSingleTip($id){
-        $tip = Tip::findOrFail($id);
-
-        return view('tipsFolder.showSingleTip', ['tip' => $tip]) ;
-    }
-
-    public function store(){
+    public function store(Request $request)
+    {
 
         $tip = new Tip();
 
-        $tip->tip_direction = request('tip_direction, up');
-        $tip->tip_direction = request('tip_direction, down');
 
 
-        
-    
-        
 
-        // kasia: problem with ennum to be solved
-        //$tipsave->tip_reason = request('tip_reason');
-        //$tipsave->tip_direction = request('tip_direction');
-   
+        $tip->tip_currency = $request->tip_currency;
+        $tip->price_at_time_of_tip = $request->price_at_time_of_tip;
+        $tip->date_now = $request->date_now;
+        $tip->date_end = $request->date_end;
+        $tip->reason_up = $request->reason_up;
 
+        $tip->reason_down = $request->reason_down;
+        $tip->reason_description = $request->reason_description;
+        $tip->calculated_tip_price = $request->calculated_tip_price;
 
-       //error_log($tipsave);
+        $tip->tip_percentage = $request->tip_percentage;
+        $tip->coin_id = $request->coin_id;
 
         $tip->save();
-      
-
+        return back()->with('error', 'sth wrong with db');
         return redirect('/tips');
-        // kasia: @csrf after clicking on submit the tip it redirects to tips now
-    }
-
-    public function edit($id){
-
-        $tip = Tip::findOrFail($id);
-        return view('tipsFolder.edit',['tip' => $tip]);
-
     }
 
 
-    public function update($id){
+    public function showSingleTip($id)
+    {
+        $tip = Tip::findOrFail($id);
+
+        return view('tipsFolder.showSingleTip', ['tip' => $tip]);
+    }
+
+
+    public function edit($id)
+    {
 
         $tip = Tip::findOrFail($id);
- 
+        return view('tipsFolder.edit', ['tip' => $tip]);
+    }
+
+
+
+    public function update($id)
+    {
+
+        $tip = Tip::findOrFail($id);
+
         $tip->tipper_name = request('tipper_name');
         $tip->title = request('title');
         $tip->tip_text = request('tip_text');
         $tip->coin_name = request('coin_name');
+
         $tip->price_at_time_of_tip = request('price_at_time_of_tip');
         $tip->calculated_tip_price = request('calculated_tip_price');
 
         $tip->save();
         return redirect('/tips');
     }
+}
 
 
-
-
+/*
+        //error_log($tipsave);
+    
     public function destroy($id){
         $tip = Tip::findOrFail($id);
         $tip ->delete();
-
         return redirect('/tips');
     }
     
-
     /* LATESTS TIPS 
     
     Kasia: add curly brakets & activate once DB has date
@@ -131,9 +106,27 @@ class TipsController extends Controller
  
     */ 
 
-
+/*
+    public function orderTipsbyDirection()
+    {
+        $tipsdata = Tip::orderBy('tip_direction')->get();
+            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+    }
     
-
+    public function orderTipsbyCoin()
+    {
+        $tipsdata = Tip::orderBy('coin_name')->get();
+            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+    }
+    public function orderTipsbyReason()
+    {
+        $tipsdata = Tip::orderBy('tip_reason')->get();
+            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+    }
+    /*
+    public function wentUp(){
+        $tipsdata = Tip::where('tip_direction' , 'up')->get();
+            return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+    }
    
-
-};
+    */

@@ -25,8 +25,8 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->string('first_name', 100);
             $table->string('last_name', 100);
             $table->string('email', 100);
-            $table->string('password', 50);
-            $table->integer('is_admin');
+            $table->string('password', 250);
+            $table->integer('is_admin')->nullable();
         });
 
 
@@ -123,18 +123,21 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->enum('reason_down', ['major_roadmap_releases_failure', 'stock_market_down', 'influencers_slating_the_project', 'instinct_of_the_expert_down', 'FUD'])->nullable();
 
             $table->string('reason_description', 1000);
-            $table->integer('calculated_tip_price')->nullable();
+            $table->integer('calculated_tip_price');
 
             $table->enum('tip_percentage', [30, 40, 50]);
+
+
+
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->index('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
 
 
             $table->integer('coin_id')->unsigned();
             $table->index('coin_id')->nullable();
             $table->foreign('coin_id')->references('id')->on('coin_data')->nullable();
-
-            //$table->integer('user_id')->unsigned()->nullable();
-            //$table->index('user_id')->nullable();
-            //$table->foreign('user_id')->references('id')->on('users')->nullable();
+            $table->string('winlose_flag', 1)->nullable();
 
 
             //$table->string('win_lose_flag',1)->nullable();

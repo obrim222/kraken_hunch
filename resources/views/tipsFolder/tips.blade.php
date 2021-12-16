@@ -11,7 +11,7 @@
     <div class="container">
 
         <div class="hero__text container--pall">
-            <h1 class="animate__animated animate__backInUp">Leaderboard</h1>>Leaderboard</h1>
+            <h2  class="animate__animated animate__backInLeft">Leader Board</h2>
             <div class="table">
                 <div class="card">
                 <div>Number</div>       
@@ -29,61 +29,166 @@
 </section>
 
 
-    <div class="flex flex-jc-c">
-        <div class="tip-card-container">
-            <div class="tip-card">
-                <h2  class="animate__animated animate__backInLeft">Tips Summary </h2>
-            </div>
-            <p></p>
-            <div>
+
+<section class="open_tips">
+    <div class="container">
+
+        <div class="hero__text container--pall">
+            <h2  class="animate__animated animate__backInLeft">Open Tips</h2>
+            <div class="table">
+
                 @foreach($tipsArray as $tip)
-                <div>
+                @if ($tip->winlose_flag  == null )
 
-                <h2>{{ $tip->title }}</h2>
-                Tipper: <br> {{ $tip->tipper_name }} <br><br>
+                <div class="card">
+                    <h2>{{ $tip->title }}</h2>
 
-                Currency name: <br> {{ $tip->coin_name }} <br><br>
+                    <div>
+                        Tipper: {{ $tip->tipper_name }}
+                    </div>
+                    <div>
+                        Currency name: {{ $tip->coin_name }} 
+                    </div>
+                    <div>
+                        Initial tip price: {{ $tip->price_at_time_of_tip }}
+                    </div>
+                    <div>
+                        Price went up of: {{ $tip->calculated_tip_price }} % 
+                     </div>
+                      <div>
+                         Date:{{ $tip->date }} 
+                      </div>
 
-                Initial tip price: <br> {{ $tip->price_at_time_of_tip }} <br><br>
-
-                Price went up of: <br> {{ $tip->calculated_tip_price }} % <br><br>
-
-                Date: <br> {{ $tip->date }} <br><br>
-
-                Value: <br> {{ $tip->tip_direction }} <br><br>
-
-                Reason why it went {{ $tip->tip_direction }}: <br>
+                      <div>
+                         Value: {{ $tip->tip_direction }} 
+                      </div>
+                      <div>
+                           Reason why it went {{ $tip->tip_direction }}: 
                     {{ $tip->reason }}  
-
-                Tipper comment: <br> {{ $tip->reason_user_description }} <br><br>
-                    
-                    
-                </div>
-                @endforeach
-
-                <a href="/home" class="back">< Back to main page</a> 
-
-
-        
+                     </div>  
+                      
+                     <div>
+                         Tipper comment: {{ $tip->reason_user_description }}                                 
+                    </div>     
+            </div> 
+            @endif
+            @endforeach
 
 
-            </div>
 
-            <div class="tip-card">
-                <h2>Ethereum</h2>
-                <p>
-                    ..............................................................................................................................................................................................
-                </p>
-                
-            </div>
-
-            <div class="tip-card">
-                <h2>Solana</h2>
-                <p>
-                    ...............................................................................................................................................................................................
-                </p>
-            </div>
+            </div>    
         </div>
+
+</section>
+
+<section class="winning_tips hero">
+    <div class="container">
+
+        <div class="hero__text container--pall">
+            <h2  class="animate__animated animate__backInLeft" style="color:green">Winning Tips</h2>
+            <div class="table">
+
+                @foreach($tipsArray as $tip)
+  
+                @if ($tip->winlose_flag  == "W" )
+                <div class="card">
+                        <h2>{{ $tip->title }}</h2>
+
+                        <div>
+                            Tipper: {{ $tip->tipper_name }}
+                        </div>
+                        <div>
+                            Currency name: {{ $tip->coin_name }} 
+                        </div>
+                        <div>
+                            Initial tip price: {{ $tip->price_at_time_of_tip }}
+                        </div>
+                        <div>
+                            Price went up of: {{ $tip->calculated_tip_price }} % 
+                        </div>
+                        <div>
+                            Date:{{ $tip->date }} 
+                        </div>
+
+                        <div>
+                            Value: {{ $tip->tip_direction }} 
+                        </div>
+                        <div>
+                            Reason why it went {{ $tip->tip_direction }}: 
+                        {{ $tip->reason }}  
+                        </div>  
+                        
+                        <div>
+                            Tipper comment: {{ $tip->reason_user_description }}                                 
+                        </div>     
+                    </div> 
+
+            @endif
+
+            @endforeach
+
+
+
+
+            </div>    
+        </div>    
     </div>
    
-   @endsection
+</section>
+
+
+<section class="winning_tips hero">
+    <div class="container">
+
+        <div class="hero__text container--pall">
+            <h2  class="animate__animated animate__backInLeft" style="color:red">Losing Tips</h2>
+            <div class="table">
+
+                @foreach($tipsArray as $tip)
+
+                @if ($tip->winlose_flag === "L" )
+                <div class="card">
+                    <h2>{{ $tip->title }}</h2>
+
+                    <div>
+                        Tipper: {{ $tip->tipper_name }}
+                    </div>
+                    <div>
+                        Currency name: {{ $tip->coin_name }} 
+                    </div>
+                    <div>
+                        Initial tip price: {{ $tip->price_at_time_of_tip }}
+                    </div>
+                    <div>
+                        Price went up of: {{ $tip->calculated_tip_price }} % 
+                     </div>
+                      <div>
+                         Date:{{ $tip->date }} 
+                      </div>
+
+                      <div>
+                         Value: {{ $tip->tip_direction }} 
+                      </div>
+                      <div>
+                           Reason why it went {{ $tip->tip_direction }}: 
+                    {{ $tip->reason }}  
+                     </div>  
+                      
+                     <div>
+                         Tipper comment: {{ $tip->reason_user_description }}                                 
+                    </div>     
+            </div> 
+
+            @endif
+            @endforeach
+
+
+
+            </div>    
+        </div>    
+    </div>
+   
+</section>
+
+  
+@endsection

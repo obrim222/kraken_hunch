@@ -922,6 +922,33 @@ body.noscroll {
   overflow: hidden;
 }
 
+label {
+  color: grey;
+  padding: 6px;
+}
+
+select {
+  margin: 10px;
+  padding: 5px;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+}
+
+.wrapperTip {
+  border: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #212529;
+  border-radius: 1%;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6;
+}
+
 h1,
 h2,
 h3 {
@@ -1033,6 +1060,9 @@ a:hover {
 .flex-jc-c {
   justify-content: center;
 }
+.flex-jc-e {
+  justify-content: end;
+}
 .flex-ai-c {
   align-items: center;
 }
@@ -1125,6 +1155,10 @@ button:hover::before,
 
 .containerSmallContent {
   height: 80vh;
+}
+
+.pl-2 {
+  padding-left: 0.5rem !important;
 }
 
 .header {
@@ -1268,6 +1302,9 @@ button:hover::before,
     height: 41rem;
     background-image: none;
   }
+}
+.hero__image::before, .hero__image::after {
+  border: 1px solid grey;
 }
 @media (min-width: 64em) {
   .hero__image::before {
