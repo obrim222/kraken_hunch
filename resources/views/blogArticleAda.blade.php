@@ -32,6 +32,13 @@
                 <button type="submit">Comment</button>
             </div>
         </form>
+        <form method="post" action="{{url(''admin/removeCategory')}}/{{$product->id}}">
+
+            {!! Form::token() !!}
+            {{ method_field('DELETE') }}
+
+            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-fill btn-primary">Remove</button>
+        </form>
     </div>
 </div>
 </div>
