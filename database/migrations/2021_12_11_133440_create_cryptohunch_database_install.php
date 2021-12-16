@@ -113,11 +113,6 @@ class CreateCryptohunchDatabaseInstall extends Migration
         });
 
 
-<<<<<<< HEAD
-
-        //dynamic table - populates from different transaction types
-Schema::create('transactions', function (Blueprint $table) {
-=======
         Schema::create('tips', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('price_at_time_of_tip')->nullable();
