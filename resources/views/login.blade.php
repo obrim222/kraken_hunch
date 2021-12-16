@@ -31,34 +31,35 @@
         @csrf
 
 
-    <p>Enter your email:</p>
- 
-    <input type="email" name="email" ><br>
-    @error('email')
-    <div class="text-red-500 mt-2 text-sm p-4">
-        {{ $message }}
-    </div>
-    @enderror
 
 
 
         <p>Enter your password:</p>
 
-    <input type="password" name="password" ><br>
-    @error('password')
-    <div class="text-red-500 mt-2 text-sm p-4">
-        {{ $message }}
-    </div>
-    @enderror
-    <div class ="p-4 "> 
-    <button type="submit" name="submit" class="button register">Login</button>
-    </div>
-</div>
+            <label>Email</label><br>
+            <input type="email" name="email"><br>
+            @error('email')
+            <div class="text-red-500 mt-2 text-sm p-4">
+                {{ $message }}
+            </div>
+            @enderror
+            <label>Password</label><br>
+            <input type="password" name="password"><br>
+            @error('password')
+            <div class="text-red-500 mt-2 text-sm p-6">
+                {{ $message }}
+            </div>
+            @enderror
+            <button type="submit" name="submit" class="button register">Login</button>
 
-</form>
 
+
+
+    </div>
 
     </form>
+
+
 </div>
 
 

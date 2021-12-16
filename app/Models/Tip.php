@@ -9,12 +9,19 @@ class Tip extends Model
 {
     use HasFactory;
     public $timestamps = false;
-
-    protected $table = "tips";
+    protected $table = 'tips';
 
     protected $fillable = [
-        'user_first_name',
-        'user_last_name'
-
+        'price_at_time_of_tip ',
+        'tip_currency',
+        'date_now',
+        'date_end',
+        'reason_up',
+        'reason_down',
+        'reason_description',
+        'calculated_tip_price',
+        'tip_percentage',
+        'tip_direction',
+        'coin_id'
     ];
 }

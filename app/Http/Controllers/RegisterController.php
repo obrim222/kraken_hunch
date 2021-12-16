@@ -7,6 +7,7 @@ use App\Models\CustomUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
 
+
 class RegisterController extends Controller
 {
 
@@ -15,7 +16,6 @@ class RegisterController extends Controller
     {
         $this->middleware(['guest']);
     }
-
 
     public function register()
     {
@@ -47,6 +47,7 @@ class RegisterController extends Controller
 
 
         if ($user->save()) {
+
             auth()->attempt($request->only('email', 'password'));
             event(new Registered($user));
             return redirect('home')->with('success', 'User registered in the database');

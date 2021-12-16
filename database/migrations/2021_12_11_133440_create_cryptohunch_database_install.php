@@ -16,10 +16,15 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
         Schema::enableForeignKeyConstraints();
 
+        
+        //static table - populate manually
         Schema::create('payment_type', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type', 15);
         });
+
+        
+        //dynamic table - populates on registration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_name', 100);
@@ -29,7 +34,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->integer('is_admin');
         });
 
-
+             //dynamic table - populates on account top up
         Schema::create('account', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -42,11 +47,13 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->foreign('payment_type_id')->references('id')->on('payment_type');
         });
 
-
+        //static table - populate manually
+        
         Schema::create('coin_data', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->nullable();;
             $table->string('symbol', 20);
-            $table->string('name', 100);
+            $table->string('name', 20);
+
 
             $table->string('poster', 500);
             $table->string('description', 2000);
@@ -60,10 +67,12 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->integer('transactions_per_second');
             $table->integer('blocktime');
             $table->integer('transactions_fees');
+
+
         });
 
 
-
+        //dynamic table - populates when adds, edits or deletes a blog
         Schema::create('blogs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('blog', 5000);
@@ -90,7 +99,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
         });
 
 
-
+        //dynamic table - populates from api scripts
         Schema::create('historical_prices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('currency1', 6);
@@ -104,6 +113,11 @@ class CreateCryptohunchDatabaseInstall extends Migration
         });
 
 
+<<<<<<< HEAD
+
+        //dynamic table - populates from different transaction types
+Schema::create('transactions', function (Blueprint $table) {
+=======
         Schema::create('tips', function (Blueprint $table) {
             $table->id();
 
@@ -150,6 +164,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
 
         Schema::create('transactions', function (Blueprint $table) {
+>>>>>>> main
             $table->increments('id');
             $table->date('date');
             $table->string('description', 200);
