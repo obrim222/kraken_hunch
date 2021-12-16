@@ -11,7 +11,7 @@
     <div class="container">
 
         <div class="hero__text container--pall">
-            <h1>Leaderboard</h1>
+            <h1 class="animate__animated animate__backInUp">Leaderboard</h1>>Leaderboard</h1>
             <div class="table">
                 <div class="card">
                 <div>Number</div>       
@@ -32,7 +32,7 @@
     <div class="flex flex-jc-c">
         <div class="tip-card-container">
             <div class="tip-card">
-                <h2>Tips Summary </h2>
+                <h2  class="animate__animated animate__backInLeft">Tips Summary </h2>
             </div>
             <p></p>
             <div>

@@ -191,9 +191,5 @@
         <a href="/tips" class="back">< Back to all coins</a> 
 
 </div> 
-
-
-
-
-   
-   @endsection
+ 
+@endsection

@@ -16,6 +16,12 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
+
+    <link
+       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <link rel="stylesheet" href="css/style.css">
     <title>@yield('title')</title>
 </head>
@@ -45,7 +51,7 @@
                 <a href="/home">Home</a>
                 <a href="/coins">Coins</a>
                 <a href="/tips">Tips</a>
-                <a href="/hunch">Hunch</a>
+                <a href="/tips/create">Give a tip</a>
                 <a href="/blogs">Blogs</a>
                 <a href="/about">About</a>
                 <a href="/login">Login</a>
@@ -63,7 +69,7 @@
             <a href="/home">Home</a>
             <a href="/coins">Coins</a>
             <a href="/tips">Tips</a>
-            <a href="/hunch">Hunch</a>
+            <a href="/tips/create">Give a tip</a>
             <a href="/blogs">Blogs</a>
             <a href="/about">About</a>
             <a href="/login">Login</a>

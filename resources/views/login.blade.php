@@ -26,13 +26,15 @@
 
 <div class="containerSmallContent flex flex-jc-c ">
 
-    <div class="form-container">
-
-        <form method="post">
-            @csrf
-
+<div class="form-container">
+    <form method="post">
+        @csrf
 
 
+
+
+
+        <p>Enter your password:</p>
 
             <label>Email</label><br>
             <input type="email" name="email"><br>

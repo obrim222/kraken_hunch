@@ -6,11 +6,12 @@
 @section('content')
 
 
-    <section class="hero">
-        <div class="container">
-
         <div class="hero__text container--pall">
-            <h1>Welcome to CryptoHunch!</h1>
+      
+            <h1 class="animate__animated animate__backInLeft">Welcome to CryptoHunch!</h1>
+
+
+    
             <p>
                 CryptoHunch is a LEARN & EARN web app with a community focused on
                 earning while learning from others! Check out our forecasting system
@@ -19,30 +20,30 @@
 
             <a href="#" class="button hero__cta">Request Invite</a>
         </div>
+
     </div>
 </section>
 
     
-    <section class="article__item ">
-        <div class="container">
+ <section class="article__item ">
+    <div class="container">
         
-            <div class="hero__text container--pall">
-                <h3>Leaderboard</h3>
+         <div class="hero__text container--pall">
+            <h3>Leaderboard</h3>
                 <div class="table">
-                    <div class="card">
-                    <div>Number</div>       
+                        <div class="card">
+                        <div>Number</div>       
                 </div> 
                 <div class="card">
-                    card
+                        card
                 </div> 
                 <div class="card">
-                    card
+                        card
                 </div> 
-                </div>    
-            </div>
-            </div>
+
         </div>
-    </section>
+    </div>
+ </section>
 
     
     <section class="hero">
