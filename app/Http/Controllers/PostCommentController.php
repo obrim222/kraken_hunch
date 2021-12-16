@@ -45,6 +45,9 @@ class PostCommentController extends Controller
 
         $blogComment->save();
 
+        if ($blogComment->save()) {
+            return back()->with('success', 'Saved in the Database');
+        }
         /*
         if ($blogComment->save()) {
 <<<<<<< refs/remotes/origin/tom
@@ -94,7 +97,7 @@ class PostCommentController extends Controller
 
     public function delete(PostCommentModel $post)
     {
-        $this->authorize('delete', $post);
+
 
         $post->delete();
 

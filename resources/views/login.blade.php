@@ -26,6 +26,7 @@
 
 <div class="containerSmallContent flex flex-jc-c ">
 
+<<<<<<< refs/remotes/origin/tom
 <div class="form-container">
 <<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
@@ -60,17 +61,16 @@
         {{ $message }}
     </div>
     @enderror
+=======
+    <div class="form-container">
 
-        <input type="password" name="password"><br>
-        @error('password')
-        <div class="text-red-500 mt-2 text-sm p-6">
-            {{ $message }}
-        </div>
-        @enderror
-        <button type="submit" name="submit" class="button register">Login</button>
+        <form method="post">
+            @csrf
+>>>>>>> Breeze
 
-        <p>Enter your password:</p>
 
+
+<<<<<<< refs/remotes/origin/tom
 <<<<<<< refs/remotes/origin/tom
     <input type="password" name="password" ><br>
 =======
@@ -94,11 +94,33 @@
     </div>
 </div>
 >>>>>>>  michael 15.12 admin auth, styling
+=======
+>>>>>>> Breeze
 
-</form>
+            <label>Email</label><br>
+            <input type="email" name="email"><br>
+            @error('email')
+            <div class="text-red-500 mt-2 text-sm p-4">
+                {{ $message }}
+            </div>
+            @enderror
+            <label>Password</label><br>
+            <input type="password" name="password"><br>
+            @error('password')
+            <div class="text-red-500 mt-2 text-sm p-6">
+                {{ $message }}
+            </div>
+            @enderror
+            <button type="submit" name="submit" class="button register">Login</button>
 
+
+
+
+    </div>
 
     </form>
+
+
 </div>
 
 

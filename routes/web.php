@@ -1,4 +1,5 @@
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 <?php
 
 use App\Http\Controllers\BlogController;
@@ -6,11 +7,19 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostCommentController;
 =======
 >>>>>>> commit
+=======
+<?php
+
+use App\Http\Controllers\BlogController;
+>>>>>>> Breeze
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+<<<<<<< refs/remotes/origin/tom
 use App\Http\Controllers\TipsController;
+=======
+>>>>>>> Breeze
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MailerController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
@@ -18,9 +27,12 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 
 =======
 >>>>>>> commit
+=======
+>>>>>>> Breeze
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +58,7 @@ Route::get('/coins', function () {
 
 Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
 <<<<<<< refs/remotes/origin/tom
+<<<<<<< refs/remotes/origin/tom
 Route::post('/blogs', [PostCommentController::class, 'store']);
 
 
@@ -54,6 +67,8 @@ Route::get('/post', [BlogController::class, 'createBlogPost']);
 Route::post('/post', [BlogController::class, 'store']);
 
 =======
+=======
+>>>>>>> Breeze
 Route::post('/blogs', [BlogController::class, 'addComment']);
 
 // Test Route
@@ -61,7 +76,10 @@ Route::get('/post', [BlogController::class, 'viewBlogpost']);
 Route::post('/post', [BlogController::class, 'addComment']);
 
 //Route::get('/blogs', [BlogController::class, 'show']);
+<<<<<<< refs/remotes/origin/tom
 >>>>>>> commit
+=======
+>>>>>>> Breeze
 
 
 Route::get('/hunch', function () {
@@ -77,7 +95,11 @@ Route::get('/about', function () {
     return view('about');
 });
 
+<<<<<<< refs/remotes/origin/tom
 Auth::routes(['verify' => true]);
+=======
+//Auth::routes(['verify' => true]);
+>>>>>>> Breeze
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
@@ -104,6 +126,7 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 
 //Test
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+<<<<<<< refs/remotes/origin/tom
 
 
 //Kasia TIPS START
@@ -412,3 +435,5 @@ Route::get('/test', function () {
     return "Basic email sent, check your inbox.";
 });
 >>>>>>> Login Page + Blog Pages
+=======
+>>>>>>> Breeze
