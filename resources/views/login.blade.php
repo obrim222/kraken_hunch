@@ -5,6 +5,7 @@
 @section('content')
 
 
+
 @if ($message = Session::get('success'))
 <p style="color:green">{{ $message }}</p>
 @endif
@@ -12,6 +13,8 @@
 @if ($message = Session::get('error'))
 <p style="color:red">{{ $message }}</p>
 @endif
+
+
 
 <section class="hero">
     <div class="container  ">
@@ -26,6 +29,7 @@
 
 <div class="containerSmallContent flex flex-jc-c ">
 
+<<<<<<< refs/remotes/origin/main
 <div class="form-container">
     <form method="post">
         @csrf
@@ -33,9 +37,18 @@
 
 
 
+=======
+    <div class="form-container">
+        <form method="post">
+            @csrf
+            <label>Email</label><br>
+            <form method="post">
+                @csrf
 
-        <p>Enter your password:</p>
+>>>>>>> Login and Register
 
+
+<<<<<<< refs/remotes/origin/main
             <label>Email</label><br>
             <input type="email" name="email"><br>
             @error('email')
@@ -61,7 +74,32 @@
 
 
 </div>
+=======
+                <input type="email" name="email"><br>
+                @error('email')
+                <div class="text-red-500 mt-2 text-sm p-4">
+                    {{ $message }}
+                </div>
+                @enderror
+
+                <label>Password</label><br>
+                <input type="password" name="password"><br>
+                @error('password')
+                <div class="text-red-500 mt-2 text-sm p-6">
+                    {{ $message }}
+                </div>
+                @enderror
+                <button type="submit" name="submit" class="button register">Login</button>
 
 
 
-@endsection
+            </form>
+
+
+        </form>
+    </div>
+>>>>>>> Login and Register
+
+
+
+    @endsection
