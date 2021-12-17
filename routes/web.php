@@ -3,18 +3,12 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CoinController;
-
-
 use App\Http\Controllers\PostCommentController;
-
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
 use App\Http\Controllers\TipsController;
-
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MailerController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
@@ -36,6 +30,8 @@ use App\Http\Controllers\StripeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/', function () {
     return view('home');
