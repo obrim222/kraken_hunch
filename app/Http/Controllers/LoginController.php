@@ -23,18 +23,10 @@ class LoginController extends Controller
     public function store(LoginRequest $request)
     {
 
-<<<<<<< refs/remotes/origin/main
         $request->authenticate();
 
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
-=======
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect('home')->with('success', 'You are logged in');
-        }
-        return back()->with('error', 'Invalid Login information');
->>>>>>> Login and Register
     }
 }

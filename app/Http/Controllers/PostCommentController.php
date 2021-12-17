@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PostCommentModel;
+use Illuminate\Support\Facades\DB;
 
 class PostCommentController extends Controller
 {
@@ -19,6 +20,11 @@ class PostCommentController extends Controller
         $blogComment = new PostCommentModel;
 
         $blogComment->comment = $request->blogComment;
+
+        $blogComment = new PostCommentModel;
+
+        $blogComment->comment = $request->blogComment;
+
 
         $blogComment->save();
 
@@ -42,13 +48,14 @@ class PostCommentController extends Controller
         return view('blogs', ['blogs' => $postComment]);
     }
 
-    public function delete(PostCommentModel $post)
+    public function delete($id)
     {
+        $result = DB::delete('DELETE FROM blogs WHERE id = ?', [$id]);
 
-
-        $post->delete();
-
-        return back();
+        if ($result)
+            return back()->with('success', 'Comment was deleted from the DB');
+        else
+            return back()->with('error', 'Error deleting comment');
     }
 
     public function blogArticleAda()

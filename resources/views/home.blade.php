@@ -6,6 +6,12 @@
 @section('content')
 
 
+
+
+    <section class="hero">
+        <div class="container">
+
+
         <div class="hero__text container--pall">
       
             <h1 class="animate__animated animate__backInLeft">Welcome to CryptoHunch!</h1>
@@ -24,48 +30,42 @@
     </div>
 </section>
 
+
     
- <section class="article__item ">
+<section class="article__item ">
     <div class="container">
         
          <div class="hero__text container--pall">
             <h3>Leaderboard</h3>
+
+
                 <div class="table">
+        
+                    @foreach($home as $LBtip)
+
+                    
+                      
                         <div class="card">
-                        <div>Number</div>       
-                </div> 
-                <div class="card">
-                        card
-                </div> 
-                <div class="card">
-                        card
-                </div> 
+                         
+                            <div>
+                                Tipper: {{ $LBtip->firstname}}
+                                {{ $LBtip->lastname}}
+                                 Win Count: {{ $LBtip->total }} 
+                
+                            </div>
+
+    
+                        </div>
+       
+        
+                    @endforeach
 
         </div>
     </div>
  </section>
 
     
-    <section class="hero">
-        <div class="container">
 
-            <div class="hero__text container--pall">
-                <h1>Leaderboard</h1>
-                <div class="table">
-                    <div class="card">
-                    <div>Number</div>       
-                </div> 
-                <div class="card">
-                    card
-                </div> 
-                <div class="card">
-                    card
-                </div> 
-                </div>    
-            </div>
-            </div>
-        </div>
-    </section>
 
     <section class="feature">
         <div class="feature__content container container--pall">

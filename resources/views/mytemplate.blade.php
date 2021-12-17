@@ -54,15 +54,27 @@
                 <a href="/tips/create">Give a tip</a>
                 <a href="/blogs">Blogs</a>
                 <a href="/about">About</a>
+           
+                @auth
+                <a href="/logout">Logout</a>
+                @else
                 <a href="/login">Login</a>
+                @endauth
+
+          
+
                 <a href="/register">Register</a>
           
             </div>
+
+            @auth 
             <div class="align-self-start user-icon-padding">
               <i class="fas fa-user"></i>
               <div>€</div>
 
             </div>
+            @endauth 
+
         </nav>
         <!--  <a href="#" class="button header__cta hide-for-mobile">Login</a>-->
         <div class="header__menu has-fade">
@@ -122,8 +134,6 @@
 
 
 
-
-
             <div class="footer__copyright">
                 <img width="25px" height="25px" src="/images/lux.png"> Engineered in Luxembourg. 
                 <br> © CryptoHunch. All Rights Reserved.
@@ -134,4 +144,7 @@
     <script src="./js/app.js"></script>
 </body>
 
-</html
+</html>
+
+
+

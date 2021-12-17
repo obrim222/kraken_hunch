@@ -16,25 +16,25 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
         Schema::enableForeignKeyConstraints();
 
-        
+
         //static table - populate manually
         Schema::create('payment_type', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type', 15);
         });
 
-        
+
         //dynamic table - populates on registration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_name', 100);
             $table->string('last_name', 100);
             $table->string('email', 100);
-            $table->string('password', 50);
-            $table->integer('is_admin');
+            $table->string('password', 250);
+            $table->integer('is_admin')->nullable();
         });
 
-             //dynamic table - populates on account top up
+        //dynamic table - populates on account top up
         Schema::create('account', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -48,7 +48,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
         });
 
         //static table - populate manually
-        
+
         Schema::create('coin_data', function (Blueprint $table) {
             $table->increments('id')->nullable();;
             $table->string('symbol', 20);
@@ -67,8 +67,6 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->integer('transactions_per_second');
             $table->integer('blocktime');
             $table->integer('transactions_fees');
-
-
         });
 
 
@@ -114,7 +112,8 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
 
         Schema::create('tips', function (Blueprint $table) {
-            $table->id();
+
+            $table->increments('id');
 
             $table->enum('tip_direction', ['up', 'down']);
             $table->enum('tip_currency', ['eur', 'hunch']);
@@ -132,18 +131,23 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->enum('reason_down', ['major_roadmap_releases_failure', 'stock_market_down', 'influencers_slating_the_project', 'instinct_of_the_expert_down', 'FUD'])->nullable();
 
             $table->string('reason_description', 1000);
-            $table->integer('calculated_tip_price')->nullable();
+            $table->integer('calculated_tip_price');
 
             $table->enum('tip_percentage', [30, 40, 50]);
 
 
+
+            $table->integer('user_id')->unsigned();
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
             $table->integer('coin_id')->unsigned();
+
             $table->index('coin_id')->nullable();
             $table->foreign('coin_id')->references('id')->on('coin_data')->nullable();
 
-            //$table->integer('user_id')->unsigned()->nullable();
-            //$table->index('user_id')->nullable();
-            //$table->foreign('user_id')->references('id')->on('users')->nullable();
+            $table->string('winlose_flag', 1)->nullable();
 
 
             //$table->string('win_lose_flag',1)->nullable();
@@ -154,12 +158,13 @@ class CreateCryptohunchDatabaseInstall extends Migration
             //$table->integer('versus_exchange_rate')->nullable();
 
             // $table->string('winlose_flag', 1);
+
         });
 
 
 
         Schema::create('transactions', function (Blueprint $table) {
->>>>>>> main
+
             $table->increments('id');
             $table->date('date');
             $table->string('description', 200);

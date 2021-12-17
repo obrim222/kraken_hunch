@@ -1,3 +1,4 @@
+
 @extends('mytemplate')
 
 @section('title', 'Coins')
