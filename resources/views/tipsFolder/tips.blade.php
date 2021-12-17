@@ -22,9 +22,8 @@
             <div class="card">
                 card
             </div> 
-            </div>    
-        </div>
-        </div>
+        </div>    
+
     </div>
 </section>
 
@@ -72,15 +71,15 @@
                     <div>
                         Tipper comment: {{ $tip->reason_user_description }}                                 
                     </div>    
-            </div> 
+                </div> 
+     
+   
             @endif
+
             @endforeach
 
-
-
-            </div>    
-        </div>
-
+    </div>
+   
 </section>
 
 <section class="winning_tips hero">
@@ -126,16 +125,13 @@
                     <div>
                         Tipper comment: {{ $tip->reason_user_description }}                                 
                     </div>  
-
+             
+            </div>
+   
             @endif
 
             @endforeach
 
-
-
-
-            </div>    
-        </div>    
     </div>
    
 </section>
@@ -184,16 +180,15 @@
                     <div>
                         Tipper comment: {{ $tip->reason_user_description }}                                 
                     </div>  
-            @endif
-            @endforeach
-
-
-
-            </div>    
-        </div>    
-    </div>
+                </div>
    
-</section>
+                @endif
+    
+                @endforeach
+    
+        </div>
+       
+    </section>
 
   
 @endsection

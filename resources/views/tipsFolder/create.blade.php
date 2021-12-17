@@ -1,6 +1,11 @@
 @extends('mytemplate')
 
 @section('title', 'Tips')
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
 <!-- added in the styling link-->
 <link rel="stylesheet" href="../css/style.css">
 
@@ -28,33 +33,76 @@
     <div class="wrapperTip" > 
         <form action="/tips" method="POST">
             @csrf
+            <div class="calc">   
+                    <div class="p-1 flex flex-jc-e mr-5">
+                        <label for="price_at_time_of_tip"> Current Price:</label>
+                    </div>
+            
+                    <div class="mr-5 flex flex-jc-e ">
+                       
+                        <input type="text" name="price_at_time_of_tip" placeholder="Calculated price" id="cp">
+                    </div>
+                    
+                    <div class="p-1 flex flex-jc-e mr-4ish">
+                        <label for="calculated_tip_price"> Forecast Price:</label>
+                    </div>        
 
-            <div class="p-4 flex flex-jc-e">
-            <input type="text" name="price_at_time_of_tip" placeholder="Current price">
+
+                    <div class="mr-5 flex flex-jc-e">
+                        <input type="text" name="calculated_tip_price" placeholder="Calculated price" id="fp">
+                   
+                    </div>
+         
+
+                    <div class="p-1">
+                        <label for="tip_direction"> Direction</label>
+                    </div>
+                        <div class="p-1">
+                        
+                            <select name="tip_direction" id="type2">
+                                <option value="up">up</option>
+                                <option value="down">down</option>
+                            </select>
+                        </div>
+                
+                
+                        <div class="p-1">
+                        <label for="tip_percentage">Tip Percentage</label><br>
+                    </div>
+        
+                    <div class="p-1">         
+                            <select name="tip_percentage" id="type" >
+                                <option type="number">-</option>
+                                <option type="number">30</option>
+                                <option type="number">40</option>
+                                <option type="number">50</option>
+                            </select> 
+                        </div>
+              
+
         </div>
         
-        
-        <div class="pl-2">
+         <div class="p-1">
             <label for="coin_id"> Coin</label>
         </div>
 
-            <div class="p-2">
+            <div class="p-1">
          
      
-                <select name="coin_id">
-                <option value="1">Uniswap</option>
+                <select name="coin_id" id="cID" onchange="myFunction()">
+                        <option value="1">Uniswap</option>
                         <option value="2">Cardano</option>
                         <option value="3">Chiliz</option>
                         <option value="4">Bitcoin</option>
-                        <option value="5">The Sandbox</option>
+                        <option value="5">the-sandbox</option>
                         <!-- <option value="etherum">Etherum</option> -->
                 </select>
         </div>
 
-        <div class="pl-2">
+        <div class="p-1">
             <label for="tip_currency">Currency</label><br>
     </div>
-            <div class="p-2">
+            <div class="p-1">
     
                 
                 <select name="tip_currency" >
@@ -63,51 +111,28 @@
                 </select>
         </div>
 
-        <div class="pl-2">
+        <div class="p-1">
         <label for="date">Start Date:</label>
     </div>
-        <div class="p-2">
+        <div class="p-1">
   
             <input type="date" name="date_now" placeholder="Date">
           
         </div>
 
-        <div class="pl-2">
+        <div class="p-1">
         <label for="date">End Date:</label>
     </div>
-        <div class="p-2">
+        <div class="p-1">
   
             <input type="date" name="date_end" placeholder="Date">
         </div>
 
-        <div class="pl-2">
-        <label for="tip_direction"> Direction</label>
-    </div>
-        <div class="p-2">
-         
-            <select name="tip_direction" id="type2">
-                <option value="up">up</option>
-                <option value="down">down</option>
-            </select>
-        </div>
-
-
-        <div class="pl-2">
-        <label for="tip_percentage">Tip Percentage</label><br>
-    </div>
-        <div class="p-2">
-       
-            <select name="tip_percentage" id="type">
-                <option type="number">30</option>
-                <option type="number">40</option>
-                <option type="number">50</option>
-             </select> 
-        </div>
-
-        <div class="pl-2">
+ 
+        <div class="p-1">
         <label for="tip_reason_up">Reason behind your prediction UP</label><br>
     </div>
-        <div class="p-2">
+        <div class="p-1">
          
             <select name="reason_up">
                 <option value="major_roadmap_releases_success">major_roadmap_releases_success</option>
@@ -118,10 +143,10 @@
             </select>
             </div>
 
-            <div class="pl-2">
+            <div class="p-1">
             <label for="tip_reason_down">Reason behind your prediction DOWN</label><br>
         </div>
-            <div class="p-2">
+            <div class="p-1">
           
                 <select name="reason_down">
                     <option value="major_roadmap_releases_failure">major_roadmap_releases_failure</option>
@@ -133,7 +158,7 @@
             </div>
 
 
-            <div class="p-2">
+            <div class="p-1">
   
                 <input type="text" name="reason_description" placeholder="Other Reason">
             </div>
@@ -144,8 +169,9 @@
             <input type="submit" name='submitBtn' value = "Submit Your Tip"> 
         </div>
 
-        </form>
-    </div>
+    </form>
+    
+</div>
 
         <a href="/tips" class="back">See all tips</a> 
       </div> 
@@ -153,4 +179,65 @@
 </div> 
 </div> 
  
+<script type="text/javascript">
+
+
+
+function myFunction() {
+    selected_coin = $('#cID option:selected').text();
+
+    const endpoint = "https://api.coingecko.com/api/v3/simple/price?ids=";
+    console.log(selected_coin );
+    var endpoint_options = endpoint + selected_coin.toLowerCase() + "&vs_currencies=eur"; 
+
+   
+const markets = endpoint_options;
+
+
+  
+$.get(markets, function (data) {
+  for (var key in data) {
+    if (Object.hasOwnProperty.call(data, key)) {
+        var eur = data[key].eur;
+      console.log(eur );
+      
+      $( "#cp" ).val(eur);
+ 
+    }
+  }
+});
+
+ };
+
+</script>
+
+<script type="text/javascript">
+
+    $( document ).ready(function() {
+        console.log( "ready!" );
+    });
+    
+        jQuery(document).ready(function($){
+      
+    
+            $(document).on('blur', '#cp, #type ', function(){
+    
+                var parent = $(this).closest('.calc');
+                var cp = $('#cp', parent).val();
+                var fp = $('#type', parent).val();
+    
+                $('#fp', parent).val((parseInt(cp) * (parseFloat(fp)/100)) + parseInt(cp) );
+            });
+        });
+    
+    
+    //manipulate the select
+    
+    
+    
+    
+    
+    
+    </script>
 @endsection
+
