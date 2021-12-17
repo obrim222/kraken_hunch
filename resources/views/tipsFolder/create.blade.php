@@ -1,6 +1,7 @@
 @extends('mytemplate')
 
 @section('title', 'Tips')
+@auth
 
 <!-- added jQuery link-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -90,7 +91,7 @@
         
                     <div class="p-1">         
                             <select name="tip_percentage" id="type"  onchange="callfunction()">
-                                <option value="">-</option>
+                                <!-- <option value="">-</option> -->
                                 <option value="30">30</option>
                                 <option value="40">40</option>
                                 <option value="50">50</option>
@@ -250,4 +251,5 @@ function calculation() {
     
     </script>
 @endsection
+@endauth
 

@@ -34,13 +34,36 @@ class TipsController extends Controller
 
     public function store(Request $request)
     {
-
         $tip = new Tip();
 
 
+        $request->validate([
+
+            'coin_id' => 'required',
+            'tip_direction' => 'required',
+            'tip_percentage' => 'required',
+            'tip_currency' => 'required',
+            'reason_up' => 'required',
+            'reason_down' => 'required',
+            'date_end' => 'required',
+
+        
+
+
+        ]);
+
+        //price_at_time_of_tip - not editable
+        //calculated_tip_price - not editable
+        //date_now - default date now
+        //reason_description - not mandatory
+
+
+        $tip->coin_id = $request->coin_id;
+        $tip->tip_direction = $request->tip_direction;
         $tip->tip_currency = $request->tip_currency;
 
         $tip->price_at_time_of_tip = $request->price_at_time_of_tip;
+        $tip->calculated_tip_price = $request->calculated_tip_price;
 
         $tip->date_now = $request->date_now;
         $tip->date_end = $request->date_end;
@@ -48,10 +71,10 @@ class TipsController extends Controller
 
         $tip->reason_down = $request->reason_down;
         $tip->reason_description = $request->reason_description;
-        $tip->calculated_tip_price = $request->calculated_tip_price;
+        
 
         $tip->tip_percentage = $request->tip_percentage;
-        $tip->coin_id = $request->coin_id;
+        
 
         $tip->save();
         return back()->with('error', 'sth wrong with db');
