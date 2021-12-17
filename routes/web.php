@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Auth;
 
 
+
 use App\Http\Controllers\StripeController;
 
 
@@ -36,6 +37,7 @@ Route::get('/', [HomeController::class, 'show']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('home', [HomeController::class, 'show']);
+
 
 Route::get('/coins', [CoinController::class, 'index']);
 
@@ -101,25 +103,17 @@ Auth::routes(['verify' => true]);
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
-Route::get('/register', [RegisterController::class, 'register'])->name('register');
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'register'])->name('register')->middleware(['auth', 'verified']);
+Route::post('/register', [RegisterController::class, 'store'])->middleware(['auth', 'verified']);
 
 Route::get("email", [MailerController::class, "email"])->name("email");
 
 Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
 
-Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
-    ->middleware('auth')
-    ->name('verification.notice');
-
-Route::get('/verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-    ->middleware(['auth', 'signed', 'throttle:6,1'])
-    ->name('verification.verify');
-
-Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-    ->middleware(['auth', 'throttle:6,1'])
-    ->name('verification.send');
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+require __DIR__ . '/auth.php';
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
