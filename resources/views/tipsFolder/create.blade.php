@@ -58,7 +58,7 @@
             
                     <div class="mr-5 flex flex-jc-e ">
                        
-                        <input type="text" name="price_at_time_of_tip" placeholder="Current price" id="cp">
+                        <input type="text" name="price_at_time_of_tip" placeholder="Calculated price" id="cp" >
                     </div>
                     
                     <div class="p-1 flex flex-jc-e mr-4ish">
@@ -77,7 +77,7 @@
                     </div>
                         <div class="p-1">
                         
-                            <select name="tip_direction" id="type2">
+                            <select name="tip_direction" id="type2" >
                                 <option value="up">up</option>
                                 <option value="down">down</option>
                             </select>
@@ -89,17 +89,30 @@
                     </div>
         
                     <div class="p-1">         
-                            <select name="tip_percentage" id="type" >
-                                <option value="-">-</option>
-                                <option type="number">30</option>
-                                <option type="number">40</option>
-                                <option type="number">50</option>
+                            <select name="tip_percentage" id="type"  onchange="callfunction()">
+                                <option value="">-</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
                             </select> 
                         </div>
               
         </div>
         
         
+
+            <div class="p-1">
+         
+     
+                <select name="coin_id" id="cID" onchange="callfunction()">
+                        <option value="1">Uniswap</option>
+                        <option value="2">Cardano</option>
+                        <option value="3">Chiliz</option>
+                        <option value="4">Bitcoin</option>
+                        <option value="5">the-sandbox</option>
+                        <!-- <option value="etherum">Etherum</option> -->
+                </select>
+        </div>
 
         <div class="p-1">
             <label for="tip_currency">Currency</label><br>
@@ -183,7 +196,11 @@
  
 <script type="text/javascript">
 
-
+function callfunction() {
+   
+     myFunction();
+     calculation();
+}
 //fetch the currency that has been selected on screen
 function myFunction() {
     selected_coin = $('#cID option:selected').text();
@@ -201,12 +218,14 @@ $.get(markets, function (data) {
   for (var key in data) {
     if (Object.hasOwnProperty.call(data, key)) {
         var eur = data[key].eur;
-      console.log(eur );
+      
       
       $( "#cp" ).val(eur);
  
     }
   }
+
+  calculation();
 });
 
  };
@@ -215,24 +234,17 @@ $.get(markets, function (data) {
 
 <script type="text/javascript">
 //Calculate the forecasted minimu price
-
-    $( document ).ready(function() {
-        console.log( "ready!" );
-    });
-    
-        jQuery(document).ready(function($){
+function calculation() {
       
     
-            $(document).on('blur', '#cp, #type ', function(){
     
-                var parent = $(this).closest('.calc');
-                var cp = $('#cp', parent).val();
-                var fp = $('#type', parent).val();
-    
-                $('#fp', parent).val((parseInt(cp) * (parseFloat(fp)/100)) + parseInt(cp) );
-            });
-        });
-    
+               
+                var cp = $('#cp').val();
+                var fp = $('#type').val();
+                        
+                $('#fp').val((parseInt(cp) * (parseFloat(fp)/100)) + parseInt(cp) );
+ 
+    }; 
    
       
     
