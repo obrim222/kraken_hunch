@@ -150,6 +150,11 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin', [LoginAdminController::class, 'adminView']);
 });
 
+// Stripe Payment Gateway
+
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+
 /*
  
 
@@ -206,7 +211,4 @@ Route::get('/test', function () {
     return "Basic email sent, check your inbox.";
 });
 
-// Stripe Payment Gateway
-
-Route::get('stripe', [StripeController::class, 'stripe']);
-Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+*/
