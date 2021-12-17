@@ -31,14 +31,11 @@ use App\Http\Controllers\StripeController;
 |
 */
 
-
-
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'show']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('home', [HomeController::class, 'show']);
 
 Route::get('/coins', [CoinController::class, 'index']);
 

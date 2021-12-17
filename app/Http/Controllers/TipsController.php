@@ -58,6 +58,7 @@ class TipsController extends Controller
         return redirect('/tips');
     }
 }
+
 /*
     public function storeDropDownItems(Request $request)
     { 

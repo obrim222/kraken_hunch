@@ -30,22 +30,35 @@
     </div>
 </section>
 
+
     
- <section class="article__item ">
+<section class="article__item ">
     <div class="container">
         
          <div class="hero__text container--pall">
             <h3>Leaderboard</h3>
+
+
                 <div class="table">
+        
+                    @foreach($home as $LBtip)
+
+                    
+                      
                         <div class="card">
-                        <div>Number</div>       
-                </div> 
-                <div class="card">
-                        card
-                </div> 
-                <div class="card">
-                        card
-                </div> 
+                         
+                            <div>
+                                Tipper: {{ $LBtip->firstname}}
+                                {{ $LBtip->lastname}}
+                                 Win Count: {{ $LBtip->total }} 
+                
+                            </div>
+
+    
+                        </div>
+       
+        
+                    @endforeach
 
         </div>
     </div>

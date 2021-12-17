@@ -12,31 +12,9 @@
             <div class="article__description">.....</div>
         </div>
         <br>
-        <p>Comments:</p>
         @foreach($blogs as $post)
 
-        <form action="{{ route('blogs') }}" method="post">
-            @csrf
-
-            <textarea name="blogComment" cols="15" rows="4"></textarea>
-
-            @error('blogComment')
-            <div>
-                {{ $message }}
-            </div>
-            @enderror
-
-           
-            <div>
-                <button type="submit">Comment</button>
-            </div>
-        </form>
-
-        <div>
-            Past Comments
-            {{$post->comment}}
-        </div>
-
+        {{$post->comment}}
         @endforeach
         <form action="{{ route('blogs') }}" method="post">
             @csrf
@@ -54,5 +32,15 @@
                 <button type="submit">Comment</button>
             </div>
         </form>
+        <form method="post" action="{{url(''admin/removeCategory')}}/{{$product->id}}">
 
+            {!! Form::token() !!}
+            {{ method_field('DELETE') }}
+
+            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-fill btn-primary">Remove</button>
+        </form>
+    </div>
+</div>
+</div>
+</section>
 @endsection
