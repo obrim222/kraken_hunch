@@ -17,6 +17,7 @@
                 loan to buy 7000 bitcoin....
             </div>
             <br>
+            <p>Comments:</p>
 
             @foreach($blogs as $post)
 
