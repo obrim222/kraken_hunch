@@ -120,25 +120,7 @@
                 </a>
             </div>
 
-<<<<<<< refs/remotes/origin/tom
-<<<<<<< refs/remotes/origin/tom
-=======
 
-<<<<<<< refs/remotes/origin/tom
- 
->>>>>>> footer, forms
-
-
-
-=======
-
-
->>>>>>> BlogPage/Post
-=======
-
-
-
->>>>>>> fix
 
             <div class="footer__copyright">
                 <img width="25px" height="25px" src="/images/lux.png"> Engineered in Luxembourg. 
@@ -150,16 +132,7 @@
     <script src="./js/app.js"></script>
 </body>
 
-<<<<<<< refs/remotes/origin/tom
-<<<<<<< refs/remotes/origin/tom
-<<<<<<< refs/remotes/origin/tom
-</html
-=======
-</html
->>>>>>> commit
-=======
-</html
->>>>>>> BlogPage/Post
-=======
-</html
->>>>>>> fix
+</html>
+
+
+

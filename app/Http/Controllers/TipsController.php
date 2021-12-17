@@ -30,6 +30,7 @@ class TipsController extends Controller
 
         return view('tipsFolder.create');
     }
+}
 
 /*
     public function storeDropDownItems(Request $request)

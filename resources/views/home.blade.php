@@ -6,14 +6,11 @@
 @section('content')
 
 
-    <section class="hero">
-        <div class="container">
->>>>>>> Auto stash before merge of "michael" and "origin/main"
-=======
+
 
     <section class="hero">
         <div class="container">
->>>>>>> fix
+
 
         <div class="hero__text container--pall">
       
@@ -55,26 +52,7 @@
  </section>
 
     
-    <section class="hero">
-        <div class="container">
 
-            <div class="hero__text container--pall">
-                <h1>Leaderboard</h1>
-                <div class="table">
-                    <div class="card">
-                    <div>Number</div>       
-                </div> 
-                <div class="card">
-                    card
-                </div> 
-                <div class="card">
-                    card
-                </div> 
-                </div>    
-            </div>
-            </div>
-        </div>
-    </section>
 
     <section class="feature">
         <div class="feature__content container container--pall">
@@ -92,21 +70,12 @@
             <div class="feature__item">
                 <div class="feature__icon">
                     <img src="./images/icon-online.svg" />
-<<<<<<< refs/remotes/origin/tom
                 </div>
                 <div class="feature__title">Multiple Payment Gateways</div>
                 <div class="feature__description">
                     Topping up your account has never been easier. We accept Visa, BTC
                     and ETH.
                 </div>
-=======
-                </div>
-                <div class="feature__title">Multiple Payment Gateways</div>
-                <div class="feature__description">
-                    Topping up your account has never been easier. We accept Visa, BTC
-                    and ETH.
-                </div>
->>>>>>> fix
             </div>
 
             <div class="feature__item">
@@ -123,19 +92,11 @@
             <div class="feature__item">
                 <div class="feature__icon">
                     <img src="./images/icon-onboarding.svg" />
-<<<<<<< refs/remotes/origin/tom
                 </div>
                 <div class="feature__title">Fast Onboarding</div>
                 <div class="feature__description">
                     Register and onboard within the hour with our easy KYC process.
                 </div>
-=======
-                </div>
-                <div class="feature__title">Fast Onboarding</div>
-                <div class="feature__description">
-                    Register and onboard within the hour with our easy KYC process.
-                </div>
->>>>>>> fix
             </div>
 
             <div class="feature__item">
@@ -163,19 +124,11 @@
                     <div class="article__title">
                         Bitcoin is touted as the new digital gold by Michael Saylor. Is
                         he right?
-<<<<<<< refs/remotes/origin/tom
                     </div>
                     <div class="article__description">
                         Michael Saylor is a brave man. Having recently taken out a bank
                         loan to buy 7000 bitcoin....
                     </div>
-=======
-                    </div>
-                    <div class="article__description">
-                        Michael Saylor is a brave man. Having recently taken out a bank
-                        loan to buy 7000 bitcoin....
-                    </div>
->>>>>>> fix
                 </div>
             </a>
 

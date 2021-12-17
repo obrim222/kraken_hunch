@@ -163,8 +163,7 @@
 
          
             <div class="p-4">
-            
-       -->     
+   
             <input type="submit" name='submitBtn' value = "Submit Your Tip"> 
         </div>
 

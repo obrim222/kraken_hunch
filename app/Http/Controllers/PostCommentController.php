@@ -20,10 +20,7 @@ class PostCommentController extends Controller
 
         $blogComment->comment = $request->blogComment;
 
-        $blogComment = new PostCommentModel;
 
-        $blogComment->comment = $request->blogComment;
->>>>>>> BlogComment
 
         $blogComment->save();
 
