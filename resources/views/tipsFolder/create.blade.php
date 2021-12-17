@@ -32,7 +32,26 @@
     <div class="wrapperTip" > 
         <form action="/tips" method="POST">
             @csrf
-            <div class="calc">   
+            <div class="calc"> 
+            
+            <div class="p-1">
+            <label for="coin_id"> Coin</label>
+        </div>
+
+            <div class="p-1">
+         
+     
+                <select name="coin_id" id="cID" onchange="myFunction()">
+                        <option value="1">Uniswap</option>
+                        <option value="2">Cardano</option>
+                        <option value="3">Chiliz</option>
+                        <option value="4">Bitcoin</option>
+                        <option value="5">the-sandbox</option>
+                        <!-- <option value="etherum">Etherum</option> -->
+                </select>
+        </div>
+            
+
                     <div class="p-1 flex flex-jc-e mr-5">
                         <label for="price_at_time_of_tip"> Current Price:</label>
                     </div>
@@ -80,22 +99,7 @@
               
         </div>
         
-         <div class="p-1">
-            <label for="coin_id"> Coin</label>
-        </div>
-
-            <div class="p-1">
-         
-     
-                <select name="coin_id" id="cID" onchange="myFunction()">
-                        <option value="1">Uniswap</option>
-                        <option value="2">Cardano</option>
-                        <option value="3">Chiliz</option>
-                        <option value="4">Bitcoin</option>
-                        <option value="5">the-sandbox</option>
-                        <!-- <option value="etherum">Etherum</option> -->
-                </select>
-        </div>
+        
 
         <div class="p-1">
             <label for="tip_currency">Currency</label><br>
