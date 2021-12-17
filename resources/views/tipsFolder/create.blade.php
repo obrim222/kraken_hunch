@@ -248,7 +248,7 @@ function calculation() {
  
     }; 
    
-      
+      // test etst stet
     
     </script>
 @endsection
