@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tip;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TipsController extends Controller
@@ -35,8 +35,13 @@ class TipsController extends Controller
     public function store(Request $request)
     {
 
-        $tip = new Tip();
 
+
+
+        $id = Auth::id();
+
+        $tip = new Tip();
+        $tip->user_id = $id;
 
         $tip->tip_currency = $request->tip_currency;
 
