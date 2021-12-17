@@ -13,6 +13,7 @@
             <div class="article__description">Our .......</div>
         </div>
         <br>
+        <p>Comments:</p>
         @foreach($blogs as $post)
 
         {{$post->comment}}

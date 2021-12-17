@@ -45,10 +45,14 @@ Route::get('/coins', [CoinController::class, 'index']);
 
 Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
 Route::post('/blogs', [PostCommentController::class, 'store']);
-Route::get('/delete', [PostCommentController::class, 'delete']);
+
+Route::get('/blogArticleAda/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
+Route::get('/blogArticleBtc/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
+Route::get('/blogArticleEth/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
+Route::get('/blogArticleSol/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
 
 
-Route::get('/post', [BlogController::class, 'createBlogPost']);
+Route::get('/post', [BlogController::class, 'createBlogPost'])->name('post');
 
 Route::post('/post', [BlogController::class, 'store']);
 
@@ -97,7 +101,7 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.send');
 
-//Test
+
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 //Kasia TIPS START
@@ -209,3 +213,5 @@ Route::get('/test', function () {
 
 Route::get('stripe', [StripeController::class, 'stripe']);
 Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+
+*/
