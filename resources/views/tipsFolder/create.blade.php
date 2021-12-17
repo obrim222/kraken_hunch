@@ -58,7 +58,7 @@
             
                     <div class="mr-5 flex flex-jc-e ">
                        
-                        <input type="text" name="price_at_time_of_tip" placeholder="Calculated price" id="cp">
+                        <input type="text" name="price_at_time_of_tip" placeholder="Current price" id="cp">
                     </div>
                     
                     <div class="p-1 flex flex-jc-e mr-4ish">
@@ -67,7 +67,7 @@
 
 
                     <div class="mr-5 flex flex-jc-e">
-                        <input type="text" name="calculated_tip_price" placeholder="Calculated price" id="fp">
+                        <input type="text" name="calculated_tip_price" placeholder="Forcasted price" id="fp">
                    
                     </div>
          
@@ -90,7 +90,7 @@
         
                     <div class="p-1">         
                             <select name="tip_percentage" id="type" >
-                                <option type="number">-</option>
+                                <option value="-">-</option>
                                 <option type="number">30</option>
                                 <option type="number">40</option>
                                 <option type="number">50</option>
