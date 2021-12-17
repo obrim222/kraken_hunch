@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../css/style.css">
 
 @section('content')
- 
+
 <section class="hero">
     <div class="container">
 
@@ -14,30 +14,30 @@
             <h1 class="animate__animated animate__backInUp">Leaderboard</h1>>Leaderboard</h1>
             <div class="table">
                 <div class="card">
-                <div>Number</div>       
-            </div> 
-            <div class="card">
-                card
-            </div> 
-            <div class="card">
-                card
-            </div> 
-            </div>    
+                    <div>Number</div>
+                </div>
+                <div class="card">
+                    card
+                </div>
+                <div class="card">
+                    card
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
     </div>
 </section>
 
 
-    <div class="flex flex-jc-c">
-        <div class="tip-card-container">
-            <div class="tip-card">
-                <h2  class="animate__animated animate__backInLeft">Tips Summary </h2>
-            </div>
-            <p></p>
+<div class="flex flex-jc-c">
+    <div class="tip-card-container">
+        <div class="tip-card">
+            <h2 class="animate__animated animate__backInLeft">Tips Summary </h2>
+        </div>
+        <p></p>
+        <div>
+            @foreach($tipsArray as $tip)
             <div>
-                @foreach($tipsArray as $tip)
-                <div>
 
                 <h2>{{ $tip->title }}</h2>
                 Tipper: <br> {{ $tip->tipper_name }} <br><br>
@@ -53,37 +53,38 @@
                 Value: <br> {{ $tip->tip_direction }} <br><br>
 
                 Reason why it went {{ $tip->tip_direction }}: <br>
-                    {{ $tip->reason }}  
+                {{ $tip->reason }}
 
                 Tipper comment: <br> {{ $tip->reason_user_description }} <br><br>
-                    
-                    
-                </div>
-                @endforeach
-
-                <a href="/home" class="back">< Back to main page</a> 
-
-
-        
 
 
             </div>
+            @endforeach
 
-            <div class="tip-card">
-                <h2>Ethereum</h2>
-                <p>
-                    ..............................................................................................................................................................................................
-                </p>
-                
-            </div>
+            <a href="/home" class="back">
+                < Back to main page</a>
 
-            <div class="tip-card">
-                <h2>Solana</h2>
-                <p>
-                    ...............................................................................................................................................................................................
-                </p>
-            </div>
+
+
+
+
+        </div>
+
+        <div class="tip-card">
+            <h2>Ethereum</h2>
+            <p>
+                ..............................................................................................................................................................................................
+            </p>
+
+        </div>
+
+        <div class="tip-card">
+            <h2>Solana</h2>
+            <p>
+                ...............................................................................................................................................................................................
+            </p>
         </div>
     </div>
-   
-   @endsection
+</div>
+
+@endsection

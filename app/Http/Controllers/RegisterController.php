@@ -44,6 +44,7 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
 
+        auth()->attempt($request->only('email', 'password'));
 
         $user->save();
 

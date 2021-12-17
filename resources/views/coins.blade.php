@@ -1,3 +1,4 @@
+<<<<<<< refs/remotes/origin/tom
 @extends('mytemplate')
 
 @section('title', 'Coins')
@@ -5,6 +6,7 @@
 @section('content')
 
 <section class="hero">
+<<<<<<< refs/remotes/origin/tom
 
 
 
