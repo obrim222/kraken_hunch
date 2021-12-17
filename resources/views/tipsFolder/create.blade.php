@@ -2,7 +2,7 @@
 
 @section('title', 'Tips')
 
-
+<!-- added jQuery link-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
@@ -11,10 +11,9 @@
 
 @section('content')
 
-
-
-
+<!-- animate css added for the text-->
 <section class="hero p-4 flex flex-jc-c">
+
     <div class="container">
 
     <h2  class="animate__animated animate__backInLeft">Tip the community </h2>
@@ -79,7 +78,6 @@
                             </select> 
                         </div>
               
-
         </div>
         
          <div class="p-1">
@@ -182,7 +180,7 @@
 <script type="text/javascript">
 
 
-
+//fetch the currency that has been selected on screen
 function myFunction() {
     selected_coin = $('#cID option:selected').text();
 
@@ -212,6 +210,7 @@ $.get(markets, function (data) {
 </script>
 
 <script type="text/javascript">
+//Calculate the forecasted minimu price
 
     $( document ).ready(function() {
         console.log( "ready!" );
@@ -230,13 +229,8 @@ $.get(markets, function (data) {
             });
         });
     
-    
-    //manipulate the select
-    
-    
-    
-    
-    
+   
+      
     
     </script>
 @endsection

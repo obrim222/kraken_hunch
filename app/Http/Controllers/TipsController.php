@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class TipsController extends Controller
 {
+
+    //added join for three tables
     public function index()
     {
         $tipsdata = Tip::join('users', 'tips.user_id', '=', 'users.id')

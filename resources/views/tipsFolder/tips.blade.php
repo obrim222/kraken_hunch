@@ -28,10 +28,10 @@
 </section>
 
 
-
+<!-- foreign key added and open win lose tips added-->
 <section class="open_tips">
     <div class="container">
-
+        
         <div class="hero__text container--pall">
             <h2  class="animate__animated animate__backInLeft">Open Tips</h2>
             <div class="table">
@@ -52,7 +52,7 @@
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Forecast {{ $tip->calculated_tip_price }} % 
+                        Forecast {{ $tip->calculated_tip_price }} 
                     </div>
                     <div>
                         Date:{{ $tip->date_now }} 
@@ -105,7 +105,7 @@
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Forecast {{ $tip->calculated_tip_price }} % 
+                        Forecast {{ $tip->calculated_tip_price }} 
                     </div>
                     <div>
                         Date:{{ $tip->date_now }} 
@@ -160,7 +160,7 @@
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Forecast {{ $tip->calculated_tip_price }} % 
+                        Forecast {{ $tip->calculated_tip_price }} 
                     </div>
                     <div>
                         Date:{{ $tip->date_now }} 
