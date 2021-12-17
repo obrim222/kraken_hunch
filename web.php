@@ -40,7 +40,7 @@ Route::get('/blogs', [BlogController::class, 'viewBlogpost'])->name('blogs');
 Route::post('/blogs', [BlogController::class, 'addComment']);
 
 // Test Route
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
+Route::get('/post', [BlogController::class, 'show']);
 Route::post('/post', [BlogController::class, 'addComment']);
 
 //Route::get('/blogs', [BlogController::class, 'show']);
