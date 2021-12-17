@@ -188,8 +188,9 @@ Route::post('/tips/{id}','TipsController@destroy');
 //Route::get('/tips','TipsController@latestTips');
 
 //TIPS END
-*/
 
+//TIPS END
+/*
 Route::get('/test', function () {
     $data = array('name' => "Our Code World");
     // Path or name to the blade template to be rendered
@@ -204,3 +205,4 @@ Route::get('/test', function () {
 
     return "Basic email sent, check your inbox.";
 });
+*/
