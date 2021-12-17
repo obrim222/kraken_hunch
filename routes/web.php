@@ -112,6 +112,7 @@ Route::get('/tips/create', [TipsController::class, 'create']);
 
 Route::post('/tips', [TipsController::class, 'store']);
 
+
 //Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
 
 //Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
@@ -149,6 +150,8 @@ Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/admin', [LoginAdminController::class, 'adminView']);
 });
+
+
 
 /*
  

@@ -1,7 +1,8 @@
 @extends('mytemplate')
 
 @section('title', 'Tips')
-@auth
+
+
 
 <!-- added jQuery link-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -54,21 +55,21 @@
             
 
                     <div class="p-1 flex flex-jc-e mr-5">
-                        <label for="price_at_time_of_tip"> Current Price:</label>
+                        <label for="price_at_time_of_tip"> Current Price: </label>
                     </div>
             
                     <div class="mr-5 flex flex-jc-e ">
                        
-                        <input type="text" name="price_at_time_of_tip" placeholder="Calculated price" id="cp" >
+                        <input type="text" name="price_at_time_of_tip" readonly="readonly" placeholder="Calculated price " id="cp" >
                     </div>
                     
                     <div class="p-1 flex flex-jc-e mr-4ish">
-                        <label for="calculated_tip_price"> Forecast Price:</label>
+                        <label for="calculated_tip_price"> Forecast Price: </label>
                     </div>        
 
 
                     <div class="mr-5 flex flex-jc-e">
-                        <input type="text" name="calculated_tip_price" placeholder="Forcasted price" id="fp">
+                        <input type="text" name="calculated_tip_price" readonly="readonly" placeholder="Forcasted price" id="fp">
                    
                     </div>
          
@@ -251,5 +252,6 @@ function calculation() {
     
     </script>
 @endsection
-@endauth
+
+
 

@@ -47,9 +47,6 @@ class TipsController extends Controller
             'reason_down' => 'required',
             'date_end' => 'required',
 
-        
-
-
         ]);
 
         //price_at_time_of_tip - not editable
