@@ -46,11 +46,33 @@ Route::get('/coins', [CoinController::class, 'index']);
 Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
 Route::post('/blogs', [PostCommentController::class, 'store']);
 
-Route::get('/blogArticleAda/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
-Route::get('/blogArticleBtc/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
-Route::get('/blogArticleEth/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
-Route::get('/blogArticleSol/{id}/delete', [PostCommentController::class, 'delete'])->middleware('IsAdmin');
+Route::get('/blogArticleAda/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleBtc/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleEth/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleSol/{id}/delete', [PostCommentController::class, 'delete']);
 
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleAda', 'HomeController@adminView');
+});
+
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleBtc', 'HomeController@adminView');
+});
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleEth', 'HomeController@adminView');
+});
+
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleSol', 'HomeController@adminView');
+});
+
+
+
+Auth::routes();
 
 Route::get('/post', [BlogController::class, 'createBlogPost'])->name('post');
 

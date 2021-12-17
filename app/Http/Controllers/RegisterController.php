@@ -57,9 +57,9 @@ class RegisterController extends Controller
 
             auth()->attempt($request->only('email', 'password'));
             event(new Registered($user));
-            return response()->json(['success' => 'User is registered!']);
+            return redirect('home')->with('success', 'User registered in the database');
         } else {
-            return response()->json(['error' => 'Error registering the user']);
+            return back()->with('error', 'Something wrong with the DB');
         }
     }
 }
