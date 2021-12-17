@@ -647,6 +647,9 @@ select {
 }
 .mt-2 {
   margin-top: 0.5rem;
+=======
+.mt-4 {
+  margin-top: 1rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -671,6 +674,9 @@ select {
 }
 .-mt-px {
   margin-top: -1px;
+=======
+.-mr-2 {
+  margin-right: -0.5rem;
 }
 .mr-5 {
   margin-right: 1.25rem;
@@ -738,6 +744,7 @@ select {
 .w-8 {
   width: 2rem;
 }
+<<<<<<< Updated upstream
 .w-auto {
   width: auto;
 }
@@ -750,6 +757,8 @@ select {
 .w-48 {
   width: 12rem;
 }
+=======
+>>>>>>> Stashed changes
 .w-4 {
   width: 1rem;
 }
@@ -832,6 +841,9 @@ select {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.break-all {
+  word-break: break-all;
 }
 .rounded-md {
   border-radius: 0.375rem;
@@ -919,6 +931,9 @@ select {
 .p-2 {
   padding: 0.5rem;
 }
+.p-1 {
+  padding: 0.25rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1000,6 +1015,8 @@ select {
 }
 .text-lg {
   font-size: 1.125rem;
+<<<<<<< Updated upstream
+=======
   line-height: 1.75rem;
 }
 .text-xl {
@@ -1058,6 +1075,7 @@ select {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
+<<<<<<< Updated upstream
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -1094,6 +1112,8 @@ select {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
 }
+=======
+>>>>>>> Stashed changes
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;

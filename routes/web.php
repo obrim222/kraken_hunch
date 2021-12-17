@@ -3,18 +3,12 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CoinController;
-
-
 use App\Http\Controllers\PostCommentController;
-
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
 use App\Http\Controllers\TipsController;
-
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MailerController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
@@ -37,6 +31,8 @@ use App\Http\Controllers\StripeController;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -49,10 +45,36 @@ Route::get('/coins', [CoinController::class, 'index']);
 
 Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
 Route::post('/blogs', [PostCommentController::class, 'store']);
-Route::get('/delete', [PostCommentController::class, 'delete']);
+
+Route::get('/blogArticleAda/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleBtc/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleEth/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleSol/{id}/delete', [PostCommentController::class, 'delete']);
 
 
-Route::get('/post', [BlogController::class, 'createBlogPost']);
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleAda', 'HomeController@adminView');
+});
+
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleBtc', 'HomeController@adminView');
+});
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleEth', 'HomeController@adminView');
+});
+
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/blogArticleSol', 'HomeController@adminView');
+});
+
+
+
+Auth::routes();
+
+Route::get('/post', [BlogController::class, 'createBlogPost'])->name('post');
 
 Route::post('/post', [BlogController::class, 'store']);
 
@@ -101,7 +123,7 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.send');
 
-//Test
+
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 //Kasia TIPS START
