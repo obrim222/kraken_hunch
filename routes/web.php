@@ -287,22 +287,22 @@ Route::get('/tips/create', [TipsController::class, 'create']);
 
 Route::post('/tips', [TipsController::class, 'store']);
 
-Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
+//Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
 
-Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
+//Route::get('/tips', [TipsController::class, 'orderTipsbyCoin']);
 
 
-Route::get('/tips', [TipsController::class, 'orderTipsbyReason']);
+//Route::get('/tips', [TipsController::class, 'orderTipsbyReason']);
 
-Route::get('/tips', [TipsController::class, 'wentUp']);
+//Route::get('/tips', [TipsController::class, 'wentUp']);
 
 //Route::get('/tips',[TipsController::class, 'wentDown']);
 
-Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
+//Route::get('/tips/{id}', [TipsController::class, 'showSingleTip']);
 
-Route::put('/tips/{id}', [TipsController::class, 'update']);
+//Route::put('/tips/{id}', [TipsController::class, 'update']);
 
-Route::post('/tips/{id}', [TipsController::class, 'destroy']);
+//Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
 Route::get('/post', [BlogController::class, 'viewBlogpost']);
 

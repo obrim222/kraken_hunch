@@ -21,37 +21,6 @@ return redirect()->route('login');
 @endif
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                    @endif
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    You are logged in!
-
-                </div>
-                <div class="card-body">
-                    <div class="panel-body">
-                        Check admin view:
-                        <a href="{{route('admin.view')}}">Admin View</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
@@ -120,12 +89,28 @@ return redirect()->route('login');
                         </div>
                         @endif
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                                <label>Email</label><br>
+                                <input type="email" name="email" value="{{ old('email') }}"><br>
+                                @error('email')
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                                    <label>Password</label><br>
+                                    <input type="password" name="password"><br>
+                                    @error('password')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <button type="submit" name="submit" class="button register">Register</button>
+                                    </form>
+                                    </div>
+         @endsection
+                       
+                               
+                             
+             
 
 
     <section class="hero">

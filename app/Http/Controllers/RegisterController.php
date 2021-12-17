@@ -33,6 +33,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required',
 
+
         ]);
 
 
@@ -43,6 +44,8 @@ class RegisterController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->password = $request->password;
+        $user->is_admin = $request->is_admin;
+
 
         auth()->attempt($request->only('email', 'password'));
 

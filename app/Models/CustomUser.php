@@ -23,6 +23,7 @@ class CustomUser extends Model
         'last_name',
         'email',
         'password',
+        'is_admin'
 
     ];
 }

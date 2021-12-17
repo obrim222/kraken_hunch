@@ -28,6 +28,33 @@ body {
     }
 }
 
+label {
+    color: grey;
+    margin-left: 10px;
+}
+
+select {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+input {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.wrapperTip {
+    border: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #212529;
+    border-radius: 1%;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+
 // Text
 h1,
 h2,
@@ -139,6 +166,10 @@ a:hover {
         justify-content: center;
     }
 
+    &-jc-e {
+        justify-content: end;
+    }
+
     &-ai-c {
         align-items: center;
     }
@@ -246,4 +277,16 @@ button,
 
 .containerSmallContent {
     height: 80vh;
+}
+
+.pl-2 {
+    padding-left: 0.5rem !important;
+}
+
+.mr-5 {
+    margin-right: 5.5rem !important;
+}
+
+.mr-4ish {
+    margin-right: 5rem !important;
 }
