@@ -131,8 +131,9 @@
     </div>
         <div class="p-1">
   
-            <input type="date" name="date_now" placeholder="Date">
-          
+        <input type="date" name="date_now"
+        name = "{{$date_now ?? ''}}valid_to" type="text" class = "form-control datepicker valid_to" placeholder = "Valid To" data-date-start-date="d" value = "{{date('Y-m-d')}}"> 
+
         </div>
 
         <div class="p-1">
