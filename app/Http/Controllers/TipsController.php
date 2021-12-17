@@ -30,14 +30,7 @@ class TipsController extends Controller
 
         return view('tipsFolder.create');
     }
-}
 
-/*
-    public function storeDropDownItems(Request $request)
-    { 
-        //dropdown model, 
-        $tip = new Dropdown();
-      
 
     public function store(Request $request)
     {
@@ -46,7 +39,9 @@ class TipsController extends Controller
 
 
         $tip->tip_currency = $request->tip_currency;
+
         $tip->price_at_time_of_tip = $request->price_at_time_of_tip;
+
         $tip->date_now = $request->date_now;
         $tip->date_end = $request->date_end;
         $tip->reason_up = $request->reason_up;
@@ -62,7 +57,18 @@ class TipsController extends Controller
         return back()->with('error', 'sth wrong with db');
         return redirect('/tips');
     }
-};
+}
+/*
+    public function storeDropDownItems(Request $request)
+    { 
+        //dropdown model, 
+        $tip = new Dropdown();
+      
+*/
+   
+
+
+/*};
 
 
     public function showSingleTip($id)

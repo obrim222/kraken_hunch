@@ -113,7 +113,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
         Schema::create('tips', function (Blueprint $table) {
 
-            $table->id();
+            $table->increments('id');
 
             $table->enum('tip_direction', ['up', 'down']);
             $table->enum('tip_currency', ['eur', 'hunch']);
@@ -123,16 +123,6 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->integer('price_at_time_of_tip');
 
 
-
-
-            $table->increments('id');
-            $table->integer('price_at_time_of_tip')->nullable();
-
-            $table->enum('tip_percentage', [30, 40, 50]);
-
-            $table->enum('tip_percentage', [30, 40, 50]);
-
-            $table->enum('tip_percentage', [30, 40, 50]);
 
             $table->date('date_now');
             $table->date('date_end');
@@ -147,15 +137,16 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
 
 
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->index('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->nullable();
+            $table->integer('user_id')->unsigned();
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
 
             $table->integer('coin_id')->unsigned();
 
             $table->index('coin_id')->nullable();
             $table->foreign('coin_id')->references('id')->on('coin_data')->nullable();
+
             $table->string('winlose_flag', 1)->nullable();
 
 
@@ -168,14 +159,6 @@ class CreateCryptohunchDatabaseInstall extends Migration
 
             // $table->string('winlose_flag', 1);
 
-            $table->index('coin_id');
-            $table->foreign('coin_id')->references('id')->on('coin_data');
-
-
-
-            $table->string('winlose_flag', 1);
-
-            $table->string('winlose_flag', 1);
         });
 
 

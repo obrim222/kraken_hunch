@@ -147,7 +147,7 @@
 
                 @foreach($tipsArray as $tip)
 
-                @if ($tip->winlose_flag === "L" )
+                @if ($tip->winlose_flag == "L" )
                 <div class="card">
                     <h2>{{ $tip->title }}</h2>
 
