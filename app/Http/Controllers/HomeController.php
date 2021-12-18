@@ -51,7 +51,7 @@ class HomeController extends Controller
             ->groupBy('users.last_name')
             ->get();
 
-
+        $home = collect($home)->sortBy('total')->reverse()->toArray();
     
         return view('home', ['home' => $home]);
       

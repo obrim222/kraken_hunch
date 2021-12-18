@@ -21,7 +21,7 @@
 
             </p>
 
-            <a href="#" class="button hero__cta">View Tips</a> <a href="#" class="button hero__cta">Give a tip</a>
+            <a href="/tips" class="button hero__cta">View Tips</a> <a href="/tips/create" class="button hero__cta">Give a tip</a>
 
         </div>
 </section>
@@ -68,7 +68,7 @@
                         
                           <div class ="flex flex-jc-c  ">
                             <p><a href="/tips" class="button hero__cta">View Tips</a> </p> 
-                            <p><a href="/create" class="button hero__cta">Give Tip</a> </p> 
+                            <p><a href="/tips/create" class="button hero__cta">Give Tip</a> </p> 
                            </div>
                         </div>
                     </div>
