@@ -52,7 +52,9 @@ class HomeController extends Controller
             ->get();
 
 
-
+    
         return view('home', ['home' => $home]);
+      
+      
     }
 }

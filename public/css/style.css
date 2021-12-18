@@ -1527,6 +1527,8 @@ button:hover::before,
     grid-template-areas: "logo links1 links2 cta" "social links1 links2 copyright";
     gap: 1rem;
     justify-items: start;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 .footer a {

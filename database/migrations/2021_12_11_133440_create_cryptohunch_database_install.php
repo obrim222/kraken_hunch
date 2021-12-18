@@ -168,9 +168,7 @@ class CreateCryptohunchDatabaseInstall extends Migration
             $table->increments('id');
             $table->date('date');
             $table->string('description', 200);
-
             $table->string('currency1', 6);
-
             $table->integer('amount1');
             $table->string('currency2', 6);
             $table->integer('amount2');

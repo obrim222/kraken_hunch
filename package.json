@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "animate.css": "^4.1.1",
-        "migrate": "^1.7.0"
+        "migrate": "^1.7.0",
+        "npm": "^8.3.0"
     }
 }
