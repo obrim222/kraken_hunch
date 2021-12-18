@@ -17,7 +17,7 @@ class BlogController extends Controller
 
         $blogs = BlogModel::join('users', 'blogs.user_id', '=', 'users.id')
         ->join('coin_data',  'coin_data.id', '=', 'blogs.coin_id')
-        ->get(['blogs.*', 'users.first_name', 'users.last_name', 'coin_data.name']);
+        ->get(['blogs.*', 'users.first_name', 'users.last_name', 'coin_data.name' ,'blogs.id']);
       
        return view('blogs', ['blogs' => $blogs]);
 

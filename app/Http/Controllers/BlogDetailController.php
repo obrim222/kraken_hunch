@@ -36,29 +36,26 @@ class BlogDetailController extends Controller
     }
 
 
-    public function addComment(Request $request)
+    public function store(Request $request)
     {
 
+        $request->validate([
 
-        $this->validate($request, [
-            'comment' => 'required',
+            'blogComment' => 'required'
+
         ]);
-
 
         $blogComment = new PostCommentModel;
 
-        $blogComment->comment = $request->comment;
+        $blogComment->comment = $request->blogComment;
 
         $blogComment->save();
 
         if ($blogComment->save()) {
-            return redirect('home')->with('success', 'Saved in the DB');
-        } else {
-            return back()->with('error', 'Something wrong with the DB');
+            return back()->with('success', 'Saved in the Database');
         }
+
     }
-
-
 
     public function viewFavouriteBlogpost()
     {
@@ -75,30 +72,5 @@ class BlogDetailController extends Controller
 
 
 
-    public function store(Request $request)
-    {
-        // Validations
-
-        $request->validate([
-
-            'blog' => 'required',
-            'coin_id' => 'required'
-
-        ]);
-
-        $blogPost = new BlogModel;
-
-        $blogPost->blog = $request->blog;
-        $blogPost->coin_id = $request->coin_id;
-
-        $blogPost->save();
-
-        if ($blogPost->save()) {
-            return redirect('home')->with('success', 'Saved in the DB');
-        } else {
-            return back()->with('error', 'Something wrong with the DB');
-        }
-
-        auth()->attempt($request->only('email', 'password'));
-    }
+  
 }

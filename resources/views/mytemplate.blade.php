@@ -14,9 +14,6 @@
             <title>@yield('title')</title>
     </head>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
-
     <link
        rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -50,20 +47,20 @@
             <div class="header__links hide-for-mobile">
                 <a href="/home">Home</a>
                 <a href="/coins">Coins</a>
+                @auth 
                 <a href="/tips">Tips</a>
                 <a href="/tips/create">Give a tip</a>
                 <a href="/blogs">Blogs</a>
+                @endauth
                 <a href="/about">About</a>
            
                 @auth
                 <a href="/logout">Logout</a>
                 @else
                 <a href="/login">Login</a>
-                @endauth
-
-          
-
                 <a href="/register">Register</a>
+                @endauth
+           
           
             </div>
 
@@ -80,12 +77,19 @@
         <div class="header__menu has-fade">
             <a href="/home">Home</a>
             <a href="/coins">Coins</a>
+            @auth 
             <a href="/tips">Tips</a>
             <a href="/tips/create">Give a tip</a>
             <a href="/blogs">Blogs</a>
+            @endauth
             <a href="/about">About</a>
+            @auth
+            <a href="/logout">Logout</a>
+            @else
             <a href="/login">Login</a>
             <a href="/register">Register</a>
+            @endauth
+           
         </div>
     </header>
 

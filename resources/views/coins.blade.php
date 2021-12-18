@@ -21,8 +21,12 @@
 
             </p>
 
-            <a href="/tips" class="button hero__cta">View Tips</a> <a href="/tips/create" class="button hero__cta">Give a tip</a>
-
+            @auth
+            <a href="#" class="button hero__cta">View Tips</a>
+            <a href="#" class="button hero__cta">Give a tip</a>
+            @else
+            <a href="./register" class="button hero__cta">Register</a>
+            @endauth
         </div>
 </section>
 

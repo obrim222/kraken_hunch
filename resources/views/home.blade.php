@@ -142,7 +142,8 @@
                         {{ $bl->title}}
                     </div>
                     <div class="article__description">
-                        {{ $bl->blog}}
+                        <?php echo substr($bl->blog, 0, 300) . "" . "................"  ?>                   
+    
                     </div>
                 </div>
             </a>

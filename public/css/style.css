@@ -1186,11 +1186,13 @@ button:hover::before,
 
 .blogImage {
   height: 18rem;
+  width: 95%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 5rem !important;
-  margin-left: 5rem !important;
+  border-style: solid;
+  border-color: #d3d3d3;
+  border-width: 1px;
 }
 
 .m-4 {
@@ -1200,7 +1202,7 @@ button:hover::before,
 .bgc {
   background-color: #d3d3d3;
   height: 180px;
-  width: 60%;
+  width: 95%;
 }
 
 .ml-4 {

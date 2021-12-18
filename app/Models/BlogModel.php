@@ -18,5 +18,6 @@ class BlogModel extends Model
         'blog',
         'coin_id',
         'date',
+        'comment'
     ];
 }

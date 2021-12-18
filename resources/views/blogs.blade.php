@@ -21,7 +21,7 @@
 
     <div class="hero__text container--pall">
   
-        <h1 class="animate__animated animate__backInRight">Latest Articles!</h1>
+        <h1 class="animate__animated animate__backInRight">Click on the blogs below to earn hunch tokens!</h1>
 
 
     </div>
@@ -43,8 +43,8 @@
                         {{ $bl->title}}
                     </div>
                     <div class="article__description">
-                        {{ $bl->blog}}
-                    </div>
+                        <?php echo substr($bl->blog, 0, 300) . "" . ".......read more"  ?>
+                                   </div>
                 </div>
             </a>
             @endforeach

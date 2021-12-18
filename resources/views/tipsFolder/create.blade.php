@@ -241,8 +241,6 @@
     function calculation() {
 
 
-
-
         var cp = $('#cp').val();
         var fp = $('#type').val();
 

@@ -80,8 +80,8 @@ Route::get('/blogsdetail', [BlogDetailController::class, 'createBlogPost'])->nam
 
 Route::post('/blogsdetail', [BlogDetailController::class, 'store']);
 
-
 Route::get('/blogsdetail', [BlogDetailController::class, 'index']);
+//Route::get('/blogsdetail', [BlogDetailController::class, 'addComment']);
 
 /*
 Route::get('/blogArticleADA', [PostCommentController::class, 'blogArticleADA']);

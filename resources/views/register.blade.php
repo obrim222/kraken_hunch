@@ -36,7 +36,7 @@ return redirect()->route('login');
     @csrf
     <input class="m-2" type="text" name="first_name" placeholder="Firstname" value="{{ old('first_name') }}"><br>
     @error('first_name')
-    <div class="text-red-500 mt-2 text-sm p-6 m-">
+    <div class="text-red-500 mt-2 text-sm p-6">
         {{ $message }}
     </div>
     @enderror
@@ -60,8 +60,9 @@ return redirect()->route('login');
 
     @enderror
 
-    <input class="m-2"type="submit" name="submit" value="Register">
-
+    <div class="p-4 ">
+        <button type="submit" name="submit" class="button register"  value="Register">Register</button>
+     </div>
 
 </form>
 </div>

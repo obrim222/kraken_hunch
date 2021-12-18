@@ -20,7 +20,14 @@
             All tips will be tracked, if they are good they will be rewarded and if bad the tipper will be penalised.  
       </p>
 
-      <a href="#" class="button hero__cta">View Tips</a> <a href="#" class="button hero__cta">Give a tip</a>
+
+      @auth
+      <a href="#" class="button hero__cta">View Tips</a>
+      <a href="#" class="button hero__cta">Give a tip</a>
+      @else
+      <a href="./register" class="button hero__cta">Register</a>
+      @endauth
+   
     </div>
 
 </div>
