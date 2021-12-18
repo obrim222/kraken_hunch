@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PostCommentModel;
 use Illuminate\Support\Facades\DB;
+use App\Models\BlogModel;
 
 class PostCommentController extends Controller
 {
@@ -20,11 +21,6 @@ class PostCommentController extends Controller
         $blogComment = new PostCommentModel;
 
         $blogComment->comment = $request->blogComment;
-
-        $blogComment = new PostCommentModel;
-
-        $blogComment->comment = $request->blogComment;
-
 
         $blogComment->save();
 
@@ -43,9 +39,16 @@ class PostCommentController extends Controller
 
     public function index()
     {
+
+        $blogs = BlogModel::join('users', 'blogs.user_id', '=', 'users.id')
+        ->join('coin_data',  'coin_data.id', '=', 'blogs.coin_id')
+        ->get(['blogs.*', 'users.first_name', 'users.last_name', 'coin_data.name']);
+      
+       
         $postComment = PostCommentModel::all();
 
-        return view('blogs', ['blogs' => $postComment]);
+        return view('blogsdetail')->with(['post' => $postComment,  'blogs' => $blogs]);
+        //return view('blogs', ['blogs' => $postComment]);
     }
 
     public function delete($id)
@@ -58,32 +61,12 @@ class PostCommentController extends Controller
             return back()->with('error', 'Error deleting comment');
     }
 
-    public function blogArticleAda()
+    public function blogArticle()
     {
         $postComment = PostCommentModel::all();
 
-        return view('blogArticleAda', ['blogs' => $postComment]);
+        return view('blogsdetail', ['blogcomments' => $postComment]);
     }
 
 
-    public function blogArticleBtc()
-    {
-        $postComment = PostCommentModel::all();
-
-        return view('blogArticleBtc', ['blogs' => $postComment]);
-    }
-
-    public function blogArticleEth()
-    {
-        $postComment = PostCommentModel::all();
-
-        return view('blogArticleEth', ['blogs' => $postComment]);
-    }
-
-    public function blogArticleSol()
-    {
-        $postComment = PostCommentModel::all();
-
-        return view('blogArticleSol', ['blogs' => $postComment]);
-    }
 }

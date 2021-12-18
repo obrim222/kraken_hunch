@@ -14,6 +14,22 @@
 <p style="color:red">{{ $message }}</p>
 @endif
 
+<section class="hero">
+    <div class="container">
+
+
+    <div class="hero__text container--pall">
+  
+        <h1 class="animate__animated animate__backInLeft">Login Page</h1>
+
+
+         <p>
+          
+        </p>
+    </div>
+
+</div>
+</section>
 
 
 <div class="containerSmallContent flex flex-jc-c ">

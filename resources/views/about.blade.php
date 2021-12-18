@@ -5,24 +5,28 @@
 @section('content')
 
    
-        <section class="hero">
+<section class="hero">
+    <div class="container">
 
-            <div class="container">
 
-                <div class="hero__text container--pall">
-                    <h1>The Concept</h1>
-                    <p>
-                        If your spouse is up at night spending an inordinate amount of time on their mobile phones, it may be time to worry. Forget about them having a mister or mistress, even worse they may have got into Crypto! 
-                        Even worse again they may have got into Crypto as a newbie making all sorts of bad decisions and listening to bad Tips. Here at CryptoHunch we provide a league table of the best tippers with the greatest Hunches. 
-                        All tips will be tracked, if they are good they will be rewarded and if bad the tipper will be penalised.  
-                    </p>
+    <div class="hero__text container--pall">
+  
+        <h1 class="animate__animated animate__backInLeft">The Concept</h1>
 
-                    <a href="#" class="button hero__cta">View Tips</a> <a href="#" class="button hero__cta">Give a tip</a>
-                </div>                    
-            </div>
-        </section>
 
-        <section class="container">
+         <p>
+            If your spouse is up at night spending an inordinate amount of time on their mobile phones, it may be time to worry. Forget about them having a mister or mistress, even worse they may have got into Crypto! 
+            Even worse again they may have got into Crypto as a newbie making all sorts of bad decisions and listening to bad Tips. Here at CryptoHunch we provide a league table of the best tippers with the greatest Hunches. 
+            All tips will be tracked, if they are good they will be rewarded and if bad the tipper will be penalised.  
+      </p>
+
+      <a href="#" class="button hero__cta">View Tips</a> <a href="#" class="button hero__cta">Give a tip</a>
+    </div>
+
+</div>
+</section>
+
+ <section class="container">
  
                 
             <div class="hero__text container--pall">

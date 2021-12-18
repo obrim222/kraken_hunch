@@ -11,13 +11,19 @@
 
 @section('content')
 
-<!-- animate css added for the text-->
-<section class="hero p-4 flex flex-jc-c">
 
+<!-- animate css added for the text-->
+
+<section class="hero">
     <div class="container">
 
-        <h2 class="animate__animated animate__backInLeft">Tip the community </h2>
+
+    <div class="hero__text container--pall">
+  
+        <h1 class="animate__animated animate__backInLeft">Tip the community!</h1>
     </div>
+
+</div>
 </section>
 
 

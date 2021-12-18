@@ -2,6 +2,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogDetailController;
 use App\Http\Controllers\CoinController;
 use App\Http\Controllers\PostCommentController;
 use Illuminate\Support\Facades\Route;
@@ -30,58 +31,66 @@ use App\Http\Controllers\StripeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [HomeController::class, 'show']);
+//function removed --delete these routes
+//Route::get('/', [HomeController::class, 'show']);
+//Route::get('home', [HomeController::class, 'show']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'showblogs']);
 
-Route::get('home', [HomeController::class, 'show']);
+Route::get('/home', [HomeController::class, 'showblogs']);
+//Route::get('home', [HomeController::class, 'showblogs']);
 
 Route::get('/coins', [CoinController::class, 'index']);
 
-
+/*
 Route::get('/blogs', [PostCommentController::class, 'index'])->name('blogs');
+
 Route::post('/blogs', [PostCommentController::class, 'store']);
 
-Route::get('/blogArticleAda/{id}/delete', [PostCommentController::class, 'delete']);
-Route::get('/blogArticleBtc/{id}/delete', [PostCommentController::class, 'delete']);
-Route::get('/blogArticleEth/{id}/delete', [PostCommentController::class, 'delete']);
-Route::get('/blogArticleSol/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleADA/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleBTC/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleETH/{id}/delete', [PostCommentController::class, 'delete']);
+Route::get('/blogArticleSOL/{id}/delete', [PostCommentController::class, 'delete']);
 
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('/blogArticleAda', 'HomeController@adminView');
+    Route::get('/blogArticleADA', 'HomeController@adminView');
 });
 
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('/blogArticleBtc', 'HomeController@adminView');
+    Route::get('/blogArticleBTC', 'HomeController@adminView');
 });
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('/blogArticleEth', 'HomeController@adminView');
+    Route::get('/blogArticleETH', 'HomeController@adminView');
 });
 
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('/blogArticleSol', 'HomeController@adminView');
+    Route::get('/blogArticleSOL', 'HomeController@adminView');
 });
 
-
+*/
 
 Auth::routes();
 
-Route::get('/post', [BlogController::class, 'createBlogPost'])->name('post');
+Route::get('/blogsdetail', [BlogDetailController::class, 'createBlogPost'])->name('post');
 
-Route::post('/post', [BlogController::class, 'store']);
+Route::post('/blogsdetail', [BlogDetailController::class, 'store']);
 
-Route::get('/blogArticleAda', [PostCommentController::class, 'blogArticleAda']);
 
-Route::get('/blogArticleBtc', [PostCommentController::class, 'blogArticleBtc']);
+Route::get('/blogsdetail', [BlogDetailController::class, 'index']);
 
-Route::get('/blogArticleEth', [PostCommentController::class, 'blogArticleEth']);
+/*
+Route::get('/blogArticleADA', [PostCommentController::class, 'blogArticleADA']);
 
-Route::get('/blogArticleSol', [PostCommentController::class, 'blogArticleSol']);
+Route::get('/blogArticleBTC', [PostCommentController::class, 'blogArticleBTC']);
+
+Route::get('/blogArticleETH', [PostCommentController::class, 'blogArticleETH']);
+
+Route::get('/blogArticleSOL', [PostCommentController::class, 'blogArticleSOL']);*/
 
 Route::get('/hunch', function () {
     return view('hunch');
@@ -148,11 +157,7 @@ Route::post('/tips', [TipsController::class, 'store']);
 
 //Route::post('/tips/{id}', [TipsController::class, 'destroy']);
 
-Route::get('/post', [BlogController::class, 'viewBlogpost']);
-
-
-
-
+Route::get('/blogs', [BlogController::class, 'index']);
 
 
 

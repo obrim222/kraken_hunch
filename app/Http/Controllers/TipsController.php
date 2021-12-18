@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Tip;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -16,10 +18,26 @@ class TipsController extends Controller
             ->join('coin_data',  'coin_data.id', '=', 'tips.coin_id')
             ->get(['tips.*', 'users.first_name', 'coin_data.name']);
 
+
+            $lb = DB::table('users')
+            ->join('tips', 'tips.user_id', '=', 'users.id')
+            ->select(
+                'users.id AS id',
+                'users.first_name AS firstname',
+                'users.last_name AS lastname',
+                DB::raw("count(tips.user_id) AS total")
+            )
+            ->groupBy('users.id')
+            ->groupBy('users.first_name')
+            ->groupBy('users.last_name')
+            ->get();
+    
+            $lb = collect($lb)->sortBy('total')->reverse()->toArray();
         //connection with database
         //  $tipsdata = Tip::all();
 
-        return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+            //    return view('tipsFolder.tips', ['tipsArray' => $tipsdata]);
+        return view('tipsFolder.tips')->with(['tipsArray' => $tipsdata,  'lb' => $lb]);
     }
 
 
