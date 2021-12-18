@@ -40,18 +40,20 @@
 
 
                 <div class="table">
-        
+                    @if(!empty($home))
                     @foreach($home as $LBtip)
 
                     
                       
                         <div class="card">
                          
-                            <div>
+                            <div class="flex flex-jc-sb p-4">
                                 Tipper: {{ $LBtip->firstname}}
                                 {{ $LBtip->lastname}}
+                                <div >
+                                                          
                                  Win Count: {{ $LBtip->total }} 
-                
+                                </div>
                             </div>
 
     
@@ -59,7 +61,7 @@
        
         
                     @endforeach
-
+                    @endif
         </div>
     </div>
  </section>
