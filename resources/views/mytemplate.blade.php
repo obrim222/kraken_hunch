@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/style.css">
-     
+        <link rel="" href="css/dist/script.js">
             <title>@yield('title')</title>
     </head>
 
@@ -37,7 +37,7 @@
 
 
             <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
-                <span> </span>
+                <span></span>
                 <span> </span>
                 <span> </span>
             </a>
@@ -146,6 +146,8 @@
     </footer>
 
     <script src="./js/app.js"></script>
+    <script src="./js/script.js"></script>
+
 </body>
 
 </html>
