@@ -47,7 +47,7 @@
                         <div class="p-1">
 
 
-                            <select name="coin_id" id="cID" onchange="myFunction()">
+                            <select name="coin_id" id="cID" onchange="callfunction()">
                                 <option value="1">Uniswap</option>
                                 <option value="2">Cardano</option>
                                 <option value="3">Chiliz</option>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="p-1">
 
-                            <select name="tip_direction" id="type2">
+                            <select name="tip_direction" id="type2"  onchange="callfunction()">
                                 <option value="up">up</option>
                                 <option value="down">down</option>
                             </select>
@@ -105,20 +105,6 @@
 
                     </div>
 
-
-
-                    <div class="p-1">
-
-
-                        <select name="coin_id" id="cID" onchange="callfunction()">
-                            <option value="1">Uniswap</option>
-                            <option value="2">Cardano</option>
-                            <option value="3">Chiliz</option>
-                            <option value="4">Bitcoin</option>
-                            <option value="5">the-sandbox</option>
-                            <!-- <option value="etherum">Etherum</option> -->
-                        </select>
-                    </div>
 
                     <div class="p-1">
                         <label for="tip_currency">Currency</label><br>
@@ -201,11 +187,11 @@
 </div>
 
 <script type="text/javascript">
-    function callfunction() {
+     function callfunction() {
 
-        myFunction();
-        calculation();
-    }
+          myFunction();
+          calculation();
+      }
     //fetch the currency that has been selected on screen
     function myFunction() {
         selected_coin = $('#cID option:selected').text();
@@ -234,20 +220,25 @@
         });
 
     };
-</script>
 
-<script type="text/javascript">
     //Calculate the forecasted minimu price
     function calculation() {
 
-
+        
         var cp = $('#cp').val();
         var fp = $('#type').val();
-
+        var direction = $('#type2').val();
+        console.log(direction);
+        if (direction =='up'){
         $('#fp').val((parseInt(cp) * (parseFloat(fp) / 100)) + parseInt(cp));
+    }   
+      else {
+        $('#fp').val(
+            parseInt(cp) * ((100 - parseFloat(fp))   / 100 )
+            );
 
-    };
-
+   }
+}
     //test
 </script>
 @endsection
