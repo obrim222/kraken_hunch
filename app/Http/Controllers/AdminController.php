@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        $id = Auth::id();
+       
         $blogComment = new PostCommentModel;
         $test = $request->oldblogComment;
       
@@ -51,28 +51,24 @@ class AdminController extends Controller
         $blogComment->id = $request->id;
  
         try { 
-            DB::table('blogs')
+            DB::table('users')
             ->where('id',   $blogComment->id)
-            ->update(['comment' =>  $blogComment->comment]);
+            ->update(['inactive' =>  1]);
             echo "Your post was successfuly added!"; 
 
             $blogs = BlogModel::join('users', 'blogs.user_id', '=', 'users.id')
             ->join('coin_data',  'coin_data.id', '=', 'blogs.coin_id')
             ->get(['blogs.*', 'users.first_name', 'users.last_name', 'coin_data.name']);
 
-            return view('blogsdetail', ['blogsdetail' => $blogs]);
+            return view('adminPage');
 
           } catch(\Illuminate\Database\QueryException $ex){ 
               return ['error' => 'error update user']; 
           }
-
-    
-       
+  
 
     }
 
  
-
-
   
 }

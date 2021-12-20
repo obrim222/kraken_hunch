@@ -47,13 +47,13 @@
     
          <div class="ml-4" > 
  
-                <form action="/blogsdetail"  method="POST">
+                <form action="/adminPage"  method="POST">
                     @csrf
                
                     <textarea   id="id"  name="id" cols="140" rows="4"> {{ " User "  . $user->id . " " .  $user->first_name  . " "  . $user->last_name  }}</textarea> 
                     
                  
-                    <button> <?php echo " Delete user " . $user->id ?></button>
+                    <button> <?php echo " Deactivate user " . $user->id ?></button>
                        
                     @error('id')    
                     @enderror
@@ -93,7 +93,7 @@
     
          <div class="ml-4" > 
  
-                <form action="/blogsdetail"  method="POST">
+                <form action="/adminPage"  method="POST">
                     @csrf
                
                     <textarea   id="id"  name="id" cols="140" rows="4"> {{ " Blog " .  $blog->id . " titled "  . $blog->title  }}</textarea> 
