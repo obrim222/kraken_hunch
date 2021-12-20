@@ -17,8 +17,12 @@
 
             </p>
 
-            <a href="#" class="button hero__cta">View Tips</a> <a href="#" class="button hero__cta">Give a tip</a>
-
+            @auth
+            <a href="#" class="button hero__cta">View Tips</a>
+            <a href="#" class="button hero__cta">Give a tip</a>
+            @else
+            <a href="./register" class="button hero__cta">Register</a>
+            @endauth
         </div>
 </section>
 
@@ -28,7 +32,7 @@
         <div class="flip-card-container">
             <div class="grid-container">
 
-          
+            @if(!empty($coin))
                @foreach($coins as $coin)
             
                 <div class="flip-card">
@@ -64,13 +68,13 @@
                         
                           <div class ="flex flex-jc-c  ">
                             <p><a href="/tips" class="button hero__cta">View Tips</a> </p> 
-                            <p><a href="/create" class="button hero__cta">Give Tip</a> </p> 
+                            <p><a href="/tips/create" class="button hero__cta">Give Tip</a> </p> 
                            </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
-
+                @endif
                 
          
             </div>

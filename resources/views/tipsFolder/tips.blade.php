@@ -13,19 +13,30 @@
         <div class="hero__text container--pall">
             <h2  class="animate__animated animate__backInLeft">Leader Board</h2>
             <div class="table">
-                <div class="card">
-                <div>Number</div>       
-            </div> 
-            <div class="card">
-                card
-            </div> 
-            <div class="card">
-                card
-            </div> 
-        </div>    
-
-    </div>
-    </div>
+   
+                            @if(!empty($lb))
+                                    @foreach($lb as $LBtip)
+                                 
+                                      
+                                        <div class="card">
+                                         
+                                            <div class="flex flex-jc-sb p-4">
+                                                Tipper: {{ $LBtip->firstname}}
+                                                {{ $LBtip->lastname}}
+                                                <div >
+                                                                          
+                                                 Win Count: {{ $LBtip->total }} 
+                                                </div>
+                                            </div>
+                
+                    
+                                        </div>
+                       
+                        
+                                    @endforeach
+                                    @endif
+                        </div>
+      </div>
 </section>
 
 

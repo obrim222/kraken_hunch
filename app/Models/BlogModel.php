@@ -17,6 +17,7 @@ class BlogModel extends Model
     protected $fillable = [
         'blog',
         'coin_id',
-
+        'date',
+        'comment'
     ];
 }

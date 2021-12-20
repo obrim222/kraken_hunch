@@ -13,63 +13,45 @@
 @endif
 
 
-<section class="articles">
+<!-- animate css added for the text-->
+
+<section class="hero">
+    <div class="container">
+
+
+    <div class="hero__text container--pall">
+  
+        <h1 class="animate__animated animate__backInRight">Click on the blogs below to earn hunch tokens!</h1>
+
+
+    </div>
+
+</div>
+</section>
+
+<section class="">
     <div class="article__content container container--pall">
-        <h2>Latest Articles</h2>
 
         <div class="article__grid">
-            <a href="blogArticleBtc" class="article__item">
-                <div class="article__image" style="background-image: url('./images/bitcoin.jpg')"></div>
+            @if(!empty($blogs))
+           @foreach($blogs as $bl) 
+            <a href="blogsdetail" class="article__item">
+                <div class="article__image" style="background-image: url('./images/<?php echo $bl->name . ".png" ?>')"></div>
                 <div class="article__text">
-                    <div class="article__author">By Kasia Kolo</div>
+                    <div class="article__author">By <?php echo $bl->first_name . " " . $bl->last_name  ?></div>
                     <div class="article__title">
-                        Bitcoin is touted as the new digital gold by Michael Saylor. Is
-                        he right?
+                        {{ $bl->title}}
                     </div>
                     <div class="article__description">
-                        Michael Saylor is a brave man. Having recently taken out a bank
-                        loan to buy 7000 bitcoin....
-                    </div>
-
-
-                    </form>
+                        <?php echo substr($bl->blog, 0, 300) . "" . ".......read more"  ?>
+                                   </div>
                 </div>
             </a>
-
-
-            <a href="blogArticleEth" class="article__item">
-                <div class="article__image" style="background-image: url('./images/ethereum.jpg')"></div>
-                <div class="article__text">
-                    <div class="article__author">By Tom Weniger</div>
-                    <div class="article__title">Ethereum...</div>
-                    <div class="article__description">Our .......</div>
-                </div>
-                </form>
-            </a>
-
-            <a href="blogArticleSol" class="article__item">
-                <div class="article__image" style="background-image: url('./images/solana.jpg')"></div>
-                <div class="article__text">
-                    <div class="article__author">By Michael O Brien</div>
-                    <div class="article__title">.....</div>
-                    <div class="article__description">.....</div>
-                </div>
-
-                </form>
-            </a>
-
-            <a href="blogArticleAda" class="article__item">
-                <div class="article__image" style="background-image: url('./images/cardano.png')"></div>
-                <div class="article__text">
-                    <div class="article__author">By Kasia Kolo</div>
-                    <div class="article__title">.....</div>
-                    <div class="article__description">.....</div>
-                </div>
-                <br>
-
-                </form>
-            </a>
+            @endforeach
+            @endif
         </div>
     </div>
 </section>
+
+
 @endsection

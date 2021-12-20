@@ -243,7 +243,7 @@ button,
 
 .form-container {
     border-radius: 5px;
-    background-color: #f2f2f2;
+
     padding: 20px;
 }
 
@@ -255,12 +255,28 @@ button,
     padding: 0.5rem !important;
 }
 
+.m-1 {
+    margin: 0.25rem !important;
+}
+
+.m-2 {
+    margin: 0.5rem !important;
+}
+
+.m-3 {
+    margin: 1rem !important;
+}
+
 .p-3 {
     padding: 1rem !important;
 }
 
 .p-4 {
     padding: 1.5rem !important;
+}
+
+.p-8 {
+    padding: 3rem !important;
 }
 
 .containerSmallContent {
@@ -277,4 +293,37 @@ button,
 
 .mr-4ish {
     margin-right: 5rem !important;
+}
+
+.blogImage {
+    height: 18rem;
+
+    width: 95%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-style: solid;
+    border-color: #d3d3d3;
+    border-width: 1px;
+}
+
+.m-4 {
+    margin: 4rem !important;
+}
+
+.bgc {
+    background-color: #d3d3d3;
+
+    height: 180px;
+
+    width: 95%;
+}
+
+.ml-4 {
+    margin-left: 4rem !important;
+}
+
+.ml-5 {
+    margin-left: 5rem !important;
 }

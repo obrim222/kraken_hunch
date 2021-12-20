@@ -17,14 +17,13 @@
             <h1 class="animate__animated animate__backInLeft">Welcome to CryptoHunch!</h1>
 
 
-    
-            <p>
+             <p>
                 CryptoHunch is a LEARN & EARN web app with a community focused on
                 earning while learning from others! Check out our forecasting system
                 that is powered by our very own expert tippers.
             </p>
 
-            <a href="#" class="button hero__cta">Request Invite</a>
+            <a href="./register" class="button hero__cta">Register</a>
         </div>
 
     </div>
@@ -36,22 +35,23 @@
     <div class="container">
         
          <div class="hero__text container--pall">
-            <h3>Leaderboard</h3>
+            <h2>Leaderboard</h2>
 
 
                 <div class="table">
-        
-                    @foreach($home as $LBtip)
-
-                    
+                    @if(!empty($home2))
+                    @foreach($home2 as $LBtip)
+                 
                       
                         <div class="card">
                          
-                            <div>
+                            <div class="flex flex-jc-sb p-4">
                                 Tipper: {{ $LBtip->firstname}}
                                 {{ $LBtip->lastname}}
+                                <div >
+                                                          
                                  Win Count: {{ $LBtip->total }} 
-                
+                                </div>
                             </div>
 
     
@@ -59,7 +59,7 @@
        
         
                     @endforeach
-
+                    @endif
         </div>
     </div>
  </section>
@@ -125,53 +125,32 @@
     </div>
 </section>
 
+
+
 <section class="articles">
     <div class="article__content container container--pall">
         <h2>Latest Articles</h2>
 
         <div class="article__grid">
-            <a href="#" class="article__item">
-                <div class="article__image" style="background-image: url('./images/bitcoin.jpg')"></div>
+            @if(!empty($blogs))
+           @foreach($blogs as $bl) 
+            <a href="blogs" class="article__item">
+                <div class="article__image" style="background-image: url('./images/<?php echo $bl->name . ".png" ?>')"></div>
                 <div class="article__text">
-                    <div class="article__author">By Kasia Kolo</div>
+                    <div class="article__author">By <?php echo $bl->first_name . " " . $bl->last_name  ?></div>
                     <div class="article__title">
-                        Bitcoin is touted as the new digital gold by Michael Saylor. Is
-                        he right?
+                        {{ $bl->title}}
                     </div>
                     <div class="article__description">
-                        Michael Saylor is a brave man. Having recently taken out a bank
-                        loan to buy 7000 bitcoin....
+                        <?php echo substr($bl->blog, 0, 300) . "" . "................"  ?>                   
+    
                     </div>
                 </div>
             </a>
+            @endforeach
+            @endif
 
-            <a href="#" class="article__item">
-                <div class="article__image" style="background-image: url('./images/ethereum.jpg')"></div>
-                <div class="article__text">
-                    <div class="article__author">By Tom Weniger</div>
-                    <div class="article__title">Ethereum...</div>
-                    <div class="article__description">Our .......</div>
-                </div>
-            </a>
-
-            <a href="#" class="article__item">
-                <div class="article__image" style="background-image: url('./images/solana.jpg')"></div>
-                <div class="article__text">
-                    <div class="article__author">By Michael O Brien</div>
-                    <div class="article__title">.....</div>
-                    <div class="article__description">.....</div>
-                </div>
-            </a>
-
-            <a href="#" class="article__item">
-                <div class="article__image" style="background-image: url('./images/cardano.png')"></div>
-                <div class="article__text">
-                    <div class="article__author">By Kasia Kolo</div>
-                    <div class="article__title">.....</div>
-                    <div class="article__description">.....</div>
-                </div>
-            </a>
-        </div>
+            </div>
     </div>
 </section>
 
