@@ -1,6 +1,6 @@
 
 <?php
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogDetailController;
@@ -8,7 +8,7 @@ use App\Http\Controllers\CoinController;
 use App\Http\Controllers\PostCommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\CheckWinnersLosers;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipsController;
@@ -135,7 +135,7 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 //Kasia TIPS START
-Route::get('/tips/create', [TipsController::class, 'checkWinnersLosers']);
+Route::get('home', [CheckWinnersLosers::class, 'checkWinnersLosers']);
 Route::get('/tips', [TipsController::class, 'index']);
 
 Route::get('/tips/create', [TipsController::class, 'create']);
@@ -146,9 +146,17 @@ Route::post('/tips', [TipsController::class, 'store']);
 
 
 //admin
-Route::post('/adminPage/delete/{id}', [UserController::class, 'delete']);
-Route::get('/adminPage', [UserController::class, 'show']);
-Route::post('/adminPage', [PostCommentController::class, 'store']);
+
+
+//Route::get('/adminPage', [AdminController::class, 'createBlogPost'])->name('post');
+
+Route::post('/adminPage', [AdminController::class, 'store']);
+
+Route::get('/adminPage', [AdminController::class, 'index']);
+
+//Route::post('/adminPage/delete/{id}', [UserController::class, 'delete']);
+//Route::get('/adminPage', [UserController::class, 'show']);
+//Route::post('/adminPage', [PostCommentController::class, 'store']);
 //Route::get('/adminPage', [PostCommentController::class, 'show']);
 
 
@@ -165,7 +173,7 @@ Route::webhooks('/http://a60b-2a02-678-5c1-8e00-6d95-9a9f-4e90-ad07.ngrok.io/');
 //});
 
 
-Route::get('/adminPage', [UserController::class, 'show']);
+//Route::get('/adminPage', [UserController::class, 'show']);
 
 
 //Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);

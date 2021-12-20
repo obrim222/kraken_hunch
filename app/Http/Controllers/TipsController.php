@@ -74,8 +74,6 @@ class TipsController extends Controller
 
         $tip->price_at_time_of_tip = $request->price_at_time_of_tip;
         
-
-
         $tip->date_now = $request->date_now;
         $tip->date_end = $request->date_end;
         $tip->reason_up = $request->reason_up;
@@ -89,10 +87,12 @@ class TipsController extends Controller
 
         $tip->save();
 
-       echo "Saved successfully to database";
+       // echo "Saved successfully to database";
       //    return back()->with('error', 'sth wrong with db');
-        
-        return redirect('/tips');
+    
+        return redirect('/tips')->with('success', 'Your tip has been saved successfully to the database ');
+    
+
     }
 
   
@@ -105,79 +105,6 @@ class TipsController extends Controller
     }
 
  
-    public function checkWinnersLosers(){
-
-        $tipsdata = Tip::join('users', 'tips.user_id', '=', 'users.id')
-        ->join('coin_data',  'coin_data.id', '=', 'tips.coin_id')
-        ->get(['tips.*', 'users.first_name', 'coin_data.name']);
-       
-
-        $client = new CoinGeckoClient();
-        $data = $client->derivatives()->getExchanges();
-        $response = $client->getLastResponse();
-        $headers = $response->getHeaders();
-
-        $bitcoinprice = $client->simple()->getPrice('0x,bitcoin', 'eur');
-        $unisawpprice = $client->simple()->getPrice('0x,uniswap', 'eur');
-        $todaysdate = date("Y-m-d");
-
-        foreach($bitcoinprice as $btc) 
-        {
-            $bit =   $btc['eur'] ;
-        }
-
-       //dd(   $bitcoinprice);
-   //
-        foreach($tipsdata as $tip) 
-        {
-            echo $tip->name ; 
-            if($tip->name = "bitcoin")
-           {
-            if(  $tip->date_end <=  $todaysdate ) 
-            {
-                            
-                   
-                    if($tip->calculated_tip_price >= $bit )
-                    {
-                     
-                        if($tip->winlose_flag !="W"  ||  $tip->winlose_flag!="L"){
-                        try { 
-                            DB::table('tips')
-                            ->where('id',   $tip->id)
-                            ->update(['winlose_flag' =>  "W"]);
-                          
-                      
-                          } catch(\Illuminate\Database\QueryException $ex){ 
-                              return ['error' => 'error update user']; 
-                          }
-                        }
-
-                    }
-                    if($tip->calculated_tip_price <= $bit )
-                    {
-                        if($tip->winlose_flag !="W"  ||  $tip->winlose_flag!="L"){
-                            try { 
-                                DB::table('tips')
-                                ->where('id',   $tip->id)
-                                ->update(['winlose_flag' =>  "L"]);
-                              
-                         
-                    
-                              } catch(\Illuminate\Database\QueryException $ex){ 
-                                  return ['error' => 'error update user']; 
-                              }
-                            }
-                    }
-                
-            }
-
-     } 
-  
-    }
-   return view('tipsFolder.create'); 
-    }
-
-
 
 
 }

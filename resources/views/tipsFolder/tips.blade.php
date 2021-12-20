@@ -1,6 +1,13 @@
 @extends('mytemplate')
 
 @section('title', 'Tips')
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
 
 <!-- added in the styling link-->
 <link rel="stylesheet" href="../css/style.css">

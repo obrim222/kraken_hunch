@@ -10,15 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 class AdminModel extends Model
 {
     use HasFactory;
-    public $timestamps = false;
-    protected $table = "admin";
 
 
-    protected $fillable = [];
-
-
-    public function __construct()
-    {
-        $this->middleware(['guest']);
-    }
+ 
+ 
 }

@@ -6,63 +6,114 @@
 <p style="color:red">{{ $message }}</p>
 @endif
 
-<h1>Users List</h1>
+@section('content')
 
-<table border="1">
-    <tr>
-        <td>Id</td>
-        <td>first name</td>
-        <td>last name</td>
-        <td>email</td>
-        <td>Comment</td>
 
-</tr>
 
-@foreach($users as $user)
-<tr>
-<td>{{$user->id}}</td>
-<td>{{$user->first_name}}</td>
-<td>{{$user->last_name}}</td>
-<td>{{$user->email}}</td>
-<td>{{$user->comment}}</td>
-<td><a href={{"adminPage/delete/".$user['id']}}>Delete Comment</a></td>
-<td><a href={{"adminPage/delete/".$user['id']}}>Delete User</a></td>
-</tr>
-@endforeach
+@extends('mytemplate')
 
-</table>
+@section('title', 'Admin')
+<!-- added jQuery link-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<body>
-    <h1>Add Blog</h1>
-    <form method="post">
-        @csrf
+
+@section('content')
+
+<section class="hero">
+    <div class="container">
+
+        <div class="hero__text container--pall">
     
-        <input type="text" name="comment" placeholder="Blog" value="{{ old('comment') }}"> <br>
-        @error('comment')
-        <div>
-            {{ $message }}
+   
+            <h1>
+             Admin Page    
+            </h1>
+            <h3> User Administration </h3> 
+     
         </div>
-        @enderror
 
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    </div>
+</section>
 
-    <button><a href=home>Home</a></button>
+
+<section>
+    @if(!empty($users))
+    @foreach($users as $user) 
+    
+     <div class="container ">
+          
+        
   
-</tr>
-<?php
+    
+         <div class="ml-4" > 
+ 
+                <form action="/blogsdetail"  method="POST">
+                    @csrf
+               
+                    <textarea   id="id"  name="id" cols="140" rows="4"> {{ " User "  . $user->id . " " .  $user->first_name  . " "  . $user->last_name  }}</textarea> 
+                    
+                 
+                    <button> <?php echo " Delete user " . $user->id ?></button>
+                       
+                    @error('id')    
+                    @enderror
+   
+              </form>
+            </div>
 
-/*
-@foreach($comments as $comment)
-<tr>
-<td>{{$comment->comment}}</td>
+        </div>
+        @endforeach
+    @endif  
+</section>
 
-<td><a href={{"adminPage/delete/".$user['id']}}>Delete</a></td>
-</tr>
-{{--@endforeach--}}
+<section class="hero">
+    <div class="container">
 
-</table>
+        <div class="hero__text container--pall">
+    
+   
+            <h1>
+             Admin Page    
+            </h1>
+            <h3> Blog Administration </h3> 
+        </h1>
+        </div>
 
-</body>
-*/
-?>
+    </div>
+</section>
+
+<section>
+    @if(!empty($blogs))
+    @foreach($blogs as $blog) 
+    
+     <div class="container ">
+          
+        
+  
+    
+         <div class="ml-4" > 
+ 
+                <form action="/blogsdetail"  method="POST">
+                    @csrf
+               
+                    <textarea   id="id"  name="id" cols="140" rows="4"> {{ " Blog " .  $blog->id . " titled "  . $blog->title  }}</textarea> 
+                    
+                 
+                    <button> <?php echo " Delete blog " . $blog->id ?></button>
+                       
+                    @error('id')    
+                    @enderror
+   
+              </form>
+            </div>
+
+        </div>
+        @endforeach
+    @endif  
+</section>
+
+
+
+
+
+@endsection
