@@ -66,4 +66,18 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'spatie/laravel-stripe-webhooks' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
+    ),
+  ),
+  'spatie/laravel-webhook-client' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
+    ),
+  ),
 );

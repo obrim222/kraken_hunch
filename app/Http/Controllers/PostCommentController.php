@@ -9,33 +9,42 @@ use App\Models\BlogModel;
 
 class PostCommentController extends Controller
 {
+
     public function store(Request $request)
     {
 
+
+     
         $request->validate([
 
-            'blogComment' => 'required'
+            'comment' => 'required',
+            
+
 
         ]);
 
-        $blogComment = new PostCommentModel;
 
-        $blogComment->comment = $request->blogComment;
 
-        $blogComment->save();
+        $comment = new PostCommentModel;
 
-        if ($blogComment->save()) {
-            return back()->with('success', 'Saved in the Database');
-        }
-        /*
-        if ($blogComment->save()) {
-            return redirect('blogs')->with('success', 'Saved in the Database');
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        
+        if ($comment->save()) {
+            return redirect('adminPage')->with('success', 'Saved in the Database');
         } else {
-            return back()->with('error', 'Error');
+            return back()->with('error', 'Error', 'Problem saving comment into the database');
         }
-        */
+        
     }
 
+    public function show()
+    {
+        $comment = PostCommentModel::all();
+    
+        return view("adminPage", ["comment" => $comment]);
+    }
 
     public function index()
     {
@@ -69,4 +78,12 @@ class PostCommentController extends Controller
     }
 
 
+ 
+
 }
+
+
+
+
+  
+   

@@ -22,6 +22,7 @@ class Tip extends Model
         'calculated_tip_price',
         'tip_percentage',
         'tip_direction',
+        'winlose_flag',
         'coin_id'
     ];
 }

@@ -24,8 +24,8 @@ class UserController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'password' => 'required',
-            'tip_count' => 'required'
+            'password' => 'required'
+       
         ]);
 
         $user = new User;
@@ -34,7 +34,7 @@ class UserController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->password = $request->password;
-        $user->tip_count = $request->tip_count;
+       
 
         $user->save();
 
@@ -51,4 +51,37 @@ class UserController extends Controller
     {
         return view('register');
     }
+  
+  
+/*
+    public function delete($id)
+    {
+        echo "test";
+      $users = DB::find($id);
+      $users->delete();
+    // return redirect('adminPage');
+}
+
+
+
+*/
+public function delete($id)
+{
+
+    $result = DB::delete('DELETE FROM users WHERE id = ?', [$id]);
+
+    if ($result)
+        return back()->with('success', 'Comment was deleted from the DB');
+    else
+        return back()->with('error', 'Error deleting comment');
+}
+
+
+public function show()
+{
+    $users = User::all();
+
+    return view("adminPage", ["users" => $users]);
+}
+
 }

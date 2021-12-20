@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87c88206a821cb1690f14c3c7954c129",
+    "content-hash": "29754678ff19443e25dc64d42646b56e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -121,6 +121,60 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "codenix-sv/coingecko-api",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codenix-sv/coingecko-api.git",
+                "reference": "6946e36d8f5e989658405f9e0fb90b7a53c8b561"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codenix-sv/coingecko-api/zipball/6946e36d8f5e989658405f9e0fb90b7a53c8b561",
+                "reference": "6946e36d8f5e989658405f9e0fb90b7a53c8b561",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "~6.0|^7.0.1",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Codenixsv\\CoinGeckoApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Volodymyr Svyryd",
+                    "email": "codenix.sv@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP REST API client for coingecko.com",
+            "homepage": "https://github.com/codenix-sv/coingecko-api",
+            "keywords": [
+                "api",
+                "client",
+                "coingecko.com",
+                "php",
+                "rest"
+            ],
+            "support": {
+                "issues": "https://github.com/codenix-sv/coingecko-api/issues?state=open",
+                "source": "https://github.com/codenix-sv/coingecko-api"
+            },
+            "time": "2021-07-24T16:33:27+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2984,6 +3038,202 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "97c24d0bc58e04d55e4a6a7b6d6102cb45b75789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/97c24d0bc58e04d55e4a6a7b6d6102cb45b75789",
+                "reference": "97c24d0bc58e04d55e4a6a7b6d6102cb45b75789",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^7.0|^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^5.0|^6.23",
+                "phpunit/phpunit": "^9.4",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src",
+                    "Spatie\\LaravelPackageTools\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.10.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-18T20:33:51+00:00"
+        },
+        {
+            "name": "spatie/laravel-stripe-webhooks",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-stripe-webhooks.git",
+                "reference": "e6d3af07d90c27064bf73f5118e3358ec462768b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-stripe-webhooks/zipball/e6d3af07d90c27064bf73f5118e3358ec462768b",
+                "reference": "e6d3af07d90c27064bf73f5118e3358ec462768b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.50",
+                "php": "^8.0",
+                "spatie/laravel-webhook-client": "^3.0",
+                "stripe/stripe-php": "^7.51"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\StripeWebhooks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle stripe webhooks in a Laravel application",
+            "homepage": "https://github.com/spatie/laravel-stripe-webhooks",
+            "keywords": [
+                "laravel-stripe-webhooks",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-stripe-webhooks/issues",
+                "source": "https://github.com/spatie/laravel-stripe-webhooks/tree/3.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-11-24T09:11:16+00:00"
+        },
+        {
+            "name": "spatie/laravel-webhook-client",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-webhook-client.git",
+                "reference": "d71a8e81c01f1f1b83f776b536320e1ee51e9cdd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/d71a8e81c01f1f1b83f776b536320e1ee51e9cdd",
+                "reference": "d71a8e81c01f1f1b83f776b536320e1ee51e9cdd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/bus": "^8.50",
+                "illuminate/database": "^8.50",
+                "illuminate/support": "^8.50",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.24"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\WebhookClient\\WebhookClientServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\WebhookClient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Receive webhooks in Laravel apps",
+            "homepage": "https://github.com/spatie/laravel-webhook-client",
+            "keywords": [
+                "laravel-webhook-client",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-webhook-client/issues",
+                "source": "https://github.com/spatie/laravel-webhook-client/tree/3.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-12-07T09:02:55+00:00"
         },
         {
             "name": "stripe/stripe-php",

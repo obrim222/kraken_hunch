@@ -36,7 +36,7 @@
         <div class="flip-card-container">
             <div class="grid-container">
 
-            @if(!empty($coin))
+            @if(!empty($coins))
                @foreach($coins as $coin)
             
                 <div class="flip-card">

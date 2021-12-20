@@ -1213,6 +1213,10 @@ button:hover::before,
   margin-left: 5rem !important;
 }
 
+.displaynone {
+  display: none;
+}
+
 .header {
   position: relative;
   z-index: 1;

@@ -16,6 +16,8 @@ class PostCommentModel extends Model
 
     protected $fillable = [
         'comment',
+        'blog'
+       ];
 
-    ];
+       protected $guarded = [];
 }
