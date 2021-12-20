@@ -62,7 +62,7 @@
                     <h2>{{ $tip->title }}</h2>
 
                     <div>
-                        Tipper: {{ $tip->first_name}}
+                        Tipper: {{ $tip->first_name . " "  . $tip->last_name }}
                     </div>
                     <div>
                         Coin name: {{ $tip->name }} 
@@ -115,7 +115,7 @@
                     <h2>{{ $tip->title }}</h2>
 
                     <div>
-                        Tipper: {{ $tip->first_name}}
+                        Tipper: {{ $tip->first_name . " "  . $tip->last_name }}
                     </div>
                     <div>
                         Coin name: {{ $tip->name }} 

@@ -17,7 +17,7 @@ class TipsController extends Controller
     {
         $tipsdata = Tip::join('users', 'tips.user_id', '=', 'users.id')
             ->join('coin_data',  'coin_data.id', '=', 'tips.coin_id')
-            ->get(['tips.*', 'users.first_name', 'coin_data.name']);
+            ->get(['tips.*', 'users.first_name', 'users.last_name', 'coin_data.name']);
 
 
             $lb = DB::table('users')

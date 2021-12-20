@@ -39,29 +39,37 @@
 <section>
     @if(!empty($users))
     @foreach($users as $user) 
-    
+    @if($user->inactive == 0)
+    {
      <div class="container ">
           
         
   
     
          <div class="ml-4" > 
- 
+            <textarea   id="id"  name="id" cols="140" rows="4"> {{ " user "  . $user->id . " " .  $user->first_name  . " "  . $user->last_name  }}</textarea> 
+          
+                    
                 <form action="/adminPage"  method="POST">
                     @csrf
                
-                    <textarea   id="id"  name="id" cols="140" rows="4"> {{ " User "  . $user->id . " " .  $user->first_name  . " "  . $user->last_name  }}</textarea> 
-                    
-                 
-                    <button> <?php echo " Deactivate user " . $user->id ?></button>
+                    <textarea class="displaynone " id="id"  name="id" cols="140" rows="4"> {{$user->id}}</textarea> 
+                    @error('id')
+
+                    <div class="m-3 ">
                        
-                    @error('id')    
-                    @enderror
-   
+                        {{$user->id}}
+                    </div>
+                    @enderror  
+                   <button> <?php echo " Deactivate user " . $user->id ?></button>
+           
               </form>
             </div>
 
         </div>
+
+    }
+    @endif  
         @endforeach
     @endif  
 </section>
@@ -89,28 +97,33 @@
      <div class="container ">
           
         
-  
+
     
-         <div class="ml-4" > 
- 
-                <form action="/adminPage"  method="POST">
-                    @csrf
-               
-                    <textarea   id="id"  name="id" cols="140" rows="4"> {{ " Blog " .  $blog->id . " titled "  . $blog->title  }}</textarea> 
-                    
-                 
-                    <button> <?php echo " Delete blog " . $blog->id ?></button>
-                       
-                    @error('id')    
-                    @enderror
-   
-              </form>
+         <div class="m-4" > 
+            <textarea   id="id"  name="id" cols="140" rows="4"> {{ " Blog "  . $blog->id .  " " .  $blog->title . "by " .  $blog->first_name  . " "  . $blog->last_name  }}</textarea> 
+       
+            <form action="/adminPage"  method="POST">
+                @csrf
+           
+                <textarea class="displaynone " id="id"  name="id" cols="140" rows="4"> {{$blog->id}}</textarea> 
+                @error('id')
+
+                <div class="m-3 ">
+                   
+                    {{$blog->id}}
+                </div>
+                @enderror  
+               <button> <?php echo " Deactivate blog " . $blog->id ?></button>
+       
+          </form>
             </div>
 
         </div>
         @endforeach
     @endif  
 </section>
+
+
 
 
 
