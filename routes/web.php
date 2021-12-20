@@ -135,14 +135,15 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 //Kasia TIPS START
-
+Route::get('/tips/create', [TipsController::class, 'checkWinnersLosers']);
 Route::get('/tips', [TipsController::class, 'index']);
 
 Route::get('/tips/create', [TipsController::class, 'create']);
 
 Route::get('/', [HomeController::class, 'showblogs']);
-Route::get('/tips/create', [TipsController::class, 'checkWinnersLosers']);
+
 Route::post('/tips', [TipsController::class, 'store']);
+
 
 //admin
 Route::post('/adminPage/delete/{id}', [UserController::class, 'delete']);

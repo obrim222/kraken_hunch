@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 class TipsController extends Controller
 {
 
+
     //added join for three tables
     public function index()
     {
@@ -21,7 +22,7 @@ class TipsController extends Controller
 
             $lb = DB::table('users')
             ->join('tips', 'tips.user_id', '=', 'users.id')
-            ->select(
+            ->select(   
                 'users.id AS id',
                 'users.first_name AS firstname',
                 'users.last_name AS lastname',
@@ -41,13 +42,6 @@ class TipsController extends Controller
     }
 
 
-    public function create()
-    {
-
-        //$currency_types = DB::table('tips')->get();  //Dropdown get tip_currency table data from DB
-
-        return view('tipsFolder.create');
-    }
 
 
     public function store(Request $request)
@@ -69,6 +63,8 @@ class TipsController extends Controller
             //'reason_description' => 'required_unless:reason_down, other',
         ]);
 
+
+        
         $id = Auth::id();
 
         $tip = new Tip();
@@ -77,6 +73,8 @@ class TipsController extends Controller
         $tip->tip_currency = $request->tip_currency;
 
         $tip->price_at_time_of_tip = $request->price_at_time_of_tip;
+        
+
 
         $tip->date_now = $request->date_now;
         $tip->date_end = $request->date_end;
@@ -90,10 +88,23 @@ class TipsController extends Controller
         $tip->coin_id = $request->coin_id;
 
         $tip->save();
-       // return back()->with('error', 'sth wrong with db');
+
+       echo "Saved successfully to database";
+      //    return back()->with('error', 'sth wrong with db');
+        
         return redirect('/tips');
     }
 
+  
+    public function create()
+    {
+
+        //$currency_types = DB::table('tips')->get();  //Dropdown get tip_currency table data from DB
+
+        return view('tipsFolder.create');
+    }
+
+ 
     public function checkWinnersLosers(){
 
         $tipsdata = Tip::join('users', 'tips.user_id', '=', 'users.id')
@@ -142,7 +153,7 @@ class TipsController extends Controller
                         }
 
                     }
-                    else
+                    if($tip->calculated_tip_price <= $bit )
                     {
                         if($tip->winlose_flag !="W"  ||  $tip->winlose_flag!="L"){
                             try { 
@@ -165,6 +176,7 @@ class TipsController extends Controller
     }
    return view('tipsFolder.create'); 
     }
+
 
 
 

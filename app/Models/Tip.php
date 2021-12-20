@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Tip extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    public $timestamps = true;
     protected $table = 'tips';
 
     protected $fillable = [
         'price_at_time_of_tip ',
         'tip_currency',
+        'tip_currency',
+        'created_at',
+        'updated_at', 
         'date_now',
         'date_end',
         'reason_up',
