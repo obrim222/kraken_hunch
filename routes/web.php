@@ -8,6 +8,7 @@ use App\Http\Controllers\CoinController;
 use App\Http\Controllers\PostCommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipsController;
@@ -154,16 +155,16 @@ Route::webhooks('/http://a60b-2a02-678-5c1-8e00-6d95-9a9f-4e90-ad07.ngrok.io/');
 
 
 
-Route::group(['middleware' => ['admin']], function () {
-    Route::get('/adminPage/delete/{id}', 'HomeController@adminView');
-});
+//Route::group(['middleware' => ['admin']], function () {
+//    Route::get('/adminPage/delete/{id}', 'HomeController@adminView');
+//});
 
-Route::group(['middleware' => ['admin']], function () {
-    Route::get('/adminPage', 'HomeController@adminView');
-});
+//Route::group(['middleware' => ['admin']], function () {
+  //  Route::get('/adminPage', 'HomeController@adminView');
+//});
 
 
-//Route::get('/adminPage', [PostCommentController::class, 'show']);
+Route::get('/adminPage', [UserController::class, 'show']);
 
 
 //Route::get('/tips/up', [TipsController::class, 'orderTipsbyDirection']);
