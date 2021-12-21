@@ -159,6 +159,7 @@ Route::post('/tips', [TipsController::class, 'store']);
 Route::post('/deactivateUser', [AdminController::class, 'deactivateUser']); 
 Route::post('/deactivateBlog', [AdminController::class, 'deactivateBlog']);
 Route::post('/deactivateTip', [AdminController::class, 'deactivateTips']);
+Route::post('/addBlog', [AdminController::class, 'addBlog']); 
 Route::get('/adminPage', [AdminController::class, 'index']);
 
 

@@ -1,15 +1,11 @@
-@section('title', 'Tips')
-@if (\Session::has('success'))
-    <div class="alert alert-success">
-        <ul style="color:green">
-         <li >{!! \Session::get('success') !!}</li> 
-        </ul>
-    </div>
+@if ($message = Session::get('success'))
+<p style="color:green">{{ $message }}</p>
 @endif
 
 @if ($message = Session::get('error'))
 <p style="color:red">{{ $message }}</p>
 @endif
+
 
 @section('content')
 
@@ -206,11 +202,11 @@
         </div>
 </div>
 <div class="container "> 
-              <form   method="POST">
+    <form action=" {{ url('addBlog') }} "  method="POST">
                   @csrf
               
-                  <input type="text" name="comment" placeholder="Blog" value="{{ old('comment') }}"> <br>
-                  @error('comment')
+                  <input type="text" name="blog" placeholder="blog" value="{{ old('blog') }}"> <br>
+                  @error('blog')
                   <div>
                       {{ $message }}
                   </div>

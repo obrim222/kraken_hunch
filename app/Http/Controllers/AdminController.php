@@ -38,16 +38,16 @@ class AdminController extends Controller
     }
 
 
-    public function __construct()
-    {
-        $this->middleware(['auth'])->only(['store', 'destroy']);
-    }
+    //public function __construct()
+   // {
+   //     $this->middleware(['auth'])->only(['store', 'destroy']);
+   // }
 
 
-    public function createBlogPost(Request $request)
+    public function addBlog(Request $request)
     {
         $request->validate([
-            'message' => 'required',
+            'blog' => 'required',
             'coin_id' => 'required'
         ]);
 
@@ -55,10 +55,22 @@ class AdminController extends Controller
 
         $blog = new BlogModel();
         $blog->user_id = $id;
-        $blog->comment = $request->comment;
+        $blog->blog = $request->blog;
         $blog->coin_id = $request->coin_id ;
-        $blog->save();
+   
 
+           //Authentication
+
+           if ($blog->save()) {
+
+       
+
+            //Auth::login($user);
+
+            return back()->with('success', 'Blog added to the databse! ');
+        } else {
+            return back()->with('error', 'Oops something went wrong');
+        }
     }
 
     public function deactivateUser(Request $request)
@@ -147,12 +159,12 @@ class AdminController extends Controller
               return ['error' => 'error update user']; 
           }
   
+       
  
     }
 
-   // public function __construct()
-   // {
-   //     $this->middleware(['guest']);
-   // }
-  
+    public function __construct()
+    {
+        $this->middleware(['admin']);
+    }
 }
