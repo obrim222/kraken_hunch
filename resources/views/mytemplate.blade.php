@@ -47,6 +47,7 @@
             <div class="header__links hide-for-mobile">
                 <a href="/home">Home</a>
                 <a href="/coins">Coins</a>
+                <a href="/email">Contact us</a>
                 @auth 
                 <a href="/tips">Tips</a>
                 <a href="/tips/create">Give a tip</a>
@@ -68,8 +69,11 @@
             <div class="align-self-start user-icon-padding">
                 <a href="/stripe" class="">
                     <i  class="fas fa-user"></i></a>   
-                    <div>€</div>
-           
+                    <div>€2,000</div>
+                       <div>{{ "User: " . Auth::id() }}</div>
+                   
+                  
+                      
             </div>
             @endauth 
 
@@ -78,6 +82,7 @@
         <div class="header__menu has-fade">
             <a href="/home">Home</a>
             <a href="/coins">Coins</a>
+            <a href="/email">Contact us</a>
             @auth 
             <a href="/tips">Tips</a>
             <a href="/tips/create">Give a tip</a>

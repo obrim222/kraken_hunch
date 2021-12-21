@@ -41,13 +41,13 @@ class MailerController extends Controller
 
 
             $mail->addReplyTo('sender@example.com', 'SenderReplyName');
-
+            /*
             if (isset($_FILES['emailAttachments'])) {
                 for ($i = 0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
                     $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
                 }
             }
-
+*/
 
 
             $mail->isHTML(true);                // Set email content format to HTML

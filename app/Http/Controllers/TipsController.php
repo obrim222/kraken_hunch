@@ -79,7 +79,7 @@ class TipsController extends Controller
         $tip->reason_up = $request->reason_up;
 
         $tip->reason_down = $request->reason_down;
-        $tip->reason_description = $request->reason_description;
+       
         $tip->calculated_tip_price = $request->calculated_tip_price;
 
         $tip->tip_percentage = $request->tip_percentage;
@@ -90,7 +90,7 @@ class TipsController extends Controller
        // echo "Saved successfully to database";
       //    return back()->with('error', 'sth wrong with db');
     
-        return redirect('/tips')->with('success', 'Your tip has been saved successfully to the database ');
+      return redirect('/tips')->with('success', 'Your tip has been saved successfully to the database ');
     
 
     }

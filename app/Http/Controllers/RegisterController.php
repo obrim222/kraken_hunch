@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CustomUser;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
 
 
 class RegisterController extends Controller
 {
+
 
 
     public function __construct()
@@ -38,7 +39,7 @@ class RegisterController extends Controller
 
 
 
-        $user = new CustomUser;
+        $user = new User;
 
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
@@ -47,17 +48,18 @@ class RegisterController extends Controller
         $user->is_admin = $request->is_admin;
 
 
-        auth()->attempt($request->only('email', 'password'));
+        //auth()->attempt($request->only('email', 'password'));
 
-        $user->save();
 
         //Authentication
 
         if ($user->save()) {
 
-            auth()->attempt($request->only('email', 'password'));
             event(new Registered($user));
-            return redirect('home')->with('success', 'User registered in the database');
+
+            //Auth::login($user);
+
+            return back()->with('success', 'Please verify the email ');
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }

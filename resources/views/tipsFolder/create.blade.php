@@ -49,7 +49,8 @@
                                 <option value="2">Cardano</option>
                                 <option value="3">Chiliz</option>
                                 <option value="4">Bitcoin</option>
-                                <option value="5">the-sandbox</option>
+                                <option value="5">Ethereum</option>
+                            
                                 <!-- <option value="etherum">Etherum</option> -->
                             </select>
                             @error('coin_id')
@@ -87,7 +88,7 @@
                                 <option value="up">up</option>
                                 <option value="down">down</option>
 
-                                <div></div>
+                
                             </select>
                             @error('tip_direction')
                             {{$message}}
@@ -195,28 +196,18 @@
                     <br>
 
 
-                    <div class="p-1">
-                        <label for="reason_description">Other reason</label><br>
-                    </div>
-                    <div class="p-1">
-                        <input type="text" name="reason_description" placeholder="Other Reason" value="{{old('reason_description')}}">
-                        @error('reason_description')
-                        {{$message}}
-                        @enderror
-                    </div>
-                    <br>
-
-
                     <div class="p-4">
-
-                        <input type="submit" name='submitBtn' value="Submit Your Tip">
+                       
+                        <input href="/tips" type="submit" class=" button hero__cta" name='submitBtn' value="Submit Your Tip">
                     </div>
 
+               
                 </form>
 
             </div>
+      
+           <!-- <a href="/tips" class="button hero__cta">See all tips</a> -->
 
-            <a href="/tips" class="back">See all tips</a>
         </div>
     </div>
 </div>
@@ -270,7 +261,7 @@
             $('#resup').hide();
             $('#resuplabel').hide();
             $('#resdown').show();
-            $('#resdown').show();
+            $('#resdownlabel').show();
 
    }
 }

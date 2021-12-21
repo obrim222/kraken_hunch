@@ -1,5 +1,6 @@
 
 <?php
+//use App\Http\Controllers\MyHeaderController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
@@ -134,8 +135,11 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
+
+
+Route::get('/runCheck', [CheckWinnersLosers::class, 'checkWinnersLosers']);
+
 //Kasia TIPS START
-Route::get('home', [CheckWinnersLosers::class, 'checkWinnersLosers']);
 Route::get('/tips', [TipsController::class, 'index']);
 
 Route::get('/tips/create', [TipsController::class, 'create']);
@@ -147,12 +151,16 @@ Route::post('/tips', [TipsController::class, 'store']);
 
 //admin
 
+//Route::post('adminPage', 'AdminController@createBlogPost')->name('adminPage');
 
-//Route::get('/adminPage', [AdminController::class, 'createBlogPost'])->name('post');
+//Route::post('/adminPage', [AdminController::class, 'createBlogPost'])->name('post');
 
-Route::post('/adminPage', [AdminController::class, 'store']);
 
+Route::post('/deactivateUser', [AdminController::class, 'deactivateUser']); 
+Route::post('/deactivateBlog', [AdminController::class, 'deactivateBlog']);
+Route::post('/deactivateTip', [AdminController::class, 'deactivateTips']);
 Route::get('/adminPage', [AdminController::class, 'index']);
+
 
 //Route::post('/adminPage/delete/{id}', [UserController::class, 'delete']);
 //Route::get('/adminPage', [UserController::class, 'show']);
@@ -160,7 +168,7 @@ Route::get('/adminPage', [AdminController::class, 'index']);
 //Route::get('/adminPage', [PostCommentController::class, 'show']);
 
 
-Route::webhooks('/http://a60b-2a02-678-5c1-8e00-6d95-9a9f-4e90-ad07.ngrok.io/');
+//Route::webhooks('/http://a60b-2a02-678-5c1-8e00-6d95-9a9f-4e90-ad07.ngrok.io/');
 
 
 

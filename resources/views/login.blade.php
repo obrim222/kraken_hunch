@@ -34,17 +34,19 @@
 
 <div class="containerSmallContent flex flex-jc-c ">
     <div class="form-container">
+        
+    <div class="m-4">
         <form method="post">
             @csrf
-                <div>
+            <div>
               <input class="m-2" type="email" name="email" placeholder="Enter your e-mail">
                     @error('email')
                     <div class="text-red-500 mt-2 text-sm p-4">
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
-                <div>  
+            </div>
+            <div>  
                      <input class="m-2" type="password" name="password" placeholder="Enter your password">
 
                             @error('password')
@@ -54,13 +56,16 @@
                             @enderror
                            <div class="p-4 ">
                                <button type="submit" name="submit" class="button register">Login</button>
-                            </div>
-                    </div> 
+                             </div>
+            </div> 
+
+        </form>
                            
     </div>
 </div>
 
-</form>
+
+</div>
 
 
 </div>

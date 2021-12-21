@@ -3,8 +3,8 @@
 @section('title', 'Tips')
 @if (\Session::has('success'))
     <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
+        <ul style="color:green">
+         <li >{!! \Session::get('success') !!}</li> 
         </ul>
     </div>
 @endif
@@ -15,6 +15,25 @@
 @section('content')
 
 <section class="hero">
+    <div class="container">
+
+
+    <div class="hero__text container--pall">
+  
+        <h1 class="animate__animated animate__backInLeft">Tips Page!</h1>
+
+
+         <p>
+            See the leaderboard below with the amount of winning tips per member aswell as the open, winning and losing tips. 
+        </p>
+
+        
+    </div>
+
+</div>
+</section>
+
+<section class="">
     <div class="container">
 
         <div class="hero__text container--pall">
@@ -61,7 +80,7 @@
                 <div class="card">
                     <h2>{{ $tip->title }}</h2>
 
-                    <div>
+                    <div class="bold">
                         Tipper: {{ $tip->first_name . " "  . $tip->last_name }}
                     </div>
                     <div>
@@ -71,25 +90,23 @@
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Forecast {{ $tip->calculated_tip_price }} 
+                        Forecast: {{ $tip->calculated_tip_price }} 
                     </div>
                     <div>
-                        Date:{{ $tip->date_now }} 
+                        Current Date: {{ $tip->date_now }} 
+                    </div>
+
+                    <div>
+                        End Date: {{ $tip->date_end }} 
                     </div>
 
                     <div>
                         Value: {{ $tip->tip_direction }} 
                     </div>
-                    <div>
-                        Forecast Reason Up: {{ $tip->reason_up}}
+                    <div class="padding-bottom">
+                        Forecast Reason: {{ $tip->reason_up . $tip->reason_down}}
                     </div>  
-                    <div> 
-                        Forecast Reason Down: {{ $tip->reason_down}}
-                    </div>
-           
-                    <div>
-                        Tipper comment: {{ $tip->reason_user_description }}                                 
-                    </div>    
+             
                 </div> 
      
    
@@ -114,7 +131,8 @@
                 <div class="card">
                     <h2>{{ $tip->title }}</h2>
 
-                    <div>
+                  
+                    <div class="bold">
                         Tipper: {{ $tip->first_name . " "  . $tip->last_name }}
                     </div>
                     <div>
@@ -124,26 +142,23 @@
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Forecast {{ $tip->calculated_tip_price }} 
+                        Forecast: {{ $tip->calculated_tip_price }} 
                     </div>
                     <div>
-                        Date:{{ $tip->date_now }} 
+                        Current Date: {{ $tip->date_now }} 
+                    </div>
+
+                    <div>
+                        End Date: {{ $tip->date_end }} 
                     </div>
 
                     <div>
                         Value: {{ $tip->tip_direction }} 
                     </div>
-                    <div>
-                        Forecast Reason Up: {{ $tip->reason_up}}
-
+                    <div class="padding-bottom">
+                        Forecast Reason: {{ $tip->reason_up . $tip->reason_down}}
                     </div>  
-                    <div>
-                        Forecast Reason Down: {{ $tip->reason_down}}
-               
-                    </div>  
-                    <div>
-                        Tipper comment: {{ $tip->reason_user_description }}                                 
-                    </div>  
+      
              
             </div>
    
@@ -169,7 +184,8 @@
                 <div class="card">
                     <h2>{{ $tip->title }}</h2>
 
-                    <div>
+                  
+                    <div class="bold">
                         Tipper: {{ $tip->first_name}}
                     </div>
                     <div>
@@ -179,26 +195,24 @@
                         Initial tip price: {{ $tip->price_at_time_of_tip }}
                     </div>
                     <div>
-                        Forecast {{ $tip->calculated_tip_price }} 
+                        Forecast: {{ $tip->calculated_tip_price }} 
                     </div>
                     <div>
-                        Date:{{ $tip->date_now }} 
+                        Current Date: {{ $tip->date_now }} 
+                    </div>
+
+                    <div>
+                        End Date: {{ $tip->date_end }} 
                     </div>
 
                     <div>
                         Value: {{ $tip->tip_direction }} 
                     </div>
-                    <div>
-                        Forecast Reason Up: {{ $tip->reason_up}}
-                    </div>  
-                    <div>
-                        Forecast Reason Down: {{ $tip->reason_down}}
-               
+                    <div class="padding-bottom">
+                        Forecast Reason: {{ $tip->reason_up . $tip->reason_down}}
                     </div>  
                     
-                    <div>
-                        Tipper comment: {{ $tip->reason_user_description }}                                 
-                    </div>  
+    
                 </div>
    
                 @endif

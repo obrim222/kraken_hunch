@@ -1,3 +1,11 @@
+@extends('mytemplate')
+
+@section('title', 'Contact us')
+
+@section('content')
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -29,23 +37,18 @@
 
 
                         <div class="card-header">
-                            <h4 class="card-title">Send Email</h4>
+                            <h4 class="card-title">Contact us</h4>
                         </div>
 
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="emailRecipient">Email To </label>
-                                <input type="email" name="emailRecipient" id="emailRecipient" class="form-control" placeholder="Mail To">
+                                <input type="email" name="emailRecipient" id="emailRecipient" class="form-control" placeholder="cryptohunchv1@gmail.com">
                             </div>
 
                             <div class="form-group">
                                 <label for="emailCc">CC </label>
                                 <input type="email" name="emailCc" id="emailCc" class="form-control" placeholder="Mail CC">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="emailBcc">BCC </label>
-                                <input type="email" name="emailBcc" id="emailBcc" class="form-control" placeholder="Mail BCC">
                             </div>
 
                             <div class="form-group">
@@ -79,3 +82,5 @@
 </body>
 
 </html>
+
+@endsection

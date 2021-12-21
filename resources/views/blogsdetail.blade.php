@@ -17,8 +17,13 @@
             <p>
                 CryptoHunch is a LEARN & EARN web app. When you are finished reading these articles you can earn Hunch by posting in the comment box below the articles so you learn and earn at the same time. 
             </p>
-
+            @auth
+                
+           
+        
+            @else
             <a href="./register" class="button hero__cta">Register</a>
+            @endauth
         </div>
 
     </div>
@@ -55,7 +60,7 @@
                         {{ $blog->id }}
                     </div>
                     @enderror
-
+                    @auth
 
                     <textarea id="comment" class="m-3 " name="blogComment" cols="140" rows="4"></textarea> 
                     @error('blogComment')
@@ -65,7 +70,11 @@
                     </div>
                     @enderror
                     <div class="m-3" >
+                       
+                            
+            
                         <button  id="storememberbtn" type="submit">Comment</button>
+                        @endauth
                     </div>
              
     

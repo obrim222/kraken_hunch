@@ -30,41 +30,42 @@ return redirect()->route('login');
 
 <div class="containerSmallContent flex flex-jc-c ">
     <div class="form-container m-4">
+        <div class="m-4">
+        <form method="post">
 
-<form method="post">
+            @csrf
+            <input class="m-2" type="text" name="first_name" placeholder="Firstname" value="{{ old('first_name') }}"><br>
+            @error('first_name')
+            <div class="text-red-500 mt-2 text-sm p-6">
+                {{ $message }}
+            </div>
+            @enderror
+            <input class="m-2" type="text" name="last_name" placeholder="Lastname" value="{{ old('last_name') }}"><br>
+            @error('last_name')
+            <div class="text-red-500 mt-2 text-sm p-6">
+                {{ $message }}
+            </div>
+            @enderror
+            <input class="m-2" type="email" name="email" placeholder="E-mail" value="{{ old('email') }}"><br>
+            @error('email')
+            <div class="text-red-500 mt-2 text-sm">
+                {{ $message }}
+            </div>
+            @enderror
+            <input class="m-2" type="password" name="password" placeholder="Password"><br>
+            @error('password')
+            <div class="text-red-500 mt-2 text-sm">
+                {{ $message }}
+            </div>
 
-    @csrf
-    <input class="m-2" type="text" name="first_name" placeholder="Firstname" value="{{ old('first_name') }}"><br>
-    @error('first_name')
-    <div class="text-red-500 mt-2 text-sm p-6">
-        {{ $message }}
+            @enderror
+
+            <div class="p-4 ">
+                <button type="submit" name="submit" class="button register"  value="Register">Register</button>
+            </div>
+
+        </form>
+        </div>
     </div>
-    @enderror
-    <input class="m-2" type="text" name="last_name" placeholder="Lastname" value="{{ old('last_name') }}"><br>
-    @error('last_name')
-    <div class="text-red-500 mt-2 text-sm p-6">
-        {{ $message }}
-    </div>
-    @enderror
-    <input class="m-2" type="email" name="email" placeholder="E-mail" value="{{ old('email') }}"><br>
-    @error('email')
-    <div class="text-red-500 mt-2 text-sm">
-        {{ $message }}
-    </div>
-    @enderror
-    <input class="m-2" type="password" name="password" placeholder="Password"><br>
-    @error('password')
-    <div class="text-red-500 mt-2 text-sm">
-        {{ $message }}
-    </div>
-
-    @enderror
-
-    <div class="p-4 ">
-        <button type="submit" name="submit" class="button register"  value="Register">Register</button>
-     </div>
-
-</form>
-</div>
 </div>
 @endsection

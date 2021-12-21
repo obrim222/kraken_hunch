@@ -2,7 +2,6 @@
 
 @section('title', 'Home')
 
-
 @section('content')
 
 
@@ -15,15 +14,20 @@
         <div class="hero__text container--pall">
       
             <h1 class="animate__animated animate__backInLeft">Welcome to CryptoHunch!</h1>
-
-
+       
              <p>
                 CryptoHunch is a LEARN & EARN web app with a community focused on
                 earning while learning from others! Check out our forecasting system
                 that is powered by our very own expert tippers.
             </p>
-
+            
+            @auth
+                
+           
+        
+            @else
             <a href="./register" class="button hero__cta">Register</a>
+            @endauth
         </div>
 
     </div>

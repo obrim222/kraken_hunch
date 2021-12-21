@@ -89,6 +89,14 @@ p {
     margin-bottom: 2.25rem;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.padding-bottom {
+    padding-bottom: 30px;
+}
+
 a,
 a:visited,
 a:hover {
@@ -320,6 +328,9 @@ button,
     width: 95%;
 }
 
+.ml-2 {
+    margin-left: 2rem !important;
+}
 .ml-4 {
     margin-left: 4rem !important;
 }
@@ -330,4 +341,9 @@ button,
 
 .displaynone {
     display: none;
+}
+
+.coinContent {
+    display: flex;
+    justify-content: space-between;
 }

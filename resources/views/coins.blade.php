@@ -16,9 +16,7 @@
         <div class="hero__text container--pall">
             <h1 class="animate__animated  animate__backInRight">Coins</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non nisi non dolor pulvinar laoreet. Praesent vel ultrices leo, in iaculis turpis. Etiam ac nibh mollis, convallis orci ut, dictum eros.
-
-
+               Hover over the coins below to see coin info and view tips or give a tip.
             </p>
 
             @auth
@@ -37,8 +35,9 @@
             <div class="grid-container">
 
             @if(!empty($coins))
+           
                @foreach($coins as $coin)
-            
+     
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -48,32 +47,40 @@
                             
                         <div class="nomics-ticker-widget" data-name="Uniswap Protocol Token" data-base= <?php  echo '"'. $coin->symbol . '"'  ?> data-quote="EUR">  </div><script src="https://widget.nomics.com/embed.js"></script>
                         
-                        <div class ="table">
-                            <div class="card">
-                               Category: {{$coin->coin_category}}
+                        <div class ="table ">
+                            
+                            <div class="card ">
+                              
+                                <div class ="">   Category : {{ $coin->coin_category}} </div>  
+
                            </div>
                            <div class="card">
-                               Founder:  {{$coin->founder}} 
+                               Founder :            {{  $coin->founder}} 
                            </div>
                            <div class="card">
-                               Cofounder:  {{$coin->cofounder}} 
+                               Algorithm :          {{ $coin->algorithm}} 
                                </div>
                                <div class="card">
-                               TPS:  {{$coin->transactions_per_second}} 
+                               Txns Per Second :     {{ $coin->transactions_per_second}} tps
                                </div>
                                <div class="card">
-                               BlockTime:  {{$coin->blocktime}} 
+                               BlockTime :          {{$coin->blocktime}} seconds
                                </div>
                                <div class="card">
-                               Txn Fees:  {{$coin->transactions_fees}} 
+                               Txn Fees :           {{$coin->transactions_fees}} euros
                                </div>
    
                             </div>
                         
                           <div class ="flex flex-jc-c  ">
-                            <p><a href="/tips" class="button hero__cta">View Tips</a> </p> 
-                            <p><a href="/tips/create" class="button hero__cta">Give Tip</a> </p> 
-                           </div>
+
+                            @auth
+                            <p><a href="#" class="button hero__cta">View Tips</a> </p> 
+                                <p> <a href="#" class="button hero__cta">Give a tip</a> </p> 
+                            @else
+                            <p><a href="./register" class="button hero__cta">Register</a> </p> 
+                            @endauth
+                              </div>
                         </div>
                     </div>
                 </div>
